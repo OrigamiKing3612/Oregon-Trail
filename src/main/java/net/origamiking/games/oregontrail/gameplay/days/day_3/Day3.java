@@ -11,6 +11,8 @@ public class Day3 {
     static Random rand = new Random();
     static int upperbound = 2; // 3 options
     private static int swicher = rand.nextInt(upperbound);
+    private static int rations = rand.nextInt(13); // 14
+    private static int bullets = rand.nextInt(14); // 15
     public static void day() {
         OregonTrailMain.println("Day 3");
         SubtractVariables.time_1();
@@ -18,17 +20,19 @@ public class Day3 {
         MainGameMenu.mainGameMenu(Variables.DAY_STUFF);
     }
     private static void choose_day() {
-        Variables.DAY_STUFF = Variables.DAY;
-//        switch (swicher) {
-//            case 0 -> {
-//
-//            }
-//            case 1 -> {
-//
-//            }
-//            case 2 -> {
-//
-//            }
-//        }
+        switch (swicher) {
+            case 0 -> {
+                if (rations == 0) rations++;
+                Variables.DAY_STUFF = "Some of your food goes bad. -" + rations;
+                Variables.POUNDS_OF_FOOD = Variables.POUNDS_OF_FOOD - rations;
+            }
+            case 1, 2 -> {
+                if (bullets == 0) bullets++;
+                if (rations == 0) rations++;
+                Variables.DAY_STUFF = "Some wolves attack you. -" + bullets + "+" + rations;
+                Variables.BULLETS = Variables.BULLETS - bullets;
+
+            }
+        }
     }
 }
