@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class Day2 {
     static Random rand = new Random();
-    static int upperbound = 2; // 3 options
+    static int upperbound = 3; // 3 options
     private static int swicher = rand.nextInt(upperbound);
     public static void day() {
         OregonTrailMain.println("Day 2");

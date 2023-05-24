@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class Day3 {
     static Random rand = new Random();
-    static int upperbound = 2; // 3 options
+    static int upperbound = 3; // 3 options
     private static int swicher = rand.nextInt(upperbound);
     private static int rations = rand.nextInt(13); // 14
     private static int bullets = rand.nextInt(14); // 15

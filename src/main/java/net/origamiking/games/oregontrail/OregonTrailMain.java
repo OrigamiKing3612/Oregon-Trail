@@ -11,6 +11,7 @@ public class OregonTrailMain {
     public static boolean DEBUG_MODE = false;
     public static void main(String[] args) {
         if (DEBUG_MODE) {
+            OregonTrailMain.println("DEBUG MODE");
             isDebugMode();
         } else {
             Scanner input = new Scanner(System.in);

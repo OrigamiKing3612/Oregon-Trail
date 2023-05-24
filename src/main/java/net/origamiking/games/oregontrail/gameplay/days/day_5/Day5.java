@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class Day5 {
     static Random rand = new Random();
-    static int upperbound = 2; // 3 options
+    static int upperbound = 3; // 3 options
     private static int swicher = rand.nextInt(upperbound);
     public static void day() {
         OregonTrailMain.println("Day 5");
@@ -22,14 +22,10 @@ public class Day5 {
         if (Day4.person) swicher = 0;
         switch (swicher) {
             case 0 -> {
-
+                Variables.DAY_STUFF = "As you keep traveling a person starts coming toward you. He greets you and says his name is Lukas. He says that he lost and he is looking for his people. He asks for some food and you graciously give him 5 pounds of food.";
+                Variables.POUNDS_OF_FOOD = Variables.POUNDS_OF_FOOD - 5;
             }
-            case 1 -> {
-
-            }
-            case 2 -> {
-
-            }
+            case 1, 2 -> Variables.DAY_STUFF = "You have an uneventful day.";
         }
     }
 }
