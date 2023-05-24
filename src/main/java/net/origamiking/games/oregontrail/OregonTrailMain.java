@@ -1,6 +1,9 @@
 package net.origamiking.games.oregontrail;
 
 import net.origamiking.games.oregontrail.gameplay.days.day_1.Day1;
+import net.origamiking.games.oregontrail.gameplay.days.day_7.Day7;
+import net.origamiking.games.oregontrail.gameplay.gameplay_features.CrossRiver;
+import net.origamiking.games.oregontrail.gameplay.gameplay_features.Deaths;
 import net.origamiking.games.oregontrail.gameplay.start.ChooseCharacters;
 import net.origamiking.games.oregontrail.gameplay.start.FirstStore;
 import net.origamiking.games.oregontrail.variables.Variables;
@@ -8,7 +11,7 @@ import net.origamiking.games.oregontrail.variables.Variables;
 import java.util.Scanner;
 
 public class OregonTrailMain {
-    public static boolean DEBUG_MODE = false;
+    public static boolean DEBUG_MODE = true;
     public static void main(String[] args) {
         if (DEBUG_MODE) {
             OregonTrailMain.println("DEBUG MODE");
@@ -26,7 +29,8 @@ public class OregonTrailMain {
             FirstStore.firststore();
         }
         OregonTrailMain.println("You leave for Oregon Tomorrow...");
-        Day1.day();
+//        Day1.day();
+        Day7.day();
     }
     public static void println(String string) {
         System.out.println(string);

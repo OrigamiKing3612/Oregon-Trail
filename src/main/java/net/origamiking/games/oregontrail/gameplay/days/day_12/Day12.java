@@ -12,7 +12,7 @@ public class Day12 {
     static int upperbound = 2; // 3 options
     private static int swicher = rand.nextInt(upperbound);
     public static void day() {
-        OregonTrailMain.println("Day 6");
+        OregonTrailMain.println("Day 12");
         SubtractVariables.time_1();
         choose_day();
         MainGameMenu.mainGameMenu(Variables.DAY_STUFF);

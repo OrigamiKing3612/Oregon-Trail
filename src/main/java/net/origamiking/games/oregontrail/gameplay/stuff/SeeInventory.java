@@ -13,6 +13,7 @@ public class SeeInventory {
         if (Variables.HAS_GUN) { OregonTrailMain.println("Gun: 1"); } else { OregonTrailMain.println("Gun: None"); }
         OregonTrailMain.println("Bullets: " + Variables.BULLETS);
         OregonTrailMain.println("People Left: " + Variables.PERSON_COUNTER);
+        //TODO add people and sickness/forlorn
 
         OregonTrailMain.println("Are you ready to leave? (Type \"Y\")");
         Scanner input = new Scanner(System.in);
