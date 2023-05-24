@@ -23,6 +23,5 @@ public class ChooseCharacters {
 
         OregonTrailMain.print("Your Characters are: ");
         OregonTrailMain.println(CharacterVariables.PERSON_1 + ", " + CharacterVariables.PERSON_2 + ", " + CharacterVariables.PERSON_3 + ", and " + CharacterVariables.PERSON_4 + ".");
-
     }
 }

@@ -7,6 +7,7 @@ public class CharacterVariables {
     public static String P1_SICK_WITH = "";
     public static boolean P1_IS_FORLORN = false;
     public static String P1_MESSAGE = "";
+    public static boolean P1_GONE = false;
 
 
     //2
@@ -15,6 +16,7 @@ public class CharacterVariables {
     public static String P2_SICK_WITH = "";
     public static boolean P2_IS_FORLORN = false;
     public static String P2_MESSAGE = "";
+    public static boolean P2_GONE = false;
 
 
 
@@ -24,6 +26,7 @@ public class CharacterVariables {
     public static String P3_SICK_WITH = "";
     public static boolean P3_IS_FORLORN = false;
     public static String P3_MESSAGE = "";
+    public static boolean P3_GONE = false;
 
 
 
@@ -33,5 +36,6 @@ public class CharacterVariables {
     public static String P4_SICK_WITH = "";
     public static boolean P4_IS_FORLORN = false;
     public static String P4_MESSAGE = "";
+    public static boolean P4_GONE = false;
 
 }

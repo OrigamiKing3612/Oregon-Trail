@@ -18,5 +18,10 @@ public class Deaths {
     }
     public static void hunger_and_sleep_deprived() {
         OregonTrailMain.println("Everyone is so tired and hungry. They look for food in the wagon but find none so they lay down to get some sleep. They eventually die of hunger and sleep.");
+        End.end();
+    }
+    public static void stuck() {
+        OregonTrailMain.println("You wait many days... no one comes.");
+        End.end();
     }
 }

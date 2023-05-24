@@ -110,11 +110,7 @@ public class CrossRiver {
                 f++;
             }
         }
-        if (t>f) {
-            return true;
-        } else {
-            return false;
-        }
+        return t > f;
     }
     private static boolean did_finish_ford() {
         int t = 0;
@@ -127,11 +123,7 @@ public class CrossRiver {
                 f++;
             }
         }
-        if (t>f) {
-            return true;
-        } else {
-            return false;
-        }
+        return t > f;
     }
     private static void death() {
         Deaths.drowning_in_river();

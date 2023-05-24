@@ -21,5 +21,7 @@ public class Variables {
     public static int FOOD_COUNTER = 6;
     public static int RATIONS_PER_PERSON = 6; // 2, 4, 6
     public static int PERSON_COUNTER = 4;
+    public static int AXELS = 0;
+    public static int WHEELS = 0;
 
 }
