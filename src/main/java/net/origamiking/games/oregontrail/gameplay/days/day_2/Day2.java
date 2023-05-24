@@ -29,7 +29,7 @@ public class Day2 {
                     if (Variables.BULLETS >= 2) {
                         Hunting.hunt();
                     } else {
-                        Variables.DAY_STUFF = "You dont have enough bullets.";
+                        Variables.DAY_STUFF = "You dont have enough bullets to hunt.";
                     }
                 }
                 case "n" -> Variables.DAY_STUFF = "You come to a forest; you pass it.";

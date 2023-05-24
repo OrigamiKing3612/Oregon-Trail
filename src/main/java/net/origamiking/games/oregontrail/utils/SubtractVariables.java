@@ -5,6 +5,7 @@ import net.origamiking.games.oregontrail.variables.Variables;
 
 public class SubtractVariables {
     public static void time_1() {
+        feed_people();
         if (Variables.FOOD_COUNTER <= 1 || Variables.REST_COUNTER <= 1) {
             throw new RuntimeException("DIED OF HUNGER OR NO REST ADD A DEATH HERE IN SubtractVariables");
         } else {

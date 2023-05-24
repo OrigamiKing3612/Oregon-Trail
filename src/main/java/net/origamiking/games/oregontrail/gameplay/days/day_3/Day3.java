@@ -23,7 +23,7 @@ public class Day3 {
         switch (swicher) {
             case 0 -> {
                 if (rations == 0) rations++;
-                Variables.DAY_STUFF = "Some of your food goes bad. -" + rations;
+                Variables.DAY_STUFF = "Some of your food goes bad. -" + rations + " pounds of food.";
                 Variables.POUNDS_OF_FOOD = Variables.POUNDS_OF_FOOD - rations;
             }
             case 1, 2 -> {
