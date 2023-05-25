@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class Day8 {
     static Random rand = new Random();
-    static int upperbound = 2; // 3 options
+    static int upperbound = 3; // 3 options
     private static final int switcher = rand.nextInt(upperbound);
     public static void day() {
         OregonTrailMain.println("Day 8");
@@ -18,7 +18,7 @@ public class Day8 {
         choose_day();
         if (switcher == 0) {
             BrokenWagon.Axel.axel();
-        }else if (switcher == 1) {
+         }else if (switcher == 1) {
             BrokenWagon.Wheel.wheel();
         }
         MainGameMenu.mainGameMenu(Variables.DAY_STUFF);
