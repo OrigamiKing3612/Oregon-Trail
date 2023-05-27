@@ -17,15 +17,11 @@ public class Day1 {
     }
     private static void choose_day() {
         switch (switcher) {
-            case 0, 1 -> {
-                Variables.DAY_STUFF = "You keep traveling, you have an uneventful day.";
-            }
+            case 0, 1 -> Variables.DAY_STUFF = "You keep traveling, you have an uneventful day.";
 //            case 1 -> {
 //                Variables.DAY_STUFF = "";
 //            }
-            case 2 -> {
-                Variables.DAY_STUFF = "It starts raining and your party and the wagon gets wet.";
-            }
+            case 2 -> Variables.DAY_STUFF = "It starts raining and your party and the wagon gets wet.";
         }
     }
 }
