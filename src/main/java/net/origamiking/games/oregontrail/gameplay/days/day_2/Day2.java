@@ -7,19 +7,18 @@ import net.origamiking.games.oregontrail.utils.SubtractVariables;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 
-import java.time.temporal.ValueRange;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Day2 {
     static Random rand = new Random();
     static int upperbound = 3; // 3 options
-    private static int swicher = rand.nextInt(upperbound);
+    private static final int switcher = rand.nextInt(upperbound);
     public static void day() {
         OregonTrailMain.println("Day 2");
         SubtractVariables.time_1();
         choose_day();
-        if (swicher == 0) {
+        if (switcher == 0) {
             OregonTrailMain.println(Variables.DAY_STUFF);
             Scanner input = new Scanner(System.in);
             String should_hunt = input.nextLine();
@@ -38,7 +37,7 @@ public class Day2 {
         MainGameMenu.mainGameMenu(Variables.DAY_STUFF);
     }
     private static void choose_day() {
-        switch (swicher) {
+        switch (switcher) {
             case 0 -> Variables.DAY_STUFF = "You come to a forest, should someone in your party go hunt? (Type \"Y/N\")";
             case 1 -> {
                 if (Variables.POUNDS_OF_FOOD >= 2) {

@@ -23,5 +23,7 @@ public class Variables {
     public static int PERSON_COUNTER = 4;
     public static int AXELS = 0;
     public static int WHEELS = 0;
+    public static int TONGUES = 0;
+
 
 }

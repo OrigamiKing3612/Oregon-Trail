@@ -8,11 +8,10 @@ import java.util.Scanner;
 public class FirstStore {
     public static void firstStore() {
         OregonTrailMain.println("Now lets buy stuff, you have " + Variables.COINS + " coins, what will you buy?");
-        OregonTrailMain.println("1. Wagons");
+        OregonTrailMain.println("1. Wagons and Wagon Supplies");
         OregonTrailMain.println("2. Food");
         OregonTrailMain.println("3. Ammunition shop");
         OregonTrailMain.println("4. Pharmacy");
-//        OregonTrailMain.println("5. ");
         OregonTrailMain.println("0. Leave Shop");
         OregonTrailMain.println("Put the number.");
         Scanner input = new Scanner(System.in);
@@ -33,9 +32,10 @@ public class FirstStore {
         OregonTrailMain.println("4. Master's Wagon, 150 Coins");
         OregonTrailMain.println("5. Wagon Axel, 10 Coins");
         OregonTrailMain.println("6. Wagon Wheel, 7 Coins");
+        OregonTrailMain.println("7. Wagon Tongue, 8 Coins");
         Scanner input = new Scanner(System.in);
-        String wagonstore = input.nextLine();
-        switch (wagonstore) {
+        String wagonStore = input.nextLine();
+        switch (wagonStore) {
             case "1" -> {
                 if (Variables.COINS >= 50) {
                     Variables.COINS = Variables.COINS - 50;
@@ -87,6 +87,15 @@ public class FirstStore {
                     Variables.COINS = Variables.COINS - 7;
                     Variables.WHEELS++;
                     OregonTrailMain.println("You bought a wheel.");
+                } else {
+                    OregonTrailMain.println("You dont have enough coins.");
+                }
+            }
+            case "7" -> {
+                if (Variables.COINS >= 8) {
+                    Variables.COINS = Variables.COINS - 8;
+                    Variables.TONGUES++;
+                    OregonTrailMain.println("You bought a tongue.");
                 } else {
                     OregonTrailMain.println("You dont have enough coins.");
                 }

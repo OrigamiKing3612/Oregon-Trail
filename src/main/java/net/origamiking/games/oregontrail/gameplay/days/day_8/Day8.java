@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class Day8 {
     static Random rand = new Random();
-    static int upperbound = 3; // 3 options
+    static int upperbound = 5; // 5 options
     private static final int switcher = rand.nextInt(upperbound);
     public static void day() {
         OregonTrailMain.println("Day 8");
@@ -18,8 +18,10 @@ public class Day8 {
         choose_day();
         if (switcher == 0) {
             BrokenWagon.Axel.axel();
-         }else if (switcher == 1) {
+         } else if (switcher == 1) {
             BrokenWagon.Wheel.wheel();
+        } else if (switcher == 2) {
+            BrokenWagon.Tongue.tongue();
         }
         MainGameMenu.mainGameMenu(Variables.DAY_STUFF);
     }
@@ -27,7 +29,8 @@ public class Day8 {
         switch (switcher) {
             case 0 -> Variables.DAY_STUFF = "Suddenly your wagon's axel breaks. What will you do?";
             case 1 -> Variables.DAY_STUFF = "Suddenly one of your wagon's wheel breaks. What will you do?";
-            case 2 -> Variables.DAY_STUFF = "You have an uneventful day.";
+            case 2 -> Variables.DAY_STUFF = "Suddenly one of your wagon's tongue breaks. What will you do?";
+            case 3,4,5 -> Variables.DAY_STUFF = "You have an uneventful day.";
         }
     }
 }

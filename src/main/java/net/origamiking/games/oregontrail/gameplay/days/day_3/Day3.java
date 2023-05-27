@@ -10,7 +10,7 @@ import java.util.Random;
 public class Day3 {
     static Random rand = new Random();
     static int upperbound = 3; // 3 options
-    private static int swicher = rand.nextInt(upperbound);
+    private static final int switcher = rand.nextInt(upperbound);
     private static int rations = rand.nextInt(13); // 14
     private static int bullets = rand.nextInt(14); // 15
     public static void day() {
@@ -20,7 +20,7 @@ public class Day3 {
         MainGameMenu.mainGameMenu(Variables.DAY_STUFF);
     }
     private static void choose_day() {
-        switch (swicher) {
+        switch (switcher) {
             case 0 -> {
                 if (rations == 0) rations++;
                 Variables.DAY_STUFF = "Some of your food goes bad. -" + rations + " pounds of food.";

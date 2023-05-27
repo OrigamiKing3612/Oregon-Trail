@@ -141,4 +141,70 @@ public class BrokenWagon {
             }
         }
     }
+    public static class Tongue {
+        public static void tongue() {
+            OregonTrailMain.println("1. Wait and see if someone comes.");
+            if (Variables.TONGUES >= 1) OregonTrailMain.println("2. Repair.");
+            Scanner input = new Scanner(System.in);
+            String a = input.nextLine();
+            if (Variables.TONGUES >= 1) {
+                switch (a) {
+                    case "1" -> waitForPeople();
+                    case "2" -> repair();
+                }
+            } else {
+                if (a.equals("1")) {
+                    waitForPeople();
+                }
+            }
+        }
+        private static void waitForPeople() {
+            int hasTongue = rand.nextInt(5);
+            if (personCome()) {
+                if (hasTongue == 2 || hasTongue == 4 || hasTongue == 0) {
+                    OregonTrailMain.println("Some people pass by and ask if you need help. " + CharacterVariables.PERSON_4 + " responds and says that their tongue broke and they need a new one. \n" + CharacterVariables.PERSON_4 + " asks if they have an extra one.");
+                    boolean haveTongue = rand.nextBoolean();
+                    int coins = rand.nextInt(50);
+                    if (coins == 0) coins = 10;
+                    if (haveTongue) {
+                        OregonTrailMain.println("They have one and offer to sell it to you for " + coins);
+                        if (Variables.COINS >= coins) {
+                            OregonTrailMain.println("You give them the money and fix your wagon.");
+                            Variables.COINS = Variables.COINS - coins;
+                        } else {
+                            OregonTrailMain.println("You don't have enough money to buy the tongue. You try to haggle but there price firm.");
+                            Deaths.stuck();
+                        }
+                    } else {
+                        OregonTrailMain.println("They don't have an extra axel. They leave");
+                        Deaths.stuck();
+                    }
+                } else {
+                    Deaths.stuck();
+                }
+            }
+        }
+        private static boolean personCome() {
+            int t = 0;
+            int f = 0;
+            for (int i = 0; i < 7; i++) {
+                boolean a = rand.nextBoolean();
+                if (a) {
+                    t++;
+                } else {
+                    f++;
+                }
+            }
+            return t > f;
+        }
+        private static void repair() {
+            if (Variables.TONGUES >= 1) {
+                OregonTrailMain.println("You use your tongue and fix your wagon.");
+                Variables.TONGUES--;
+            } else {
+                OregonTrailMain.println("You don't have an extra tongue.");
+                Deaths.stuck();
+            }
+        }
+    }
 }
