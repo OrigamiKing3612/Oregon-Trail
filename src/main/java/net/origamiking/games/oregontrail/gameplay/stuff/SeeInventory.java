@@ -12,9 +12,13 @@ public class SeeInventory {
         OregonTrailMain.println("Pounds of Food: " + Variables.POUNDS_OF_FOOD);
         OregonTrailMain.println("Medicine: " + Variables.MEDICINE);
         if (Variables.HAS_GUN) { OregonTrailMain.println("Gun: 1"); } else { OregonTrailMain.println("Gun: None"); }
+        OregonTrailMain.println("Knife: " + Variables.KNIFE);
         OregonTrailMain.println("Bullets: " + Variables.BULLETS);
         OregonTrailMain.println("Axels: " + Variables.AXELS);
         OregonTrailMain.println("Wheels: " + Variables.WHEELS);
+        OregonTrailMain.println("Harmonica: " + Variables.HARMONICA);
+        OregonTrailMain.println("Clothes: " + Variables.CLOTHES);
+        OregonTrailMain.println("Coffee: " + Variables.COFFEE);
         OregonTrailMain.println("People Left: " + Variables.PERSON_COUNTER);
         SeeInventory.characters();
 

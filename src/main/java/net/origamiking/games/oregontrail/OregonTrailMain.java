@@ -25,7 +25,7 @@ public class OregonTrailMain {
             ChooseCharacters.choose_characters();
             FirstStore.firstStore();
         }
-        OregonTrailMain.println("You leave for Oregon Tomorrow...");
+        OregonTrailMain.println("Its May 1st\nYou leave for Oregon Tomorrow...");
         for (int d = 0; d < Variables.DAYS; d++) {
             Day.day();
         }

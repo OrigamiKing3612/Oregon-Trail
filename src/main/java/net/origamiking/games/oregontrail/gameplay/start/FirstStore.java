@@ -12,6 +12,7 @@ public class FirstStore {
         OregonTrailMain.println("2. Food");
         OregonTrailMain.println("3. Ammunition shop");
         OregonTrailMain.println("4. Pharmacy");
+        OregonTrailMain.println("5. Misc");
         OregonTrailMain.println("0. Leave Shop");
         OregonTrailMain.println("Put the number.");
         Scanner input = new Scanner(System.in);
@@ -21,11 +22,57 @@ public class FirstStore {
             case "2" -> food();
             case "3" -> ammunition_shop();
             case "4" -> pharmacy();
-            case "5" -> leave_shop();
-
+            case "5" -> misc();
+            case "0" -> leave_shop();
         }
     }
-    public static void wagons() {
+    private static void misc() {
+        OregonTrailMain.println("1. Knife, 20 Coins");
+        OregonTrailMain.println("2. Harmonica, 5 Coins");
+        OregonTrailMain.println("3. Clothes, 7 Coins");
+        OregonTrailMain.println("4. Coffee, 5 Coins");
+        Scanner input = new Scanner(System.in);
+        String misc = input.nextLine();
+        switch (misc) {
+            case "1" -> {
+                if (Variables.COINS >= 20) {
+                    Variables.COINS = Variables.COINS - 20;
+                    Variables.KNIFE++;
+                    OregonTrailMain.println("You bought a knife.");
+                } else {
+                    OregonTrailMain.println("You dont have enough coins.");
+                }
+            }
+            case "2" -> {
+                if (Variables.COINS >= 5) {
+                    Variables.COINS = Variables.COINS - 5;
+                    Variables.HARMONICA++;
+                    OregonTrailMain.println("You bought a harmonica.");
+                } else {
+                    OregonTrailMain.println("You dont have enough coins.");
+                }
+            }
+            case "3" -> {
+                if (Variables.COINS >= 7) {
+                    Variables.COINS = Variables.COINS - 7;
+                    Variables.CLOTHES++;
+                    OregonTrailMain.println("You bought clothes.");
+                } else {
+                    OregonTrailMain.println("You dont have enough coins.");
+                }
+            }
+            case "4" -> {
+                if (Variables.COINS >= 5) {
+                    Variables.COINS = Variables.COINS - 5;
+                    Variables.COFFEE++;
+                    OregonTrailMain.println("You bought a coffee.");
+                } else {
+                    OregonTrailMain.println("You dont have enough coins.");
+                }
+            }
+        }
+    }
+    private static void wagons() {
         OregonTrailMain.println("1. Small Wagon, 50 Coins");
         OregonTrailMain.println("2. Medium Wagon, 75 Coins");
         OregonTrailMain.println("3. Big Wagon, 100 Coins");
@@ -103,7 +150,7 @@ public class FirstStore {
         }
         firstStore();
     }
-    public static void food() {
+    private static void food() {
         OregonTrailMain.println("1. 4 Packs of Berries, 1 Coins");
         OregonTrailMain.println("2. 40 Pounds of Meat, 10 Coins");
         OregonTrailMain.println("3. 5 Bacon, 20 Coins");
@@ -150,7 +197,7 @@ public class FirstStore {
         }
         firstStore();
     }
-    public static void ammunition_shop() {
+    private static void ammunition_shop() {
         OregonTrailMain.println("1. 10 Bullets, 15 Coins");
         OregonTrailMain.println("2. 20 Bullets, 30 Coins");
         OregonTrailMain.println("3. 50 Bullets, 75 Coins");
@@ -187,7 +234,7 @@ public class FirstStore {
         }
         firstStore();
     }
-    public static void pharmacy() {
+    private static void pharmacy() {
         OregonTrailMain.println("1. 1 Medicine, 30 Coins");
         OregonTrailMain.println("2. 2 Medicine, 60 Coins");
         Scanner input = new Scanner(System.in);
@@ -214,5 +261,5 @@ public class FirstStore {
         }
         firstStore();
     }
-    public static void leave_shop() {}
+    private static void leave_shop() {}
 }

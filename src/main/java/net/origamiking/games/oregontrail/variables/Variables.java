@@ -28,6 +28,9 @@ public class Variables {
     public static int AXELS = 0;
     public static int WHEELS = 0;
     public static int TONGUES = 0;
-
+    public static int HARMONICA = 0;
+    public static int CLOTHES = 0;
+    public static int KNIFE = 0;
+    public static int COFFEE = 0;
 
 }
