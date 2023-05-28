@@ -207,4 +207,12 @@ public class BrokenWagon {
             }
         }
     }
+    public static void brokenWagon() {
+        int w = rand.nextInt(3);
+        switch (w) {
+            case 0 -> { Variables.DAY_STUFF = "Suddenly your wagon's axel breaks. What will you do?"; Axel.axel(); }
+            case 1 -> { Variables.DAY_STUFF = "Suddenly one of your wagon's wheel breaks. What will you do?"; Wheel.wheel(); }
+            case 2 -> { Variables.DAY_STUFF = "Suddenly one of your wagon's tongue breaks. What will you do?"; Tongue.tongue(); }
+        }
+    }
 }

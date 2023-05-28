@@ -10,6 +10,23 @@ public class CrossRiver {
     static Random rand = new Random();
     private static int FERRY_PRICE = rand.nextInt(50);
     public static int RIVER_DIFFICULTY = 5;
+    private static int riverDifficulty = rand.nextInt(5);
+    public static void crossRiver() {
+        OregonTrailMain.println("You come to a river. What will you do.");
+        OregonTrailMain.println("1. Use the ferry");
+        OregonTrailMain.println("2. Caulk Wagon");
+        OregonTrailMain.println("3. Ford the river");
+        Scanner input = new Scanner(System.in);
+        String river = input.nextLine();
+        if (riverDifficulty == 1 || riverDifficulty == 0) riverDifficulty = 2;
+        CrossRiver.RIVER_DIFFICULTY = riverDifficulty;
+        switch (river) {
+            case "1" -> CrossRiver.ferry();
+            case "2" -> CrossRiver.caulk();
+            case "3" -> CrossRiver.ford();
+        }
+        Variables.DAY_STUFF = "";
+    }
     public static void ferry() {
         if (FERRY_PRICE <= 20) FERRY_PRICE = 20;
         OregonTrailMain.println("The ferry is " + FERRY_PRICE + " coins. 100% chance of success");

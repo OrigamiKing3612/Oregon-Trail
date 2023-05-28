@@ -19,10 +19,7 @@ public class MainGameMenu {
         Scanner input = new Scanner(System.in);
         String day = input.nextLine();
         switch (day) {
-            case "1" -> {
-                Variables.DAY_NUMBER++;
-                FindDay.findDay();
-            }
+            case "1" -> {}
             case "2" -> ChangeRations.changeRations();
             case "3" -> SeeInventory.seeInventory();
             case "4" -> Rest.rest();

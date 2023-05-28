@@ -2,11 +2,15 @@ package net.origamiking.games.oregontrail.variables;
 
 //import java.util.ArrayList;
 
-public class Variables {
-    public static int CAMP_MESSAGE = 0;
+import java.util.Random;
 
+public class Variables {
+    static Random rand = new Random();
+    public static int DAYS = rand.nextInt(124, 186);
+    public static int CAMP_MESSAGE = 0;
     public static int COINS = 300;
     public static int DAY_NUMBER = 1;
+
     public static String DAY = "Day " + DAY_NUMBER;
     public static String WAGON_TYPE = "";
 //    public static ArrayList<String> FOOD = new ArrayList<String>();

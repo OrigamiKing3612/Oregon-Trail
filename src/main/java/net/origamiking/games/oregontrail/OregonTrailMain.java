@@ -1,8 +1,8 @@
 package net.origamiking.games.oregontrail;
 
-import net.origamiking.games.oregontrail.gameplay.days.day_1.Day1;
 import net.origamiking.games.oregontrail.gameplay.start.ChooseCharacters;
 import net.origamiking.games.oregontrail.gameplay.start.FirstStore;
+import net.origamiking.games.oregontrail.gameplay.day.Day;
 import net.origamiking.games.oregontrail.variables.Variables;
 
 import java.util.Scanner;
@@ -21,12 +21,14 @@ public class OregonTrailMain {
             OregonTrailMain.println("Are you ready to get started? Y/N");
             String ready = input.nextLine();
             ready = ready.toLowerCase();
-            if (!(ready.equals("y") || ready.equals("Y"))) OregonTrailMain.println("Too bad.");
+            if (!(ready.equals("y"))) OregonTrailMain.println("Too bad.");
             ChooseCharacters.choose_characters();
             FirstStore.firstStore();
         }
         OregonTrailMain.println("You leave for Oregon Tomorrow...");
-        Day1.day();
+        for (int d = 0; d < Variables.DAYS; d++) {
+            Day.day();
+        }
     }
     public static void println(String string) {
         System.out.println(string);

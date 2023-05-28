@@ -10,29 +10,28 @@ import java.util.Scanner;
 public class Hunting {
     static Random rand = new Random();
     static int upperbound_numbers = 15; // 16 options
-    static int upperbound = 2; // 3 options
-    private static int timesHunting = rand.nextInt(upperbound);
+    private static int timesHunting = rand.nextInt(5);
     public static void hunt() {
         if (timesHunting == 0) timesHunting = 1;
 //        for (int i = 0; i < timesHunting; i++) {
-        int number_to_pick = rand.nextInt(upperbound_numbers);
-        OregonTrailMain.println("Pick a number between 0 and " + upperbound_numbers);
-        Scanner input = new Scanner(System.in);
-        String number_picked = input.nextLine();
-        if (Objects.equals(number_picked, String.valueOf(number_to_pick))) {
-            killedAnimal();
-        } else if (Objects.equals(number_picked, String.valueOf(number_to_pick - 1))) {
-            killedAnimal();
-        } else if (Objects.equals(number_picked, String.valueOf(number_to_pick + 1))) {
-            killedAnimal();
-        } else if (Objects.equals(number_picked, String.valueOf(number_to_pick - 2))) {
-            killedAnimal();
-        } else if (Objects.equals(number_picked, String.valueOf(number_to_pick + 2))) {
-            killedAnimal();
-        } else {
-            OregonTrailMain.println("You missed an animal.\n -1 Bullet");
-            Variables.BULLETS--;
-        }
+            int number_to_pick = rand.nextInt(upperbound_numbers);
+            OregonTrailMain.println("Pick a number between 0 and " + upperbound_numbers);
+            Scanner input = new Scanner(System.in);
+            String number_picked = input.nextLine();
+            if (Objects.equals(number_picked, String.valueOf(number_to_pick))) {
+                killedAnimal();
+            } else if (Objects.equals(number_picked, String.valueOf(number_to_pick - 1))) {
+                killedAnimal();
+            } else if (Objects.equals(number_picked, String.valueOf(number_to_pick + 1))) {
+                killedAnimal();
+            } else if (Objects.equals(number_picked, String.valueOf(number_to_pick - 2))) {
+                killedAnimal();
+            } else if (Objects.equals(number_picked, String.valueOf(number_to_pick + 2))) {
+                killedAnimal();
+            } else {
+                OregonTrailMain.println("You missed an animal.\n -1 Bullet");
+                Variables.BULLETS--;
+            }
 //        }
     }
     private static void killedAnimal() {

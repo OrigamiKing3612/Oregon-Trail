@@ -3,6 +3,7 @@ package net.origamiking.games.oregontrail.gameplay.start;
 import net.origamiking.games.oregontrail.OregonTrailMain;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class ChooseCharacters {
@@ -22,6 +23,10 @@ public class ChooseCharacters {
         CharacterVariables.PERSON_4 = input.nextLine();
 
         OregonTrailMain.print("Your Characters are: ");
+        if (Objects.equals(CharacterVariables.PERSON_1, "")) CharacterVariables.PERSON_1 = "Person-1";
+        if (Objects.equals(CharacterVariables.PERSON_2, "")) CharacterVariables.PERSON_2 = "Person-2";
+        if (Objects.equals(CharacterVariables.PERSON_3, "")) CharacterVariables.PERSON_3 = "Person-3";
+        if (Objects.equals(CharacterVariables.PERSON_4, "")) CharacterVariables.PERSON_4 = "Person-4";
         OregonTrailMain.println(CharacterVariables.PERSON_1 + ", " + CharacterVariables.PERSON_2 + ", " + CharacterVariables.PERSON_3 + ", and " + CharacterVariables.PERSON_4 + ".");
     }
 }

@@ -1,6 +1,5 @@
 package net.origamiking.games.oregontrail.utils;
 
-import net.origamiking.games.oregontrail.OregonTrailMain;
 import net.origamiking.games.oregontrail.gameplay.gameplay_features.Deaths;
 import net.origamiking.games.oregontrail.variables.Variables;
 
