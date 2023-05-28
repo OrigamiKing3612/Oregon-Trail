@@ -11,13 +11,12 @@ import java.util.Scanner;
 
 public class Day {
     static Random rand = new Random();
-    static int upperbound = 3; // 3 options
-    private static final int switcher = rand.nextInt(upperbound);
     public static void day() {
+        final int switcher = rand.nextInt(12); //# of Options
         OregonTrailMain.println("Day " + Variables.DAY_NUMBER);
         SubtractVariables.time_1();
         ChooseGame.choose_day(switcher);
-        if (switcher == 0) {
+        if (switcher == 2) {
             OregonTrailMain.println(Variables.DAY_STUFF);
             Scanner input = new Scanner(System.in);
             String should_hunt = input.nextLine();
