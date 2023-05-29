@@ -27,6 +27,8 @@ public class SeeInventory {
         OregonTrailMain.println("Are you ready to leave? (Type \"Y\")");
         Scanner input = new Scanner(System.in);
         String ready = input.nextLine();
+        ready = ready.toLowerCase();
+        if (ready.equals("y")) {}
     }
     public static void characters() {
         if (!CharacterVariables.PERSON_1.IS_GONE) {
