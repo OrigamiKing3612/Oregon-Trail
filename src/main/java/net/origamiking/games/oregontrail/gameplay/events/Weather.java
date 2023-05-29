@@ -10,9 +10,8 @@ public class Weather {
     public static void weather() {
         boolean w = rand.nextBoolean();
         if (w) {
-            if (Variables.DAY_NUMBER >= 200) {
-//                SNOWING.get();
-                //TODO SNOWING
+            if (Variables.DAY_NUMBER >= 176) {
+                SNOWING.get();
             } else {
                 RAINING.get();
             }
@@ -29,15 +28,16 @@ public class Weather {
     }
     public static class SNOWING {
         public static void get() {
-
+            WeatherVariables.RAINING = true;
+            WeatherVariables.IS_GROUND_WET = false;
+            Variables.DAY_STUFF = "Dark clouds start moving in and soon it starts snowing.";
         }
-    }
-    public static class SEVERE {
-
     }
     public static class THUNDERSTORM {
         public static void get() {
-
+            WeatherVariables.RAINING = true;
+            WeatherVariables.IS_GROUND_WET = true;
+            Variables.DAY_STUFF = "Dark clouds start moving in and soon it starts thunder-storming.";
         }
     }
 }

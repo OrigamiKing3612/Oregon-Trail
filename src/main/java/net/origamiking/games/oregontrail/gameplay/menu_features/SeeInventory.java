@@ -36,7 +36,7 @@ public class SeeInventory {
             show_person(CharacterVariables.PERSON_1.PERSON_1, CharacterVariables.PERSON_1.IS_FORLORN, CharacterVariables.PERSON_1.IS_SICK, CharacterVariables.PERSON_1.SICK_WITH);
             OregonTrailMain.println("   Health: " + CharacterVariables.PERSON_1.STATS.HEALTH + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HEALTH);
             OregonTrailMain.println("   Stamina: " + CharacterVariables.PERSON_1.STATS.STAMINA + " out of " + CharacterVariables.PERSON_1.STATS.MAX_STAMINA);
-            OregonTrailMain.println("   Morale: " + CharacterVariables.PERSON_1.STATS.MORALE + " out of " + CharacterVariables.PERSON_1.STATS.MAX_MORALE);
+            OregonTrailMain.println("   Happiness: " + CharacterVariables.PERSON_1.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HAPPINESS);
             OregonTrailMain.println("   Hygiene: " + CharacterVariables.PERSON_1.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HYGIENE);
             OregonTrailMain.println("");
         }
@@ -44,7 +44,7 @@ public class SeeInventory {
             show_person(CharacterVariables.PERSON_2.PERSON_2, CharacterVariables.PERSON_2.IS_FORLORN, CharacterVariables.PERSON_2.IS_SICK, CharacterVariables.PERSON_2.SICK_WITH);
             OregonTrailMain.println("   Health: " + CharacterVariables.PERSON_2.STATS.HEALTH + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HEALTH);
             OregonTrailMain.println("   Stamina: " + CharacterVariables.PERSON_2.STATS.STAMINA + " out of " + CharacterVariables.PERSON_2.STATS.MAX_STAMINA);
-            OregonTrailMain.println("   Morale: " + CharacterVariables.PERSON_2.STATS.MORALE + " out of " + CharacterVariables.PERSON_2.STATS.MAX_MORALE);
+            OregonTrailMain.println("   Happiness: " + CharacterVariables.PERSON_2.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HAPPINESS);
             OregonTrailMain.println("   Hygiene: " + CharacterVariables.PERSON_2.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HYGIENE);
             OregonTrailMain.println("");
         }
@@ -52,7 +52,7 @@ public class SeeInventory {
             show_person(CharacterVariables.PERSON_3.PERSON_3, CharacterVariables.PERSON_3.IS_FORLORN, CharacterVariables.PERSON_3.IS_SICK, CharacterVariables.PERSON_3.SICK_WITH);
             OregonTrailMain.println("   Health: " + CharacterVariables.PERSON_3.STATS.HEALTH + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HEALTH);
             OregonTrailMain.println("   Stamina: " + CharacterVariables.PERSON_3.STATS.STAMINA + " out of " + CharacterVariables.PERSON_3.STATS.MAX_STAMINA);
-            OregonTrailMain.println("   Morale: " + CharacterVariables.PERSON_3.STATS.MORALE + " out of " + CharacterVariables.PERSON_3.STATS.MAX_MORALE);
+            OregonTrailMain.println("   Happiness: " + CharacterVariables.PERSON_3.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HAPPINESS);
             OregonTrailMain.println("   Hygiene: " + CharacterVariables.PERSON_3.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HYGIENE);
             OregonTrailMain.println("");
         }
@@ -60,7 +60,7 @@ public class SeeInventory {
             show_person(CharacterVariables.PERSON_4.PERSON_4, CharacterVariables.PERSON_4.IS_FORLORN, CharacterVariables.PERSON_4.IS_SICK, CharacterVariables.PERSON_4.SICK_WITH);
             OregonTrailMain.println("   Health: " + CharacterVariables.PERSON_4.STATS.HEALTH + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HEALTH);
             OregonTrailMain.println("   Stamina: " + CharacterVariables.PERSON_4.STATS.STAMINA + " out of " + CharacterVariables.PERSON_4.STATS.MAX_STAMINA);
-            OregonTrailMain.println("   Morale: " + CharacterVariables.PERSON_4.STATS.MORALE + " out of " + CharacterVariables.PERSON_4.STATS.MAX_MORALE);
+            OregonTrailMain.println("   Happiness: " + CharacterVariables.PERSON_4.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HAPPINESS);
             OregonTrailMain.println("   Hygiene: " + CharacterVariables.PERSON_4.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HYGIENE);
             OregonTrailMain.println("");
         }

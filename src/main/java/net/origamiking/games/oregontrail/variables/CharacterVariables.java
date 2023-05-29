@@ -10,11 +10,11 @@ public class CharacterVariables {
         public static boolean IS_GONE = false;
         public static class STATS {
             public static int MAX_HEALTH = 10;
-            public static int MAX_MORALE = 10;
+            public static int MAX_HAPPINESS = 10;
             public static int MAX_STAMINA = 10;
             public static int MAX_HYGIENE = 10;
             public static int HEALTH = 10;
-            public static int MORALE = 10;
+            public static int HAPPINESS = 10;
             public static int STAMINA = 10;
             public static int HYGIENE = 10;
 //            public static int HUNTING = 1; //changes depending on past profession hidden at start
@@ -31,11 +31,11 @@ public class CharacterVariables {
         public static boolean IS_GONE = false;
         public static class STATS {
             public static int MAX_HEALTH = 10;
-            public static int MAX_MORALE = 10;
+            public static int MAX_HAPPINESS = 10;
             public static int MAX_STAMINA = 10;
             public static int MAX_HYGIENE = 10;
             public static int HEALTH = 10;
-            public static int MORALE = 10;
+            public static int HAPPINESS = 10;
             public static int STAMINA = 10;
             public static int HYGIENE = 10;
 //            public static int HUNTING = 1; //changes depending on past profession hidden at start
@@ -52,11 +52,11 @@ public class CharacterVariables {
         public static boolean IS_GONE = false;
         public static class STATS {
             public static int MAX_HEALTH = 10;
-            public static int MAX_MORALE = 10;
+            public static int MAX_HAPPINESS = 10;
             public static int MAX_STAMINA = 10;
             public static int MAX_HYGIENE = 10;
             public static int HEALTH = 10;
-            public static int MORALE = 10;
+            public static int HAPPINESS = 10;
             public static int STAMINA = 10;
             public static int HYGIENE = 10;
 //            public static int HUNTING = 1; //changes depending on past profession hidden at start
@@ -73,11 +73,11 @@ public class CharacterVariables {
         public static boolean IS_GONE = false;
         public static class STATS {
             public static int MAX_HEALTH = 10;
-            public static int MAX_MORALE = 10;
+            public static int MAX_HAPPINESS = 10;
             public static int MAX_STAMINA = 10;
             public static int MAX_HYGIENE = 10;
             public static int HEALTH = 10;
-            public static int MORALE = 10;
+            public static int HAPPINESS = 10;
             public static int STAMINA = 10;
             public static int HYGIENE = 10;
 //            public static int HUNTING = 1; //changes depending on past profession hidden at start

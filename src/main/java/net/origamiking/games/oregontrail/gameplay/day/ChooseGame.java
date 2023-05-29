@@ -20,7 +20,7 @@ public class ChooseGame {
                 }
             } // Bandits
             case 4 -> BrokenWagon.brokenWagon();
-            case 5 -> Camp.camp(); //TODO REDO
+            case 5 -> Camp.camp();
             case 6 -> CrossRiver.crossRiver();
             case 7 -> MeetPerson.meetPerson();
             case 8 -> Weather.weather();
