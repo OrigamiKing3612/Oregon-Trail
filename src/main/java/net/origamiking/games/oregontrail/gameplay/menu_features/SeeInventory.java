@@ -1,4 +1,4 @@
-package net.origamiking.games.oregontrail.gameplay.stuff;
+package net.origamiking.games.oregontrail.gameplay.menu_features;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
@@ -27,8 +27,6 @@ public class SeeInventory {
         OregonTrailMain.println("Are you ready to leave? (Type \"Y\")");
         Scanner input = new Scanner(System.in);
         String ready = input.nextLine();
-        ready = ready.toLowerCase();
-        if (ready.equals("y")) {}
     }
     public static void characters() {
         if (!CharacterVariables.PERSON_1.IS_GONE) {

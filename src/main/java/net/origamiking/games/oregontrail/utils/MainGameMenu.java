@@ -1,9 +1,9 @@
 package net.origamiking.games.oregontrail.utils;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
-import net.origamiking.games.oregontrail.gameplay.stuff.ChangeRations;
-import net.origamiking.games.oregontrail.gameplay.stuff.Rest;
-import net.origamiking.games.oregontrail.gameplay.stuff.SeeInventory;
+import net.origamiking.games.oregontrail.gameplay.menu_features.ChangeRations;
+import net.origamiking.games.oregontrail.gameplay.menu_features.Rest;
+import net.origamiking.games.oregontrail.gameplay.menu_features.SeeInventory;
 
 import java.util.Objects;
 import java.util.Scanner;
