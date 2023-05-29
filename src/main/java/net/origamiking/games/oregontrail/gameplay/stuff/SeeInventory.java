@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class SeeInventory {
     public static void seeInventory() {
+        OregonTrailMain.println("You have:");
         OregonTrailMain.println("Coins: " + Variables.COINS);
         OregonTrailMain.println("Pounds of Food: " + Variables.POUNDS_OF_FOOD);
         OregonTrailMain.println("Medicine: " + Variables.MEDICINE);
@@ -30,27 +31,57 @@ public class SeeInventory {
         if (ready.equals("y")) {}
     }
     public static void characters() {
-        OregonTrailMain.println("");
-        show_person(CharacterVariables.PERSON_1, CharacterVariables.P1_GONE, CharacterVariables.P1_IS_FORLORN, CharacterVariables.IS_PERSON_1_SICK, CharacterVariables.P1_SICK_WITH);
-        show_person(CharacterVariables.PERSON_2, CharacterVariables.P2_GONE, CharacterVariables.P2_IS_FORLORN, CharacterVariables.IS_PERSON_2_SICK, CharacterVariables.P2_SICK_WITH);
-        show_person(CharacterVariables.PERSON_3, CharacterVariables.P3_GONE, CharacterVariables.P3_IS_FORLORN, CharacterVariables.IS_PERSON_3_SICK, CharacterVariables.P3_SICK_WITH);
-        show_person(CharacterVariables.PERSON_4, CharacterVariables.P4_GONE, CharacterVariables.P4_IS_FORLORN, CharacterVariables.IS_PERSON_4_SICK, CharacterVariables.P4_SICK_WITH);
+        if (!CharacterVariables.PERSON_1.IS_GONE) {
+            OregonTrailMain.println("");
+            show_person(CharacterVariables.PERSON_1.PERSON_1, CharacterVariables.PERSON_1.IS_FORLORN, CharacterVariables.PERSON_1.IS_SICK, CharacterVariables.PERSON_1.SICK_WITH);
+            OregonTrailMain.println("   Health: " + CharacterVariables.PERSON_1.STATS.HEALTH + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HEALTH);
+            OregonTrailMain.println("   Stamina: " + CharacterVariables.PERSON_1.STATS.STAMINA + " out of " + CharacterVariables.PERSON_1.STATS.MAX_STAMINA);
+            OregonTrailMain.println("   Morale: " + CharacterVariables.PERSON_1.STATS.MORALE + " out of " + CharacterVariables.PERSON_1.STATS.MAX_MORALE);
+            OregonTrailMain.println("   Hygiene: " + CharacterVariables.PERSON_1.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HYGIENE);
+            OregonTrailMain.println("");
+        }
+        if (!CharacterVariables.PERSON_2.IS_GONE) {
+            show_person(CharacterVariables.PERSON_2.PERSON_2, CharacterVariables.PERSON_2.IS_FORLORN, CharacterVariables.PERSON_2.IS_SICK, CharacterVariables.PERSON_2.SICK_WITH);
+            OregonTrailMain.println("   Health: " + CharacterVariables.PERSON_2.STATS.HEALTH + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HEALTH);
+            OregonTrailMain.println("   Stamina: " + CharacterVariables.PERSON_2.STATS.STAMINA + " out of " + CharacterVariables.PERSON_2.STATS.MAX_STAMINA);
+            OregonTrailMain.println("   Morale: " + CharacterVariables.PERSON_2.STATS.MORALE + " out of " + CharacterVariables.PERSON_2.STATS.MAX_MORALE);
+            OregonTrailMain.println("   Hygiene: " + CharacterVariables.PERSON_2.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HYGIENE);
+            OregonTrailMain.println("");
+        }
+        if (!CharacterVariables.PERSON_3.IS_GONE) {
+            show_person(CharacterVariables.PERSON_3.PERSON_3, CharacterVariables.PERSON_3.IS_FORLORN, CharacterVariables.PERSON_3.IS_SICK, CharacterVariables.PERSON_3.SICK_WITH);
+            OregonTrailMain.println("   Health: " + CharacterVariables.PERSON_3.STATS.HEALTH + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HEALTH);
+            OregonTrailMain.println("   Stamina: " + CharacterVariables.PERSON_3.STATS.STAMINA + " out of " + CharacterVariables.PERSON_3.STATS.MAX_STAMINA);
+            OregonTrailMain.println("   Morale: " + CharacterVariables.PERSON_3.STATS.MORALE + " out of " + CharacterVariables.PERSON_3.STATS.MAX_MORALE);
+            OregonTrailMain.println("   Hygiene: " + CharacterVariables.PERSON_3.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HYGIENE);
+            OregonTrailMain.println("");
+        }
+        if (!CharacterVariables.PERSON_4.IS_GONE) {
+            show_person(CharacterVariables.PERSON_4.PERSON_4, CharacterVariables.PERSON_4.IS_FORLORN, CharacterVariables.PERSON_4.IS_SICK, CharacterVariables.PERSON_4.SICK_WITH);
+            OregonTrailMain.println("   Health: " + CharacterVariables.PERSON_4.STATS.HEALTH + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HEALTH);
+            OregonTrailMain.println("   Stamina: " + CharacterVariables.PERSON_4.STATS.STAMINA + " out of " + CharacterVariables.PERSON_4.STATS.MAX_STAMINA);
+            OregonTrailMain.println("   Morale: " + CharacterVariables.PERSON_4.STATS.MORALE + " out of " + CharacterVariables.PERSON_4.STATS.MAX_MORALE);
+            OregonTrailMain.println("   Hygiene: " + CharacterVariables.PERSON_4.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HYGIENE);
+            OregonTrailMain.println("");
+        }
     }
-    public static void displayForlorn(Boolean p_is_forlorn, String p) {
+    private static void displayForlorn(Boolean p_is_forlorn) {
         if (p_is_forlorn) {
-            OregonTrailMain.println(p + " is forlorn.");
+            OregonTrailMain.println("   Is forlorn.");
         } else {
-            OregonTrailMain.println(p + " is not forlorn.");
+            OregonTrailMain.println("   Is not forlorn.");
         }
     }
-    public static void displaySick(Boolean sick, String p, String s) {
-        if (!(sick)) OregonTrailMain.println(p + " is sick with " + s);
-    }
-    public static void show_person(String p, Boolean gone, Boolean p_is_forlorn, Boolean sick, String s) {
-        if (!(gone)) {
-            OregonTrailMain.println(p);
-            displayForlorn(p_is_forlorn, p);
-            displaySick(sick, p, s);
+    private static void displaySick(Boolean sick, String s) {
+        if (sick) {
+            OregonTrailMain.println("   Is sick with " + s + ".");
+        } else {
+            OregonTrailMain.println("   Is not sick.");
         }
+    }
+    public static void show_person(String p, Boolean p_is_forlorn, Boolean sick, String s) {
+            OregonTrailMain.println(p + ":");
+            displayForlorn(p_is_forlorn);
+            displaySick(sick, s);
     }
 }

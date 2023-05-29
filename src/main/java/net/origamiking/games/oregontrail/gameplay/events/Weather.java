@@ -1,4 +1,4 @@
-package net.origamiking.games.oregontrail.gameplay.gameplay_features;
+package net.origamiking.games.oregontrail.gameplay.events;
 
 import net.origamiking.games.oregontrail.variables.Variables;
 import net.origamiking.games.oregontrail.variables.WeatherVariables;

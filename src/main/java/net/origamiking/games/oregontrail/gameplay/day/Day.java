@@ -1,7 +1,7 @@
 package net.origamiking.games.oregontrail.gameplay.day;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
-import net.origamiking.games.oregontrail.gameplay.gameplay_features.Hunting;
+import net.origamiking.games.oregontrail.gameplay.events.Hunting;
 import net.origamiking.games.oregontrail.utils.MainGameMenu;
 import net.origamiking.games.oregontrail.utils.SubtractVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
@@ -12,9 +12,9 @@ import java.util.Scanner;
 public class Day {
     static Random rand = new Random();
     public static void day() {
-        final int switcher = rand.nextInt(12); //# of Options
+        final int switcher = rand.nextInt(15); //# of Options
         OregonTrailMain.println("Day " + Variables.DAY_NUMBER);
-        SubtractVariables.time_1();
+        SubtractVariables.feed_people();
         ChooseGame.choose_day(switcher);
         if (switcher == 2) {
             OregonTrailMain.println(Variables.DAY_STUFF);

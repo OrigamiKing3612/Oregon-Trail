@@ -1,6 +1,6 @@
 package net.origamiking.games.oregontrail.gameplay.day;
 
-import net.origamiking.games.oregontrail.gameplay.gameplay_features.*;
+import net.origamiking.games.oregontrail.gameplay.events.*;
 import net.origamiking.games.oregontrail.variables.Variables;
 
 import java.util.Random;
@@ -20,13 +20,16 @@ public class ChooseGame {
                 }
             } // Bandits
             case 4 -> BrokenWagon.brokenWagon();
-            case 5 -> Camp.camp();
+            case 5 -> Camp.camp(); //TODO REDO
             case 6 -> CrossRiver.crossRiver();
             case 7 -> MeetPerson.meetPerson();
             case 8 -> Weather.weather();
             case 9 -> Illness.illness();
             case 10 -> Injuries.injuries();
             case 11 -> Forlorn.forlorn();
+            case 12 -> Fishing.fish();
+            case 13 -> WagonOnSideOfTrail.wagonOnSideOfTrail();
+            case 14 -> AnimalAttack.attack();
         }
     }
 }

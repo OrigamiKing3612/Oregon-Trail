@@ -5,6 +5,7 @@ import net.origamiking.games.oregontrail.gameplay.stuff.ChangeRations;
 import net.origamiking.games.oregontrail.gameplay.stuff.Rest;
 import net.origamiking.games.oregontrail.gameplay.stuff.SeeInventory;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class MainGameMenu {
@@ -15,7 +16,7 @@ public class MainGameMenu {
         OregonTrailMain.println("3. See Inventory");
         OregonTrailMain.println("4. Rest");
         OregonTrailMain.println("");
-        OregonTrailMain.println(dayStuff);
+        if (!(Objects.equals(dayStuff, ""))) OregonTrailMain.println(dayStuff);
         Scanner input = new Scanner(System.in);
         String day = input.nextLine();
         switch (day) {
