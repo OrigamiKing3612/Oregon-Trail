@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Day {
     static Random rand = new Random();
     public static void day() {
-        final int switcher = rand.nextInt(15); //# of Options
+        final int switcher = rand.nextInt(16); //# of Options
         OregonTrailMain.println("Day " + Variables.DAY_NUMBER);
         SubtractVariables.feed_people();
         ChooseGame.choose_day(switcher);
