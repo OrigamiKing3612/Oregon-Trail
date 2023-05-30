@@ -8,11 +8,9 @@ public class Variables {
     static Random rand = new Random();
     public static int DAYS = rand.nextInt(124, 156);
     public static int MAX_DAYS = 186;
-    public static int CAMP_MESSAGE = 0;
     public static int COINS = 300;
     public static int DAY_NUMBER = 1;
     public static String WAGON_TYPE = "";
-//    public static ArrayList<String> FOOD = new ArrayList<String>();
     public static float POUNDS_OF_FOOD = 0;
     public static Boolean HAS_GUN = true;
     public static int BULLETS = 0;
