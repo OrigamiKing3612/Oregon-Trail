@@ -2,11 +2,13 @@ package net.origamiking.games.oregontrail.gameplay.start;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
 import net.origamiking.games.oregontrail.variables.Variables;
+import net.origamiking.games.oregontrail.window.Inventory;
 
 import javax.swing.*;
 
 public class FirstStore {
     public static void firstStore() {
+        Inventory.printToWindow();
         OregonTrailMain.println("You have " + Variables.COINS + " coins, what will you buy?");
         String[] options = {"Leave Shop", "Misc", "Pharmacy", "Ammunition shop", "Food", "Wagons and Wagon Supplies"};
 

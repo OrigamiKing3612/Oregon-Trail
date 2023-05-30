@@ -20,7 +20,7 @@ public class Fort {
             case 4 -> SeeDoctor.seeDoctor();
             case 3 -> FortStore.fortStore();
             case 2 -> Rest.rest();
-            case 1 -> SeeInventory.seeInventory();
+            case 1 -> SeeInventory.useStuff();
             case 0 -> move_on = true;
         }
         if (!move_on) fort();
