@@ -24,4 +24,7 @@ public class Deaths {
         OregonTrailMain.println("You wait many days... no one comes.");
         End.end();
     }
+    public static void inians() {
+        End.end();
+    }
 }

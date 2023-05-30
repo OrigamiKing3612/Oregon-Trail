@@ -11,10 +11,8 @@ public class Indians {
     public static void indians() {
         int indian = rand.nextInt(4);
         switch (indian) {
-            case 0 -> cherokee();
-            case 1 -> chickasaw();
-            case 2 -> choctaw();
-            case 3 -> creek();
+            case 0, 1 -> cherokee();
+            case 2, 3 -> choctaw();
         }
     }
     public static void cherokee() {
@@ -35,18 +33,43 @@ public class Indians {
         }
         OregonTrailMain.println("They also attack. Your People are hurt.");
         CharacterVariables.PERSON_1.STATS.HEALTH = CharacterVariables.PERSON_1.STATS.HEALTH - 2;
+        if (CharacterVariables.PERSON_1.STATS.HEALTH <= 0) OregonTrailMain.println(CharacterVariables.PERSON_1.PERSON + " has died by Indians."); Deaths.inians();
         CharacterVariables.PERSON_2.STATS.HEALTH = CharacterVariables.PERSON_2.STATS.HEALTH - 2;
+        if (CharacterVariables.PERSON_2.STATS.HEALTH <= 0) OregonTrailMain.println(CharacterVariables.PERSON_2.PERSON + " has died by Indians."); Deaths.inians();
         CharacterVariables.PERSON_3.STATS.HEALTH = CharacterVariables.PERSON_3.STATS.HEALTH - 2;
+        if (CharacterVariables.PERSON_3.STATS.HEALTH <= 0) OregonTrailMain.println(CharacterVariables.PERSON_3.PERSON + " has died by Indians."); Deaths.inians();
         CharacterVariables.PERSON_4.STATS.HEALTH = CharacterVariables.PERSON_4.STATS.HEALTH - 2;
+        if (CharacterVariables.PERSON_4.STATS.HEALTH <= 0) OregonTrailMain.println(CharacterVariables.PERSON_4.PERSON + " has died by Indians."); Deaths.inians();
     }
     public static void chickasaw() {
         //nice
-        //TODO CHICKASAW
     }
     public static void choctaw() {
-        //TODO CHOCTAW
+        int p = rand.nextInt(10, 50);
+        int m = rand.nextInt(1, 2);
+        OregonTrailMain.println("A group of Choctaw Indians sabotage you and take some stuff.");
+        OregonTrailMain.println("-" + p + " Pounds of food");
+        if (Variables.POUNDS_OF_FOOD <= p) {
+            Variables.POUNDS_OF_FOOD = 0;
+        } else {
+            Variables.POUNDS_OF_FOOD = Variables.POUNDS_OF_FOOD - p;
+        }
+        OregonTrailMain.println("-" + m + " Medicine");
+        if (Variables.MEDICINE <= m) {
+            Variables.MEDICINE = 0;
+        } else {
+            Variables.MEDICINE = Variables.MEDICINE - m;
+        }
+        OregonTrailMain.println("They also attack. Your People are hurt. " + CharacterVariables.PERSON_1.PERSON + " tries to fight back.");
+        CharacterVariables.PERSON_1.STATS.HEALTH = CharacterVariables.PERSON_1.STATS.HEALTH - 3;
+        CharacterVariables.PERSON_1.STATS.STAMINA = CharacterVariables.PERSON_1.STATS.STAMINA - 3;
+        if (CharacterVariables.PERSON_1.STATS.HEALTH <= 0) OregonTrailMain.println(CharacterVariables.PERSON_1.PERSON + " has died by Indians."); Deaths.inians();
+        CharacterVariables.PERSON_2.STATS.HEALTH = CharacterVariables.PERSON_2.STATS.HEALTH - 3;
+        if (CharacterVariables.PERSON_2.STATS.HEALTH <= 0) OregonTrailMain.println(CharacterVariables.PERSON_2.PERSON + " has died by Indians."); Deaths.inians();
+        CharacterVariables.PERSON_3.STATS.HEALTH = CharacterVariables.PERSON_3.STATS.HEALTH - 3;
+        if (CharacterVariables.PERSON_3.STATS.HEALTH <= 0) OregonTrailMain.println(CharacterVariables.PERSON_3.PERSON + " has died by Indians."); Deaths.inians();
+        CharacterVariables.PERSON_4.STATS.HEALTH = CharacterVariables.PERSON_4.STATS.HEALTH - 3;
+        if (CharacterVariables.PERSON_4.STATS.HEALTH <= 0) OregonTrailMain.println(CharacterVariables.PERSON_4.PERSON + " has died by Indians."); Deaths.inians();
     }
-    public static void creek() {
-        //TODO CREEK
-    }
+    public static void creek() {}
 }

@@ -19,6 +19,7 @@ public class Variables {
     public static int MEDICINE = 0;
     public static String DAY_STUFF = "";
     public static int RATIONS_PER_PERSON = 2; // 2, 4, 6
+    public static int OUT_OF_FOOD_COUNTER = 3;
     public static int PERSON_COUNTER = 4;
     public static int AXELS = 0;
     public static int WHEELS = 0;
