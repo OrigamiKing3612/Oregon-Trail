@@ -1,7 +1,5 @@
 package net.origamiking.games.oregontrail.variables;
 
-//import java.util.ArrayList;
-
 import java.util.Random;
 
 public class Variables {
