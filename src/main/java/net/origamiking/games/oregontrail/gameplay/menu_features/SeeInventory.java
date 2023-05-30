@@ -5,7 +5,7 @@ import net.origamiking.games.oregontrail.gameplay.menu_features.inentory.UseStuf
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 
-import java.util.Scanner;
+import javax.swing.*;
 
 public class SeeInventory {
     public static void seeInventory() {
@@ -24,19 +24,15 @@ public class SeeInventory {
         OregonTrailMain.println("People Left: " + Variables.PERSON_COUNTER);
         SeeInventory.characters();
 
+        String[] options = {"Leave", "Use Clothes", "Use Coffee", "Use Medicine"};
 
-        OregonTrailMain.println("1. Use Medicine");
-        OregonTrailMain.println("2. Use Coffee");
-        OregonTrailMain.println("3. Use Clothes");
-        OregonTrailMain.println("0. Leave");
-        Scanner input = new Scanner(System.in);
-        String ready = input.nextLine();
-        ready = ready.toLowerCase();
-        switch (ready) {
-            case "1" -> UseStuff.useMedicine();
-            case "2" -> UseStuff.useCoffee();
-            case "3" -> UseStuff.useClothes();
-            case "0" -> leave();
+        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "What do you want to do?", JOptionPane.DEFAULT_OPTION,
+                JOptionPane.PLAIN_MESSAGE, null, options, null);
+        switch (choice) {
+            case 3 -> UseStuff.useMedicine();
+            case 2 -> UseStuff.useCoffee();
+            case 1 -> UseStuff.useClothes();
+            case 0 -> leave();
         }
     }
     public static void characters() {

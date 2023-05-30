@@ -4,23 +4,24 @@ import net.origamiking.games.oregontrail.OregonTrailMain;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 
+import javax.swing.*;
 import java.util.Random;
-import java.util.Scanner;
 
 public class BrokenWagon {
     static Random rand = new Random();
     public static class Axel {
         public static void axel() {
-            OregonTrailMain.println("1. Wait and see if someone comes.");
-            if (Variables.AXELS >= 1) OregonTrailMain.println("2. Repair.");
-            Scanner input = new Scanner(System.in);
-            String a = input.nextLine();
             if (Variables.AXELS >= 1) {
-                switch (a) {
-                    case "1" -> waitForPeople();
-                    case "2" -> repair();
+                String[] options = {"Wait and see if someone comes.", "Repair"};
+
+                int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Suddenly your wagon's axel breaks. What will you do?", JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.PLAIN_MESSAGE, null, options, null);
+                switch (choice) {
+                    case 0 -> waitForPeople();
+                    case 1 -> repair();
                 }
             } else {
+                OregonTrailMain.println("You don't have an axel so you wait for people to come.");
                 waitForPeople();
             }
         }
@@ -76,16 +77,17 @@ public class BrokenWagon {
     }
     public static class Wheel {
         public static void wheel() {
-            OregonTrailMain.println("1. Wait and see if someone comes.");
-            if (Variables.WHEELS >= 1) OregonTrailMain.println("2. Repair.");
-            Scanner input = new Scanner(System.in);
-            String a = input.nextLine();
             if (Variables.WHEELS >= 1) {
-                switch (a) {
-                    case "1" -> waitForPeople();
-                    case "2" -> repair();
+                String[] options = {"Wait and see if someone comes.", "Repair"};
+
+                int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Suddenly one of your wagon's wheel breaks. What will you do?", JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.PLAIN_MESSAGE, null, options, null);
+                switch (choice) {
+                    case 0 -> waitForPeople();
+                    case 1 -> repair();
                 }
             } else {
+                OregonTrailMain.println("You don't have an wheel so you wait for people to come.");
                 waitForPeople();
             }
         }
@@ -141,16 +143,17 @@ public class BrokenWagon {
     }
     public static class Tongue {
         public static void tongue() {
-            OregonTrailMain.println("1. Wait and see if someone comes.");
-            if (Variables.TONGUES >= 1) OregonTrailMain.println("2. Repair.");
-            Scanner input = new Scanner(System.in);
-            String a = input.nextLine();
             if (Variables.TONGUES >= 1) {
-                switch (a) {
-                    case "1" -> waitForPeople();
-                    case "2" -> repair();
+                String[] options = {"Wait and see if someone comes.", "Repair"};
+
+                int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Suddenly your wagon's tongue breaks. What will you do?", JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.PLAIN_MESSAGE, null, options, null);
+                switch (choice) {
+                    case 0 -> waitForPeople();
+                    case 1 -> repair();
                 }
             } else {
+                OregonTrailMain.println("You don't have an tongue so you wait for people to come.");
                 waitForPeople();
             }
         }

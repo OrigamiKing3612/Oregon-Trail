@@ -1,11 +1,12 @@
 package net.origamiking.games.oregontrail.gameplay.events;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
+import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 
+import javax.swing.*;
 import java.util.Objects;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Hunting {
     static Random rand = new Random();
@@ -16,8 +17,8 @@ public class Hunting {
 //        for (int i = 0; i < timesHunting; i++) {
             int number_to_pick = rand.nextInt(upperbound_numbers);
             OregonTrailMain.println("Pick a number between 0 and " + upperbound_numbers);
-            Scanner input = new Scanner(System.in);
-            String number_picked = input.nextLine();
+        String number_picked = JOptionPane.showInputDialog("Pick a number between 0 and " + upperbound_numbers + ":");
+        CharacterVariables.PERSON_4.PERSON = (number_picked != null) ? number_picked : "";
             if (Objects.equals(number_picked, String.valueOf(number_to_pick))) {
                 killedAnimal();
             } else if (Objects.equals(number_picked, String.valueOf(number_to_pick - 1))) {

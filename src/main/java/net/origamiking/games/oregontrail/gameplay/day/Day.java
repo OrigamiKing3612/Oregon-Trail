@@ -8,8 +8,8 @@ import net.origamiking.games.oregontrail.utils.MainGameMenu;
 import net.origamiking.games.oregontrail.utils.SubtractVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 
+import javax.swing.*;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Day {
     static Random rand = new Random();
@@ -25,18 +25,19 @@ public class Day {
             ChooseGame.choose_day(switcher);
             if (switcher == 2) {
                 OregonTrailMain.println(Variables.DAY_STUFF);
-                Scanner input = new Scanner(System.in);
-                String should_hunt = input.nextLine();
-                should_hunt = should_hunt.toLowerCase();
-                switch (should_hunt) {
-                    case "y" -> {
+                String[] options = {"No", "Yes"};
+
+                int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "You come to a forest, should someone in your party go hunt?", JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.PLAIN_MESSAGE, null, options, null);
+                switch (choice) {
+                    case 1 -> {
                         if (Variables.BULLETS >= 2) {
                             Hunting.hunt();
                         } else {
                             Variables.DAY_STUFF = "You dont have enough bullets to hunt.";
                         }
                     }
-                    case "n" -> Variables.DAY_STUFF = "You come to a forest; you pass it.";
+                    case 0 -> Variables.DAY_STUFF = "You come to a forest; you pass it.";
                 }
             }
             MainGameMenu.mainGameMenu(Variables.DAY_STUFF);

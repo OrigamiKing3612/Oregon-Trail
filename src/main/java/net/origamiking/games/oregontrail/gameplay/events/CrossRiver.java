@@ -3,8 +3,8 @@ package net.origamiking.games.oregontrail.gameplay.events;
 import net.origamiking.games.oregontrail.OregonTrailMain;
 import net.origamiking.games.oregontrail.variables.Variables;
 
+import javax.swing.*;
 import java.util.Random;
-import java.util.Scanner;
 
 public class CrossRiver {
     static Random rand = new Random();
@@ -12,18 +12,18 @@ public class CrossRiver {
     public static int RIVER_DIFFICULTY = 5;
     private static int riverDifficulty = rand.nextInt(5);
     public static void crossRiver() {
-        OregonTrailMain.println("You come to a river. What will you do.");
-        OregonTrailMain.println("1. Use the ferry");
-        OregonTrailMain.println("2. Caulk Wagon");
-        OregonTrailMain.println("3. Ford the river");
-        Scanner input = new Scanner(System.in);
-        String river = input.nextLine();
+        OregonTrailMain.println("You come to a river. What will you do?");
+        String[] options = {"Ford the river", "Caulk Wagon", "Use the ferry"};
+
+        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "You come to a river. What will you do?", JOptionPane.DEFAULT_OPTION,
+                JOptionPane.PLAIN_MESSAGE, null, options, null);
+
         if (riverDifficulty == 1 || riverDifficulty == 0) riverDifficulty = 2;
         CrossRiver.RIVER_DIFFICULTY = riverDifficulty;
-        switch (river) {
-            case "1" -> CrossRiver.ferry();
-            case "2" -> CrossRiver.caulk();
-            case "3" -> CrossRiver.ford();
+        switch (choice) {
+            case 2 -> CrossRiver.ferry();
+            case 1 -> CrossRiver.caulk();
+            case 0 -> CrossRiver.ford();
         }
         Variables.DAY_STUFF = "";
     }
@@ -33,12 +33,14 @@ public class CrossRiver {
         OregonTrailMain.println("1. Use the ferry");
         OregonTrailMain.println("2. Caulk the wagon");
         OregonTrailMain.println("3. Ford the river");
-        Scanner input = new Scanner(System.in);
-        String to_do = input.nextLine();
-        switch (to_do) {
-            case "1" -> CrossRiver.use_ferry();
-            case "2" -> CrossRiver.caulk();
-            case "3" -> CrossRiver.ford();
+        String[] options = {"Ford the river", "Caulk Wagon", "Use the ferry"};
+
+        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "You come to a river. What will you do?", JOptionPane.DEFAULT_OPTION,
+                JOptionPane.PLAIN_MESSAGE, null, options, null);
+        switch (choice) {
+            case 2 -> CrossRiver.use_ferry();
+            case 1 -> CrossRiver.caulk();
+            case 0 -> CrossRiver.ford();
         }
     }
     private static void use_ferry() {
@@ -49,11 +51,13 @@ public class CrossRiver {
             OregonTrailMain.println("You don't have enough coins.");
             OregonTrailMain.println("1. Caulk the wagon");
             OregonTrailMain.println("2. Ford the river");
-            Scanner input = new Scanner(System.in);
-            String to_do = input.nextLine();
-            switch (to_do) {
-                case "1" -> CrossRiver.caulk();
-                case "2" -> CrossRiver.ford();
+            String[] options = {"Ford the river", "Caulk Wagon"};
+
+            int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "You come to a river. What will you do?", JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.PLAIN_MESSAGE, null, options, null);
+            switch (choice) {
+                case 1 -> CrossRiver.caulk();
+                case 0 -> CrossRiver.ford();
             }
         }
     }
@@ -62,15 +66,14 @@ public class CrossRiver {
     }
     public static void ford() {
         OregonTrailMain.println("You decide to ford the river. The rivers difficultly is " + RIVER_DIFFICULTY);
-        OregonTrailMain.println("1. Ford the river");
-        OregonTrailMain.println("2. Caulk the wagon");
-        OregonTrailMain.println("3. Use Ferry");
-        Scanner input = new Scanner(System.in);
-        String to_do = input.nextLine();
-        switch (to_do) {
-            case "1" -> CrossRiver.will_ford();
-            case "2" -> CrossRiver.caulk();
-            case "3" -> ferry();
+        String[] options = {"Use the ferry", "Caulk Wagon", "Ford the river" };
+
+        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "You come to a river. What will you do?", JOptionPane.DEFAULT_OPTION,
+                JOptionPane.PLAIN_MESSAGE, null, options, null);
+        switch (choice) {
+            case 2 -> CrossRiver.will_ford();
+            case 1 -> CrossRiver.caulk();
+            case 0 -> ferry();
         }
     }
     public static void will_ford() {
@@ -96,16 +99,15 @@ public class CrossRiver {
         }
     }
     public static void caulk() {
-        OregonTrailMain.println("You decide to caulk you wagon. The rivers difficultly is " + RIVER_DIFFICULTY);
-        OregonTrailMain.println("1. Caulk the wagon");
-        OregonTrailMain.println("2. Ford the river");
-        OregonTrailMain.println("3. Use Ferry");
-        Scanner input = new Scanner(System.in);
-        String to_do = input.nextLine();
-        switch (to_do) {
-            case "1" -> CrossRiver.will_caulk();
-            case "2" -> CrossRiver.ford();
-            case "3" -> ferry();
+        OregonTrailMain.println("You decide to caulk the wagon. The rivers difficultly is " + RIVER_DIFFICULTY);
+        String[] options = {"Use the ferry", "Ford the river", "Caulk Wagon"};
+
+        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "You come to a river. What will you do?", JOptionPane.DEFAULT_OPTION,
+                JOptionPane.PLAIN_MESSAGE, null, options, null);
+        switch (choice) {
+            case 2 -> CrossRiver.will_caulk();
+            case 1 -> CrossRiver.ford();
+            case 0 -> ferry();
         }
     }
     private static void will_caulk() {

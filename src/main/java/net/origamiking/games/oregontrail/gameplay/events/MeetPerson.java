@@ -3,8 +3,8 @@ package net.origamiking.games.oregontrail.gameplay.events;
 import net.origamiking.games.oregontrail.OregonTrailMain;
 import net.origamiking.games.oregontrail.variables.Variables;
 
+import javax.swing.*;
 import java.util.Random;
-import java.util.Scanner;
 
 public class MeetPerson {
     static Random rand = new Random();
@@ -29,14 +29,20 @@ public class MeetPerson {
     private static void john() {
         int p = rand.nextInt(10, 25);
         OregonTrailMain.println("You come across a person. He greets you and says that is name is John. You tell him where you are going. He asks if you have any spare food. He asks for " + p + " pounds of food. Do you give it to him? Y/N");
-        Scanner i = new Scanner(System.in);
-        String input = i.nextLine();
-        if (input.equalsIgnoreCase("y")) {
-            if (Variables.POUNDS_OF_FOOD >= p) {
-                OregonTrailMain.println("You give him " + p + " pounds of food. He thanks you and leaves.");
-            } else {
-                OregonTrailMain.println("You don't have the amount of food he wants.");
+        String[] options = {"No", "Yes"};
+
+        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Do you give food to John?", JOptionPane.DEFAULT_OPTION,
+                JOptionPane.PLAIN_MESSAGE, null, options, null);
+
+        switch (choice) {
+            case 1 -> {
+                if (Variables.POUNDS_OF_FOOD >= p) {
+                    OregonTrailMain.println("You give him " + p + " pounds of food. He thanks you and leaves.");
+                } else {
+                    OregonTrailMain.println("You don't have the amount of food he wants.");
+                }
             }
+            case 0 -> {}
         }
     }
     private static void mary() {

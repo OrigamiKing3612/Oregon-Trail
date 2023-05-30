@@ -10,7 +10,7 @@ public class ChooseGame {
     public static void choose_day(int switcher) {
         switch (switcher) {
             case 0, 1 -> Variables.DAY_STUFF = "You have an uneventful day.";
-            case 2 -> Variables.DAY_STUFF = "You come to a forest, should someone in your party go hunt? (Type \"Y/N\")";
+            case 2 -> Variables.DAY_STUFF = "You come to a forest, should someone in your party go hunt?";
             case 3 -> {
                 boolean t = rand.nextBoolean();
                 if (t) {
