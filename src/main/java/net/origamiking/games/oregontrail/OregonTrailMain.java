@@ -29,7 +29,7 @@ public class OregonTrailMain {
                 JOptionPane.PLAIN_MESSAGE, null, options, options[1]);
 
         switch (choice) {
-            case 0 -> LoadGame.loadGame();
+            case 0 -> LoadGame.loadSaves();
             case 1 -> NewGame.newGame();
             default -> throw new IllegalStateException("Unexpected value: " + choice);
         }

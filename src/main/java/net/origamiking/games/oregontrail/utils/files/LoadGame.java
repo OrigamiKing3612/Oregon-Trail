@@ -1,16 +1,58 @@
 package net.origamiking.games.oregontrail.utils.files;
 
+import net.origamiking.games.oregontrail.OregonTrailMain;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.FileVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 import net.origamiking.games.oregontrail.variables.WeatherVariables;
 
+import javax.swing.*;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import static net.origamiking.games.oregontrail.variables.FileVariables.getSaveDirectory;
+
 public class LoadGame {
-    public static void loadGame() {
+    public static void loadSaves() {
+        File folder = new File(FileVariables.SAVES_DIRECTORY);
+
+        if (folder.isDirectory()) {
+            File[] files = folder.listFiles();
+
+            if (files != null) {
+                int fileCount = 0;
+                for (File file : files) {
+                    if (file.isFile() && !file.getName().equals(".DS_Store")) {
+                        fileCount++;
+                    }
+                }
+
+                String[] options = new String[fileCount];
+                int index = 0;
+
+                for (File file : files) {
+                    if (file.isFile() && !file.getName().equals(".DS_Store")) {
+                        String fileName = file.getName();
+                        String option = fileName.substring(0, fileName.lastIndexOf("."));
+                        options[index] = option;
+                        index++;
+                    }
+                }
+
+                int choice = JOptionPane.showOptionDialog(null, "Pick a save:", "Saves", JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.PLAIN_MESSAGE, null, options, null);
+                if (choice >= 0 && choice < options.length) {
+                    String selectedSave = options[choice];
+                    FileVariables.SAVE_NAME = String.valueOf(selectedSave);
+                    FileVariables.FILE_NAME = getSaveDirectory() + selectedSave + ".txt";
+                    OregonTrailMain.println("Selected save: " + selectedSave);
+                }
+            }
+        }
+    }
+    public static void loadSave() {
         try (BufferedReader reader = new BufferedReader(new FileReader(FileVariables.FILE_NAME))) {
             String line;
             if ((line = reader.readLine()) != null) Variables.DAYS = Integer.parseInt(line);
@@ -94,7 +136,6 @@ public class LoadGame {
             if ((line = reader.readLine()) != null) WeatherVariables.SEVERE = Boolean.parseBoolean(line);
             if ((line = reader.readLine()) != null) WeatherVariables.THUNDERSTORM = Boolean.parseBoolean(line);
             if ((line = reader.readLine()) != null) WeatherVariables.IS_GROUND_WET = Boolean.parseBoolean(line);
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
