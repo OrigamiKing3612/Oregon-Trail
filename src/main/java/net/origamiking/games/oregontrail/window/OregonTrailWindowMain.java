@@ -17,7 +17,7 @@ public class OregonTrailWindowMain {
 
         frame.add(scrollPane, BorderLayout.CENTER);
 
-        ImageIcon icon = new ImageIcon("resources/icon.png");
+        ImageIcon icon = new ImageIcon("icon.png");
 
         frame.setIconImage(icon.getImage());
 
