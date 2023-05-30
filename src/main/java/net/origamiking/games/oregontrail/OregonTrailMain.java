@@ -10,12 +10,19 @@ import javax.swing.*;
 
 public class OregonTrailMain {
     public static boolean DEBUG_MODE = false;
-    private static final OregonTrailWindowMain window = new OregonTrailWindowMain();
+    private static OregonTrailWindowMain window;
+
     public static void main(String[] args) {
-//        SwingUtilities.invokeLater(() -> {
-//            window.appendTextln("Hello, world!");
-//        });
-            if (DEBUG_MODE) {
+
+        if (isMacOS()) {
+            System.setProperty("apple.awt.application.name", "Oregon Trail");
+            System.setProperty("apple.awt.application.appearance", "system");
+            System.setProperty("apple.awt.application.icon", "Info.plist");
+            System.setProperty("apple.awt.brushMetalLook", "true");
+            System.setProperty("apple.awt.showGrowBox", "true");
+        }
+        window  = new OregonTrailWindowMain();
+        if (DEBUG_MODE) {
                 OregonTrailMain.println("DEBUG MODE");
                 isDebugMode();
             } else {
@@ -44,6 +51,7 @@ public class OregonTrailMain {
     public static void print(String string) {
         window.appendText(string);
     }
+
     public static void isDebugMode() {
         if (DEBUG_MODE) {
             Variables.POUNDS_OF_FOOD = 10000;
@@ -51,5 +59,9 @@ public class OregonTrailMain {
             Variables.BULLETS = 10000;
             Variables.WAGON_TYPE = "DEBUG WAGON";
         }
+    }
+    private static boolean isMacOS() {
+        String osName = System.getProperty("os.name").toLowerCase();
+        return osName.contains("mac");
     }
 }

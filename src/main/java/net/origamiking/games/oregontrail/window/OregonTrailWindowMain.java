@@ -17,7 +17,9 @@ public class OregonTrailWindowMain {
 
         frame.add(scrollPane, BorderLayout.CENTER);
 
-//        JScrollPane scrollPane = new JScrollPane(textArea);
+        ImageIcon icon = new ImageIcon("resources/icon.png");
+
+        frame.setIconImage(icon.getImage());
 
         frame.getContentPane().add(scrollPane);
 
@@ -34,6 +36,7 @@ public class OregonTrailWindowMain {
         textArea.setCaretPosition(textArea.getDocument().getLength());
 
     }
+
     public void appendText(String text) {
         textArea.append(text);
         textArea.setCaretPosition(textArea.getDocument().getLength());
