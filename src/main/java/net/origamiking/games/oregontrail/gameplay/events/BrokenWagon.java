@@ -28,7 +28,7 @@ public class BrokenWagon {
             int hasAxel = rand.nextInt(5);
             if (personCome()) {
                 if (hasAxel == 2 || hasAxel == 4 || hasAxel == 0) {
-                    OregonTrailMain.println("Some people pass by and ask if you need help. " + CharacterVariables.PERSON_4.PERSON_4 + " responds and says that their axel broke and they need a new one. \n" + CharacterVariables.PERSON_4.PERSON_4 + " asks if they have an extra one.");
+                    OregonTrailMain.println("Some people pass by and ask if you need help. " + CharacterVariables.PERSON_4.PERSON + " responds and says that their axel broke and they need a new one. \n" + CharacterVariables.PERSON_4.PERSON + " asks if they have an extra one.");
                     boolean haveAxel = rand.nextBoolean();
                     int coins = rand.nextInt(50);
                     if (coins == 0) coins = 10;
@@ -93,7 +93,7 @@ public class BrokenWagon {
             int hasAxel = rand.nextInt(5);
             if (personCome()) {
                 if (hasAxel == 2 || hasAxel == 4 || hasAxel == 0) {
-                    OregonTrailMain.println("Some people pass by and ask if you need help. " + CharacterVariables.PERSON_4.PERSON_4 + " responds and says that one of their wheels broke and they need a new one. \n" + CharacterVariables.PERSON_4.PERSON_4 + " asks if they have an extra one.");
+                    OregonTrailMain.println("Some people pass by and ask if you need help. " + CharacterVariables.PERSON_4.PERSON + " responds and says that one of their wheels broke and they need a new one. \n" + CharacterVariables.PERSON_4.PERSON + " asks if they have an extra one.");
                     boolean haveWheel = rand.nextBoolean();
                     int coins = rand.nextInt(30);
                     if (coins == 0) coins = 10;
@@ -158,7 +158,7 @@ public class BrokenWagon {
             int hasTongue = rand.nextInt(5);
             if (personCome()) {
                 if (hasTongue == 2 || hasTongue == 4 || hasTongue == 0) {
-                    OregonTrailMain.println("Some people pass by and ask if you need help. " + CharacterVariables.PERSON_4.PERSON_4 + " responds and says that their tongue broke and they need a new one. \n" + CharacterVariables.PERSON_4.PERSON_4 + " asks if they have an extra one.");
+                    OregonTrailMain.println("Some people pass by and ask if you need help. " + CharacterVariables.PERSON_4.PERSON + " responds and says that their tongue broke and they need a new one. \n" + CharacterVariables.PERSON_4.PERSON + " asks if they have an extra one.");
                     boolean haveTongue = rand.nextBoolean();
                     int coins = rand.nextInt(50);
                     if (coins == 0) coins = 10;

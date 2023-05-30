@@ -2,7 +2,7 @@ package net.origamiking.games.oregontrail.variables;
 
 public class CharacterVariables {
     public static class PERSON_1 {
-        public static String PERSON_1 = "Person 1";
+        public static String PERSON = "Person 1";
         public static boolean IS_SICK = false;
         public static String SICK_WITH = "";
         public static boolean IS_FORLORN = false;
@@ -23,11 +23,11 @@ public class CharacterVariables {
         }
     }
     public static class PERSON_2 {
-        public static String PERSON_2 = "Person 2";
+        public static String PERSON = "Person 2";
         public static boolean IS_SICK = false;
         public static String SICK_WITH = "";
         public static boolean IS_FORLORN = false;
-        public static String IS_MESSAGE = "";
+        public static String MESSAGE = "";
         public static boolean IS_GONE = false;
         public static class STATS {
             public static int MAX_HEALTH = 10;
@@ -44,7 +44,7 @@ public class CharacterVariables {
         }
     }
     public static class PERSON_3 {
-        public static String PERSON_3 = "Person 3";
+        public static String PERSON = "Person 3";
         public static boolean IS_SICK = false;
         public static String SICK_WITH = "";
         public static boolean IS_FORLORN = false;
@@ -65,7 +65,7 @@ public class CharacterVariables {
         }
     }
     public static class PERSON_4 {
-        public static String PERSON_4 = "Person 4";
+        public static String PERSON = "Person 4";
         public static boolean IS_SICK = false;
         public static String SICK_WITH = "";
         public static boolean IS_FORLORN = false;

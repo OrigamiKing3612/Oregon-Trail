@@ -15,10 +15,10 @@ public class Forlorn {
     }
     public static void pickPerson() {
         switch (switcher) {
-            case 0 -> { person = CharacterVariables.PERSON_1.PERSON_1; CharacterVariables.PERSON_1.IS_FORLORN = true; }
-            case 1 -> { person = CharacterVariables.PERSON_2.PERSON_2; CharacterVariables.PERSON_2.IS_FORLORN = true; }
-            case 2 -> { person = CharacterVariables.PERSON_3.PERSON_3; CharacterVariables.PERSON_3.IS_FORLORN = true; }
-            case 3 -> { person = CharacterVariables.PERSON_4.PERSON_4; CharacterVariables.PERSON_4.IS_FORLORN = true; }
+            case 0 -> { person = CharacterVariables.PERSON_1.PERSON; CharacterVariables.PERSON_1.IS_FORLORN = true; }
+            case 1 -> { person = CharacterVariables.PERSON_2.PERSON; CharacterVariables.PERSON_2.IS_FORLORN = true; }
+            case 2 -> { person = CharacterVariables.PERSON_3.PERSON; CharacterVariables.PERSON_3.IS_FORLORN = true; }
+            case 3 -> { person = CharacterVariables.PERSON_4.PERSON; CharacterVariables.PERSON_4.IS_FORLORN = true; }
         }
     }
 }

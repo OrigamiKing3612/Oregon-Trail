@@ -16,22 +16,22 @@ public class Illness {
     private static int pickPerson() {
         switch (switcher1) {
             case 0 -> {
-                person = CharacterVariables.PERSON_1.PERSON_1;
+                person = CharacterVariables.PERSON_1.PERSON;
                 CharacterVariables.PERSON_1.IS_SICK = true;
                 return 1;
             }
             case 1 -> {
-                person = CharacterVariables.PERSON_2.PERSON_2;
+                person = CharacterVariables.PERSON_2.PERSON;
                 CharacterVariables.PERSON_2.IS_SICK = true;
                 return 2;
             }
             case 2 -> {
-                person = CharacterVariables.PERSON_3.PERSON_3;
+                person = CharacterVariables.PERSON_3.PERSON;
                 CharacterVariables.PERSON_3.IS_SICK = true;
                 return 3;
             }
             case 3 -> {
-                person = CharacterVariables.PERSON_4.PERSON_4;
+                person = CharacterVariables.PERSON_4.PERSON;
                 CharacterVariables.PERSON_4.IS_SICK = true;
                 return 4;
             }
@@ -61,7 +61,7 @@ public class Illness {
                         CharacterVariables.PERSON_1.STATS.HAPPINESS--;
                     }
                 }
-                OregonTrailMain.println(CharacterVariables.PERSON_1.PERSON_1 + " is sick with " + CharacterVariables.PERSON_1.SICK_WITH + ".");
+                OregonTrailMain.println(CharacterVariables.PERSON_1.PERSON + " is sick with " + CharacterVariables.PERSON_1.SICK_WITH + ".");
             }
             case 2 -> {
                 if (CharacterVariables.PERSON_2.STATS.HYGIENE <= 5) switcher2 = 0;
@@ -84,7 +84,7 @@ public class Illness {
                         CharacterVariables.PERSON_2.STATS.HAPPINESS--;
                     }
                 }
-                OregonTrailMain.println(CharacterVariables.PERSON_2.PERSON_2 + " is sick with " + CharacterVariables.PERSON_2.SICK_WITH + ".");
+                OregonTrailMain.println(CharacterVariables.PERSON_2.PERSON + " is sick with " + CharacterVariables.PERSON_2.SICK_WITH + ".");
 
             }
             case 3 -> {
@@ -108,7 +108,7 @@ public class Illness {
                         CharacterVariables.PERSON_3.STATS.HAPPINESS--;
                     }
                 }
-                OregonTrailMain.println(CharacterVariables.PERSON_3.PERSON_3 + " is sick with " + CharacterVariables.PERSON_3.SICK_WITH + ".");
+                OregonTrailMain.println(CharacterVariables.PERSON_3.PERSON + " is sick with " + CharacterVariables.PERSON_3.SICK_WITH + ".");
             }
             case 4 -> {
                 if (CharacterVariables.PERSON_4.STATS.HYGIENE <= 5) switcher2 = 0;
@@ -131,7 +131,7 @@ public class Illness {
                         CharacterVariables.PERSON_4.STATS.HAPPINESS--;
                     }
                 }
-                OregonTrailMain.println(CharacterVariables.PERSON_4.PERSON_4 + " is sick with " + CharacterVariables.PERSON_4.SICK_WITH + ".");
+                OregonTrailMain.println(CharacterVariables.PERSON_4.PERSON + " is sick with " + CharacterVariables.PERSON_4.SICK_WITH + ".");
             }
             default -> throw new IllegalStateException("Unexpected value: " + pickPerson());
         }

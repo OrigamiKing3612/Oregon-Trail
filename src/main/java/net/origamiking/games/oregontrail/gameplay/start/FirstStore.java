@@ -3,11 +3,12 @@ package net.origamiking.games.oregontrail.gameplay.start;
 import net.origamiking.games.oregontrail.OregonTrailMain;
 import net.origamiking.games.oregontrail.variables.Variables;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class FirstStore {
     public static void firstStore() {
-        OregonTrailMain.println("Now lets buy stuff, you have " + Variables.COINS + " coins, what will you buy?");
+        OregonTrailMain.println("You have " + Variables.COINS + " coins, what will you buy?");
         OregonTrailMain.println("1. Wagons and Wagon Supplies");
         OregonTrailMain.println("2. Food");
         OregonTrailMain.println("3. Ammunition shop");
@@ -71,6 +72,7 @@ public class FirstStore {
                 }
             }
         }
+        firstStore();
     }
     private static void wagons() {
         OregonTrailMain.println("1. Small Wagon, 50 Coins");
@@ -261,5 +263,10 @@ public class FirstStore {
         }
         firstStore();
     }
-    private static void leave_shop() {}
+    private static void leave_shop() {
+        if (Objects.equals(Variables.WAGON_TYPE, "")) {
+            OregonTrailMain.println("You need a Wagon!");
+            firstStore();
+        }
+    }
 }
