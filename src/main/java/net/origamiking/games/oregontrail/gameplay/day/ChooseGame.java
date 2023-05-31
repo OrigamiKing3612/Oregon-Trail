@@ -8,7 +8,6 @@ import java.util.Random;
 public class ChooseGame {
     static Random rand = new Random();
     public static void choose_day(int switcher) {
-        switcher = 0;
         switch (switcher) {
             case 0, 1 -> Variables.DAY_STUFF = "You have an uneventful day.";
             case 2 -> Variables.DAY_STUFF = "You come to a forest, should someone in your party go hunt?";
