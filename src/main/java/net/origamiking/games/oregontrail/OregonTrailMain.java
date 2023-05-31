@@ -9,24 +9,24 @@ import net.origamiking.games.oregontrail.window.InventoryWindow;
 import net.origamiking.games.oregontrail.window.OregonTrailWindowMain;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class OregonTrailMain {
     private static OregonTrailWindowMain window;
     public static InventoryWindow inventoryWindow;
-
     public static void main(String[] args) {
         if (isMacOS()) {
-            System.setProperty("apple.awt.application.name", "Oregon Trail");
+            System.setProperty("apple.awt.application.name", "Oregon Trail By: OrigamiKing3612");
             System.setProperty("apple.awt.application.appearance", "system");
             System.setProperty("apple.awt.application.icon", "Info.plist");
             System.setProperty("apple.awt.brushMetalLook", "true");
             System.setProperty("apple.awt.showGrowBox", "true");
         }
+        setColors();
         window = new OregonTrailWindowMain();
         inventoryWindow = new InventoryWindow();
         start();
     }
-
     public static void println(String string) {
         window.appendTextln(string);
     }
@@ -51,6 +51,30 @@ public class OregonTrailMain {
         }
         for (int d = Variables.DAYS; d < Variables.MAX_DAYS; d++) {
             Day.day();
+        }
+    }
+    private static void setColors() {
+        try {
+            Font font = new Font("Times New Roman", Font.PLAIN, 16);
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+
+            UIManager.put("OptionPane.background", Color.BLACK);
+            UIManager.put("OptionPane.buttonBackground", Color.BLACK);
+            UIManager.put("OptionPane.messageForeground", Color.GREEN);
+            UIManager.put("OptionPane.buttonForeground", Color.GREEN);
+            UIManager.put("Panel.background", Color.BLACK);
+            UIManager.put("TextField.background", Color.DARK_GRAY);
+            UIManager.put("TextField.foreground", Color.GREEN);
+            UIManager.put("Button.background", Color.BLACK);
+            UIManager.put("Button.foreground", Color.WHITE);
+            UIManager.put("ComboBox.background", Color.BLACK);
+            UIManager.put("Label.font", font);
+            UIManager.put("Button.font", font);
+            UIManager.put("TextField.font", font);
+            UIManager.put("ComboBox.font", font);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

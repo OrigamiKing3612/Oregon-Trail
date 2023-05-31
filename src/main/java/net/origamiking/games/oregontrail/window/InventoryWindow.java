@@ -22,16 +22,18 @@ public class InventoryWindow {
 
         frame.getContentPane().add(scrollPane);
 
-        Font font = new Font("Trebuchet MS", Font.PLAIN, 16);
+        Font font = new Font("Times New Roman", Font.PLAIN, 16);
         textArea.setFont(font);
-//        textArea.setForeground(Color.GREEN);
+        textArea.setForeground(Color.GREEN);
+        textArea.setBackground(Color.BLACK);
+        frame.setBackground(Color.BLACK);
 
-        frame.setSize(500, 1000);
+        frame.setSize(300, 1000);
         frame.setVisible(true);
     }
 
     public void appendTextln(String text) {
-        textArea.append(text + "\n");
+        textArea.append(" " + text + "\n");
         textArea.setCaretPosition(textArea.getDocument().getLength());
 
     }

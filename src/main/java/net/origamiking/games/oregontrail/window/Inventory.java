@@ -7,6 +7,7 @@ import net.origamiking.games.oregontrail.variables.Variables;
 public class Inventory {
     public static void printToWindow() {
         OregonTrailMain.inventoryWindow.clearWindow();
+        OregonTrailMain.inventoryWindow.appendTextln("");
         OregonTrailMain.inventoryWindow.appendTextln("You have:");
         OregonTrailMain.inventoryWindow.appendTextln("Coins: " + Variables.COINS);
         OregonTrailMain.inventoryWindow.appendTextln("Wagon Type: " + Variables.WAGON_TYPE);
