@@ -1,6 +1,7 @@
 package net.origamiking.games.oregontrail.gameplay.events;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
+import net.origamiking.games.oregontrail.utils.Utils;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 
 import java.util.Random;
@@ -45,10 +46,9 @@ public class Illness {
                 switch (switcher2) {
                     case 0 -> {
                         CharacterVariables.PERSON_1.SICK_WITH = "Dysentery";
-                        CharacterVariables.PERSON_1.STATS.MAX_STAMINA = 7;
-                        CharacterVariables.PERSON_1.STATS.MAX_HEALTH = 5;
-                        CharacterVariables.PERSON_1.STATS.STAMINA = CharacterVariables.PERSON_1.STATS.MAX_STAMINA;
-                        CharacterVariables.PERSON_1.STATS.HEALTH = CharacterVariables.PERSON_1.STATS.MAX_HEALTH;
+                        Utils.subStamina(1, 3);
+                        Utils.setMAX_HEALTH(1, 5);
+                        CharacterVariables.PERSON_1.SICK_COUNTER = 5;
                         if (CharacterVariables.PERSON_1.STATS.HAPPINESS <= 4) {
                             CharacterVariables.PERSON_1.STATS.HAPPINESS--;
                         } else {
@@ -59,6 +59,7 @@ public class Illness {
                         CharacterVariables.PERSON_1.SICK_WITH = "Fever";
                         CharacterVariables.PERSON_1.STATS.STAMINA = CharacterVariables.PERSON_1.STATS.STAMINA - 2;
                         CharacterVariables.PERSON_1.STATS.HAPPINESS--;
+                        CharacterVariables.PERSON_1.SICK_COUNTER = 3;
                     }
                 }
                 OregonTrailMain.println(CharacterVariables.PERSON_1.PERSON + " is sick with " + CharacterVariables.PERSON_1.SICK_WITH + ".");
@@ -68,10 +69,9 @@ public class Illness {
                 switch (switcher2) {
                     case 0 -> {
                         CharacterVariables.PERSON_2.SICK_WITH = "Dysentery";
-                        CharacterVariables.PERSON_2.STATS.MAX_STAMINA = 7;
-                        CharacterVariables.PERSON_2.STATS.MAX_HEALTH = 5;
-                        CharacterVariables.PERSON_2.STATS.STAMINA = CharacterVariables.PERSON_2.STATS.MAX_STAMINA;
-                        CharacterVariables.PERSON_2.STATS.HEALTH = CharacterVariables.PERSON_2.STATS.MAX_HEALTH;
+                        Utils.subStamina(2, 3);
+                        Utils.setMAX_HEALTH(2, 5);
+                        CharacterVariables.PERSON_1.SICK_COUNTER = 5;
                         if (CharacterVariables.PERSON_2.STATS.HAPPINESS <= 4) {
                             CharacterVariables.PERSON_2.STATS.HAPPINESS--;
                         } else {
@@ -82,6 +82,7 @@ public class Illness {
                         CharacterVariables.PERSON_2.SICK_WITH = "Fever";
                         CharacterVariables.PERSON_2.STATS.STAMINA = CharacterVariables.PERSON_2.STATS.STAMINA - 2;
                         CharacterVariables.PERSON_2.STATS.HAPPINESS--;
+                        CharacterVariables.PERSON_1.SICK_COUNTER = 3;
                     }
                 }
                 OregonTrailMain.println(CharacterVariables.PERSON_2.PERSON + " is sick with " + CharacterVariables.PERSON_2.SICK_WITH + ".");
@@ -92,10 +93,9 @@ public class Illness {
                 switch (switcher2) {
                     case 0 -> {
                         CharacterVariables.PERSON_3.SICK_WITH = "Dysentery";
-                        CharacterVariables.PERSON_3.STATS.MAX_STAMINA = 7;
-                        CharacterVariables.PERSON_3.STATS.MAX_HEALTH = 5;
-                        CharacterVariables.PERSON_3.STATS.STAMINA = CharacterVariables.PERSON_3.STATS.MAX_STAMINA;
-                        CharacterVariables.PERSON_3.STATS.HEALTH = CharacterVariables.PERSON_3.STATS.MAX_HEALTH;
+                        Utils.subStamina(3, 3);
+                        Utils.setMAX_HEALTH(3, 5);
+                        CharacterVariables.PERSON_1.SICK_COUNTER = 5;
                         if (CharacterVariables.PERSON_3.STATS.HAPPINESS <= 4) {
                             CharacterVariables.PERSON_3.STATS.HAPPINESS--;
                         } else {
@@ -106,6 +106,7 @@ public class Illness {
                         CharacterVariables.PERSON_3.SICK_WITH = "Fever";
                         CharacterVariables.PERSON_3.STATS.STAMINA = CharacterVariables.PERSON_3.STATS.STAMINA - 2;
                         CharacterVariables.PERSON_3.STATS.HAPPINESS--;
+                        CharacterVariables.PERSON_1.SICK_COUNTER = 3;
                     }
                 }
                 OregonTrailMain.println(CharacterVariables.PERSON_3.PERSON + " is sick with " + CharacterVariables.PERSON_3.SICK_WITH + ".");
@@ -115,10 +116,9 @@ public class Illness {
                 switch (switcher2) {
                     case 0 -> {
                         CharacterVariables.PERSON_4.SICK_WITH = "Dysentery";
-                        CharacterVariables.PERSON_4.STATS.MAX_STAMINA = 7;
-                        CharacterVariables.PERSON_4.STATS.MAX_HEALTH = 5;
-                        CharacterVariables.PERSON_4.STATS.STAMINA = CharacterVariables.PERSON_4.STATS.MAX_STAMINA;
-                        CharacterVariables.PERSON_4.STATS.HEALTH = CharacterVariables.PERSON_4.STATS.MAX_HEALTH;
+                        Utils.subStamina(4, 3);
+                        Utils.setMAX_HEALTH(4, 5);
+                        CharacterVariables.PERSON_1.SICK_COUNTER = 5;
                         if (CharacterVariables.PERSON_4.STATS.HAPPINESS <= 4) {
                             CharacterVariables.PERSON_4.STATS.HAPPINESS--;
                         } else {
@@ -129,6 +129,7 @@ public class Illness {
                         CharacterVariables.PERSON_4.SICK_WITH = "Fever";
                         CharacterVariables.PERSON_4.STATS.STAMINA = CharacterVariables.PERSON_4.STATS.STAMINA - 2;
                         CharacterVariables.PERSON_4.STATS.HAPPINESS--;
+                        CharacterVariables.PERSON_1.SICK_COUNTER = 3;
                     }
                 }
                 OregonTrailMain.println(CharacterVariables.PERSON_4.PERSON + " is sick with " + CharacterVariables.PERSON_4.SICK_WITH + ".");

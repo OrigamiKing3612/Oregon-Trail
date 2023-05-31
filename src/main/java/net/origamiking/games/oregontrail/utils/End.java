@@ -6,11 +6,9 @@ import javax.swing.*;
 
 public class End {
     public static void end() {
-
-        String[] options = {"Leave", "Replay"};
-
         OregonTrailMain.println("You Died. Thanks for playing!");
 
+        String[] options = {"Leave", "Replay"};
         int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Replay or Leave", JOptionPane.DEFAULT_OPTION,
                 JOptionPane.PLAIN_MESSAGE, null, options, null);
         switch (choice) {

@@ -138,6 +138,13 @@ public class LoadGame {
             if ((line = reader.readLine()) != null) WeatherVariables.SEVERE = Boolean.parseBoolean(line);
             if ((line = reader.readLine()) != null) WeatherVariables.THUNDERSTORM = Boolean.parseBoolean(line);
             if ((line = reader.readLine()) != null) WeatherVariables.IS_GROUND_WET = Boolean.parseBoolean(line);
+            if ((line = reader.readLine()) != null) CharacterVariables.PERSON_1.SICK_COUNTER = Integer.parseInt(line);
+            if ((line = reader.readLine()) != null) CharacterVariables.PERSON_2.SICK_COUNTER = Integer.parseInt(line);
+            if ((line = reader.readLine()) != null) CharacterVariables.PERSON_3.SICK_COUNTER = Integer.parseInt(line);
+            if ((line = reader.readLine()) != null) CharacterVariables.PERSON_4.SICK_COUNTER = Integer.parseInt(line);
+
+
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

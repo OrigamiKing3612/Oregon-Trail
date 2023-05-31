@@ -8,6 +8,7 @@ public class CharacterVariables {
         public static boolean IS_FORLORN = false;
         public static String MESSAGE = "";
         public static boolean IS_GONE = false;
+        public static int SICK_COUNTER = 0;
 
         public static class STATS {
             public static int MAX_HEALTH = 10;
@@ -33,6 +34,7 @@ public class CharacterVariables {
         public static boolean IS_FORLORN = false;
         public static String MESSAGE = "";
         public static boolean IS_GONE = false;
+        public static int SICK_COUNTER = 0;
 
         public static class STATS {
             public static int MAX_HEALTH = 10;
@@ -59,6 +61,7 @@ public class CharacterVariables {
         public static boolean IS_FORLORN = false;
         public static String MESSAGE = "";
         public static boolean IS_GONE = false;
+        public static int SICK_COUNTER = 0;
 
         public static class STATS {
             public static int MAX_HEALTH = 10;
@@ -85,7 +88,7 @@ public class CharacterVariables {
         public static boolean IS_FORLORN = false;
         public static String MESSAGE = "";
         public static boolean IS_GONE = false;
-
+        public static int SICK_COUNTER = 0;
         public static class STATS {
             public static int MAX_HEALTH = 10;
             public static int MAX_HAPPINESS = 10;

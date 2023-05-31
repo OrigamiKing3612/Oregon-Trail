@@ -22,7 +22,7 @@ public class Day {
             Oregon.win();
         } else {
             final int switcher = rand.nextInt(15); //# of Options
-            SubtractVariables.feed_people();
+            SubtractVariables.subtractVariables();
             Utils.checkIfForlorn();
             Utils.checkIfPersonDead();
             ChooseGame.choose_day(switcher);

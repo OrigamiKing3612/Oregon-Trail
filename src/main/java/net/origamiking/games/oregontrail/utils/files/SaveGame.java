@@ -116,7 +116,10 @@ public class SaveGame {
             writer.write(WeatherVariables.SEVERE + "\n");
             writer.write(WeatherVariables.THUNDERSTORM + "\n");
             writer.write(WeatherVariables.IS_GROUND_WET + "\n");
-            //file vars
+            writer.write(CharacterVariables.PERSON_1.SICK_COUNTER);
+            writer.write(CharacterVariables.PERSON_2.SICK_COUNTER);
+            writer.write(CharacterVariables.PERSON_3.SICK_COUNTER);
+            writer.write(CharacterVariables.PERSON_4.SICK_COUNTER);
 
 
             writer.close();
