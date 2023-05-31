@@ -1,6 +1,7 @@
 package net.origamiking.games.oregontrail;
 
 import net.origamiking.games.oregontrail.gameplay.day.Day;
+import net.origamiking.games.oregontrail.utils.files.DeleteGame;
 import net.origamiking.games.oregontrail.utils.files.LoadGame;
 import net.origamiking.games.oregontrail.utils.files.NewGame;
 import net.origamiking.games.oregontrail.variables.Variables;
@@ -23,30 +24,33 @@ public class OregonTrailMain {
         }
         window = new OregonTrailWindowMain();
         inventoryWindow = new InventoryWindow();
-        OregonTrailMain.println("Welcome to Oregon-Trail by OrigamiKing3612");
-        String[] options = {"Load Game", "New Game"};
-        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Load Game or New Game", JOptionPane.DEFAULT_OPTION,
-                JOptionPane.PLAIN_MESSAGE, null, options, options[1]);
-
-        switch (choice) {
-            case 1 -> NewGame.newGame();
-            case 0 -> LoadGame.loadSaves();
-            default -> throw new IllegalStateException("Unexpected value: " + choice);
-        }
-        for (int d = Variables.DAYS; d < Variables.MAX_DAYS; d++) {
-            Day.day();
-        }
+        start();
     }
 
     public static void println(String string) {
         window.appendTextln(string);
     }
-
     public static void print(String string) {
         window.appendText(string);
     }
     public static boolean isMacOS() {
         String osName = System.getProperty("os.name").toLowerCase();
         return osName.contains("mac");
+    }
+    public static void start() {
+        OregonTrailMain.println("Welcome to Oregon-Trail by OrigamiKing3612");
+        String[] options = {"Delete Save", "Load Game", "New Game"};
+        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Load Game or New Game", JOptionPane.DEFAULT_OPTION,
+                JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
+
+        switch (choice) {
+            case 2 -> NewGame.newGame();
+            case 1 -> LoadGame.loadSaves();
+            case 0 -> DeleteGame.deleteSave();
+            default -> throw new IllegalStateException("Unexpected value: " + choice);
+        }
+        for (int d = Variables.DAYS; d < Variables.MAX_DAYS; d++) {
+            Day.day();
+        }
     }
 }
