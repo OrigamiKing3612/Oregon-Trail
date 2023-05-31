@@ -9,6 +9,7 @@ import java.util.Objects;
 import java.util.Random;
 
 public class Hunting {
+    //TODO redo to let player choose a character (see WagonOnSideOfTrail.java) and move the stuff from Day.java. (All stuff from Hunting.hunt())
     static Random rand = new Random();
     static int upperbound_numbers = 15; // 16 options
     private static int timesHunting = rand.nextInt(5);
