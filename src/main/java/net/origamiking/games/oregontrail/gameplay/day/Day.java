@@ -13,7 +13,7 @@ import javax.swing.*;
 import java.util.Random;
 
 public class Day {
-    static Random rand = new Random();
+    final static Random rand = new Random();
     public static void day() {
         OregonTrailMain.println("Day " + Variables.DAY_NUMBER);
         if (Variables.DAY_NUMBER == 130 || Variables.DAY_NUMBER == 140 || Variables.DAY_NUMBER == 150) {

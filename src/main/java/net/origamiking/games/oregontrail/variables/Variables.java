@@ -3,7 +3,7 @@ package net.origamiking.games.oregontrail.variables;
 import java.util.Random;
 
 public class Variables {
-    static Random rand = new Random();
+    final static Random rand = new Random();
     public static int DAYS = rand.nextInt(124, 156);
     public static int MAX_DAYS = 186;
     public static int COINS = 300;

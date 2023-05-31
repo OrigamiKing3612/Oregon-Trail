@@ -6,7 +6,7 @@ import net.origamiking.games.oregontrail.variables.Variables;
 import java.util.Random;
 
 public class ChooseGame {
-    static Random rand = new Random();
+    final static Random rand = new Random();
     public static void choose_day(int switcher) {
         switch (switcher) {
             case 0, 1 -> Variables.DAY_STUFF = "You have an uneventful day.";

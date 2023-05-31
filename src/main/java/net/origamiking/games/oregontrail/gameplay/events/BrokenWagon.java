@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.util.Random;
 
 public class BrokenWagon {
-    static Random rand = new Random();
+    final static Random rand = new Random();
     public static class Axel {
         public static void axel() {
             if (Variables.AXELS >= 1) {

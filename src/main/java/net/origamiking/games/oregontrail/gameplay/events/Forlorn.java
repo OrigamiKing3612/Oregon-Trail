@@ -6,7 +6,7 @@ import net.origamiking.games.oregontrail.variables.Variables;
 import java.util.Random;
 
 public class Forlorn {
-    static Random rand = new Random();
+    final static Random rand = new Random();
     private static final int switcher = rand.nextInt(4);
     private static String person;
     public static void forlorn() {

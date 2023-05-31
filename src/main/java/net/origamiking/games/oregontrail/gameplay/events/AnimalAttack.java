@@ -7,7 +7,7 @@ import net.origamiking.games.oregontrail.variables.Variables;
 import java.util.Random;
 
 public class AnimalAttack {
-    static Random rand = new Random();
+    final static Random rand = new Random();
     public static void attack() {
         int switcher = rand.nextInt(3);
         switch (switcher) {

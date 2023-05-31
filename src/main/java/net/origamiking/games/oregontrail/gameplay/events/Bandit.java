@@ -5,15 +5,15 @@ import net.origamiking.games.oregontrail.variables.Variables;
 import java.util.Random;
 
 public class Bandit {
-    protected static Random rand = new Random();
+    protected static final Random rand = new Random();
     public static class PACK {
         public static void bandits() {
             throw new RuntimeException("PACK OF BANDITS");
         }
     }
     public static class ONE {
-        static int coins = rand.nextInt(5, 15);
-        static int pounds = rand.nextInt(7, 20);
+        static final int coins = rand.nextInt(5, 15);
+        static final int pounds = rand.nextInt(7, 20);
         public static void bandit() {
             Variables.DAY_STUFF = "A bandit comes and takes some stuff. -" + thing_1() + " Coins, -" + thing_2() + " Pounds of Food, and -" + thing_3() + " Medicine";
         }

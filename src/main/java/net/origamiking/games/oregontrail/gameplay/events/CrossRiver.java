@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.util.Random;
 
 public class CrossRiver {
-    static Random rand = new Random();
+    final static Random rand = new Random();
     private static int FERRY_PRICE = rand.nextInt(50);
     public static int RIVER_DIFFICULTY = 5;
     private static int riverDifficulty = rand.nextInt(5);

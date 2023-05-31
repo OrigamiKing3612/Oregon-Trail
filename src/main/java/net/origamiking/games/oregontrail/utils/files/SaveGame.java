@@ -10,16 +10,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class SaveGame {
-//    public static void set_save_name() {
-//        OregonTrailMain.println("Please name it the same thing it is at the very top.");
-//        FileVariables.SAVE_NAME = JOptionPane.showInputDialog("Please name it the same thing it is at the very top. Please name your game:");
-//        if (FileVariables.SAVE_NAME.equals("")) {
-//            FileVariables.SAVE_NAME = "Oregon-Trail-Save";
-//        }
-////        FileVariables.SAVE_NAME = (save_name != null) ? save_name : "";
-//        OregonTrailMain.println("Your save is named: " + FileVariables.SAVE_NAME);
-//    }
-
     public static void saveGame() {
 //        set_save_name();
         try {

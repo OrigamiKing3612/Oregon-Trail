@@ -9,7 +9,7 @@ import javax.swing.*;
 import java.util.Random;
 
 public class WagonOnSideOfTrail {
-    static Random rand = new Random();
+    final static Random rand = new Random();
     public static void wagonOnSideOfTrail() {
         String person = "";
         boolean go = false;

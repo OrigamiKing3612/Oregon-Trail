@@ -4,11 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class InventoryWindow {
-    private final JFrame frame;
     private final JTextArea textArea;
 
     public InventoryWindow() {
-        frame = new JFrame("Oregon Trail Inventory");
+        JFrame frame = new JFrame("Oregon Trail Inventory");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         textArea = new JTextArea(20, 40);

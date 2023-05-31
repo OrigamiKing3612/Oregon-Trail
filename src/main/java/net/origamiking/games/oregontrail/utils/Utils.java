@@ -7,8 +7,7 @@ import java.util.Objects;
 import java.util.Random;
 
 public class Utils {
-    static Random rand = new Random();
-
+    final static Random rand = new Random();
     public static String returnPersonName(int personNumber) {
         switch (personNumber) {
             case 1 -> {
@@ -97,26 +96,10 @@ public class Utils {
         }
     }
     public static void checkIfForlorn() {
-        if (CharacterVariables.PERSON_1.STATS.HAPPINESS <= 4) {
-            CharacterVariables.PERSON_1.IS_FORLORN = true;
-        } else {
-            CharacterVariables.PERSON_1.IS_FORLORN = false;
-        }
-        if (CharacterVariables.PERSON_2.STATS.HAPPINESS <= 4) {
-            CharacterVariables.PERSON_2.IS_FORLORN = true;
-        } else {
-            CharacterVariables.PERSON_2.IS_FORLORN = false;
-        }
-        if (CharacterVariables.PERSON_3.STATS.HAPPINESS <= 4) {
-            CharacterVariables.PERSON_3.IS_FORLORN = true;
-        } else {
-            CharacterVariables.PERSON_3.IS_FORLORN = false;
-        }
-        if (CharacterVariables.PERSON_4.STATS.HAPPINESS <= 4) {
-            CharacterVariables.PERSON_4.IS_FORLORN = true;
-        } else {
-            CharacterVariables.PERSON_4.IS_FORLORN = false;
-        }
+        CharacterVariables.PERSON_1.IS_FORLORN = CharacterVariables.PERSON_1.STATS.HAPPINESS <= 4;
+        CharacterVariables.PERSON_2.IS_FORLORN = CharacterVariables.PERSON_2.STATS.HAPPINESS <= 4;
+        CharacterVariables.PERSON_3.IS_FORLORN = CharacterVariables.PERSON_3.STATS.HAPPINESS <= 4;
+        CharacterVariables.PERSON_4.IS_FORLORN = CharacterVariables.PERSON_4.STATS.HAPPINESS <= 4;
     }
     public static void checkIfPersonDead() {
         if (CharacterVariables.PERSON_1.STATS.HEALTH <= 0) {

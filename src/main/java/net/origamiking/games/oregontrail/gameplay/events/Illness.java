@@ -7,32 +7,27 @@ import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import java.util.Random;
 
 public class Illness {
-    static Random rand = new Random();
+    final static Random rand = new Random();
     private static final int switcher1 = rand.nextInt(4);
     private static int switcher2 = rand.nextInt(2);
-    private static String person = "";
     public static void illness() {
         pickIllness();
     }
     private static int pickPerson() {
         switch (switcher1) {
             case 0 -> {
-                person = CharacterVariables.PERSON_1.PERSON;
                 CharacterVariables.PERSON_1.IS_SICK = true;
                 return 1;
             }
             case 1 -> {
-                person = CharacterVariables.PERSON_2.PERSON;
                 CharacterVariables.PERSON_2.IS_SICK = true;
                 return 2;
             }
             case 2 -> {
-                person = CharacterVariables.PERSON_3.PERSON;
                 CharacterVariables.PERSON_3.IS_SICK = true;
                 return 3;
             }
             case 3 -> {
-                person = CharacterVariables.PERSON_4.PERSON;
                 CharacterVariables.PERSON_4.IS_SICK = true;
                 return 4;
             }

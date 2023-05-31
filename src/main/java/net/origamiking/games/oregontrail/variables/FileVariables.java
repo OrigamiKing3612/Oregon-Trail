@@ -29,12 +29,5 @@ public class FileVariables {
         }
     }
 
-    //    public static void getFileName() {
-//        File file;
-//        file.getName();
-//    }
-    public static String return_save_name() {
-        return FileVariables.SAVE_NAME;
-    }
     public static void load() {}
 }

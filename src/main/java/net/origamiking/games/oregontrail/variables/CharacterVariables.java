@@ -19,10 +19,6 @@ public class CharacterVariables {
             public static int HAPPINESS = 10;
             public static int STAMINA = 10;
             public static int HYGIENE = 10;
-
-            //            public static int HUNTING = 1; //changes depending on past profession hidden at start
-//            public static int CARPENTRY = 1; //changes depending on past profession hidden at start
-//            public static int MEDICAL = 1; //changes depending on past profession hidden at start
             public static void load() {}
         }
     }
@@ -45,10 +41,6 @@ public class CharacterVariables {
             public static int HAPPINESS = 10;
             public static int STAMINA = 10;
             public static int HYGIENE = 10;
-
-            //            public static int HUNTING = 1; //changes depending on past profession hidden at start
-//            public static int CARPENTRY = 1; //changes depending on past profession hidden at start
-//            public static int MEDICAL = 1; //changes depending on past profession hidden at start
             public static void load() {
             }
         }
@@ -72,10 +64,6 @@ public class CharacterVariables {
             public static int HAPPINESS = 10;
             public static int STAMINA = 10;
             public static int HYGIENE = 10;
-
-            //            public static int HUNTING = 1; //changes depending on past profession hidden at start
-//            public static int CARPENTRY = 1; //changes depending on past profession hidden at start
-//            public static int MEDICAL = 1; //changes depending on past profession hidden at start
             public static void load() {
             }
         }
@@ -98,10 +86,6 @@ public class CharacterVariables {
             public static int HAPPINESS = 10;
             public static int STAMINA = 10;
             public static int HYGIENE = 10;
-
-            //            public static int HUNTING = 1; //changes depending on past profession hidden at start
-//            public static int CARPENTRY = 1; //changes depending on past profession hidden at start
-//            public static int MEDICAL = 1; //changes depending on past profession hidden at start
             public static void load() {
             }
         }

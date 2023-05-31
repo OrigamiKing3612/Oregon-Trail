@@ -6,7 +6,7 @@ import net.origamiking.games.oregontrail.variables.WeatherVariables;
 import java.util.Random;
 
 public class Weather {
-    static Random rand = new Random();
+    final static Random rand = new Random();
     public static void weather() {
         boolean w = rand.nextBoolean();
         if (w) {

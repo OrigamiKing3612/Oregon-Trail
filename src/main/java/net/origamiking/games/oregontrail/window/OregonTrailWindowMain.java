@@ -4,11 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class OregonTrailWindowMain {
-    private final JFrame frame;
     private final JTextArea textArea;
 
     public OregonTrailWindowMain() {
-        frame = new JFrame("Oregon Trail by OrigamiKing3612");
+        JFrame frame = new JFrame("Oregon Trail by OrigamiKing3612");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         textArea = new JTextArea(20, 40);

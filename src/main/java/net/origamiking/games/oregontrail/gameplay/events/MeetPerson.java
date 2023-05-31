@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.util.Random;
 
 public class MeetPerson {
-    static Random rand = new Random();
+    final static Random rand = new Random();
     public static void meetPerson() {
         Variables.DAY_STUFF = "";
         int meetPerson = rand.nextInt(10);
