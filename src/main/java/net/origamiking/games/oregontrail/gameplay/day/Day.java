@@ -6,6 +6,7 @@ import net.origamiking.games.oregontrail.gameplay.events.fort.Fort;
 import net.origamiking.games.oregontrail.gameplay.events.Hunting;
 import net.origamiking.games.oregontrail.utils.MainGameMenu;
 import net.origamiking.games.oregontrail.utils.SubtractVariables;
+import net.origamiking.games.oregontrail.utils.Utils;
 import net.origamiking.games.oregontrail.variables.Variables;
 
 import javax.swing.*;
@@ -20,8 +21,10 @@ public class Day {
         } else if (Variables.DAY_NUMBER >= Variables.MAX_DAYS) {
             Oregon.win();
         } else {
-            final int switcher = rand.nextInt(16); //# of Options
+            final int switcher = rand.nextInt(15); //# of Options
             SubtractVariables.feed_people();
+            Utils.checkIfForlorn();
+            Utils.checkIfPersonDead();
             ChooseGame.choose_day(switcher);
             if (switcher == 2) {
                 OregonTrailMain.println(Variables.DAY_STUFF);

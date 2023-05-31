@@ -8,6 +8,7 @@ import java.util.Random;
 public class ChooseGame {
     static Random rand = new Random();
     public static void choose_day(int switcher) {
+        switcher = 13;
         switch (switcher) {
             case 0, 1 -> Variables.DAY_STUFF = "You have an uneventful day.";
             case 2 -> Variables.DAY_STUFF = "You come to a forest, should someone in your party go hunt?";
@@ -25,12 +26,12 @@ public class ChooseGame {
             case 7 -> MeetPerson.meetPerson();
             case 8 -> Weather.weather();
             case 9 -> Illness.illness();
-            case 10 -> Injuries.injuries();
-            case 11 -> Forlorn.forlorn();
-            case 12 -> Fishing.fish();
-            case 13 -> WagonOnSideOfTrail.wagonOnSideOfTrail();
-            case 14 -> AnimalAttack.attack();
-            case 15 -> Indians.indians();
+//            case 10 -> Injuries.injuries();
+            case 10 -> Forlorn.forlorn();
+            case 11 -> Fishing.fish();
+            case 12 -> WagonOnSideOfTrail.wagonOnSideOfTrail();
+            case 13 -> AnimalAttack.attack();
+            case 14 -> Indians.indians();
         }
     }
 }
