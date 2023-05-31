@@ -36,4 +36,5 @@ public class FileVariables {
     public static String return_save_name() {
         return FileVariables.SAVE_NAME;
     }
+    public static void load() {}
 }

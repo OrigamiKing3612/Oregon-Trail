@@ -49,10 +49,12 @@ public class LoadGame {
                     FileVariables.FILE_NAME = getSaveDirectory() + selectedSave + ".txt";
                     OregonTrailMain.println("Selected save: " + selectedSave);
                 }
+                loadSave();
             }
         }
     }
     public static void loadSave() {
+        Variables.load();
         try (BufferedReader reader = new BufferedReader(new FileReader(FileVariables.FILE_NAME))) {
             String line;
             if ((line = reader.readLine()) != null) Variables.DAYS = Integer.parseInt(line);

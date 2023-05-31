@@ -24,5 +24,9 @@ public class Variables {
     public static int CLOTHES = 0;
     public static int KNIFE = 0;
     public static int COFFEE = 0;
-
+    public static void load() {
+        FileVariables.load();
+        CharacterVariables.load();
+        WeatherVariables.load();
+    }
 }

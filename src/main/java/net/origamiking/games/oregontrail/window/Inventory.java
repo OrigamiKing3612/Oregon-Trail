@@ -5,11 +5,11 @@ import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 
 public class Inventory {
-
     public static void printToWindow() {
         OregonTrailMain.inventoryWindow.clearWindow();
         OregonTrailMain.inventoryWindow.appendTextln("You have:");
         OregonTrailMain.inventoryWindow.appendTextln("Coins: " + Variables.COINS);
+        OregonTrailMain.inventoryWindow.appendTextln("Wagon Type: " + Variables.WAGON_TYPE);
         OregonTrailMain.inventoryWindow.appendTextln("Pounds of Food: " + Variables.POUNDS_OF_FOOD);
         OregonTrailMain.inventoryWindow.appendTextln("Medicine: " + Variables.MEDICINE);
         if (Variables.HAS_GUN) { OregonTrailMain.inventoryWindow.appendTextln("Gun: 1"); } else { OregonTrailMain.inventoryWindow.appendTextln("Gun: None"); }
