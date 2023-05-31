@@ -1,6 +1,7 @@
 package net.origamiking.games.oregontrail.utils;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
+import net.origamiking.games.oregontrail.gameplay.events.Deaths;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 
 import java.util.Random;
@@ -126,14 +127,11 @@ public class Utils {
             CharacterVariables.PERSON_2.IS_FORLORN = false;
         }
         if (CharacterVariables.PERSON_3.STATS.HAPPINESS <= 4) {
-            OregonTrailMain.println(CharacterVariables.PERSON_3.PERSON + " is forlorn.");
             CharacterVariables.PERSON_3.IS_FORLORN = true;
         } else {
-            OregonTrailMain.println(CharacterVariables.PERSON_3.PERSON + " is not forlorn.");
             CharacterVariables.PERSON_3.IS_FORLORN = false;
         }
         if (CharacterVariables.PERSON_4.STATS.HAPPINESS <= 4) {
-            OregonTrailMain.println(CharacterVariables.PERSON_4.PERSON + " is forlorn.");
             CharacterVariables.PERSON_4.IS_FORLORN = true;
         } else {
             OregonTrailMain.println(CharacterVariables.PERSON_4.PERSON + " is not forlorn.");
@@ -142,20 +140,19 @@ public class Utils {
     }
     public static void checkIfPersonDead() {
         if (CharacterVariables.PERSON_1.STATS.HEALTH <= 0) {
-            OregonTrailMain.println(CharacterVariables.PERSON_1.PERSON + " is dead.");
             CharacterVariables.PERSON_1.IS_GONE = true;
         }
         if (CharacterVariables.PERSON_2.STATS.HEALTH <= 0) {
-            OregonTrailMain.println(CharacterVariables.PERSON_2.PERSON + " is dead.");
             CharacterVariables.PERSON_2.IS_GONE = true;
         }
         if (CharacterVariables.PERSON_3.STATS.HEALTH <= 0) {
-            OregonTrailMain.println(CharacterVariables.PERSON_3.PERSON + " is dead.");
             CharacterVariables.PERSON_3.IS_GONE = true;
         }
         if (CharacterVariables.PERSON_4.STATS.HEALTH <= 0) {
-            OregonTrailMain.println(CharacterVariables.PERSON_4.PERSON + " is dead.");
             CharacterVariables.PERSON_4.IS_GONE = true;
+        }
+        if (CharacterVariables.PERSON_1.IS_GONE && CharacterVariables.PERSON_2.IS_GONE && CharacterVariables.PERSON_3.IS_GONE && CharacterVariables.PERSON_4.IS_GONE) {
+            Deaths.everyoneDied();
         }
     }
     public static void die(int personNumber) {

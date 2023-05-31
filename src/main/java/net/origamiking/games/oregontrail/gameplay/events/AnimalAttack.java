@@ -47,7 +47,7 @@ public class AnimalAttack {
         } else {
             int person_dead = Utils.returnPerson();
             String dead = Utils.returnPersonName(person_dead);
-            OregonTrailMain.println("Suddenly a bear jumps out and attacks " + personName + ". You dont have any bullets so everyone tries to punch the bear. In the process, " + dead + " dies.");
+            OregonTrailMain.println("Suddenly a bear jumps out and attacks " + dead + ". You dont have any bullets so everyone tries to punch the bear. In the process, " + dead + " dies.");
             Utils.subStamina(1, 2);
             Utils.subStamina(2, 2);
             Utils.subStamina(3, 2);

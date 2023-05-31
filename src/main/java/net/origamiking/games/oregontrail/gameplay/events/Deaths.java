@@ -27,4 +27,8 @@ public class Deaths {
     public static void inians() {
         End.end();
     }
+    public static void everyoneDied() {
+        OregonTrailMain.println("Everyone in your party died.");
+        End.end();
+    }
 }
