@@ -3,13 +3,11 @@ package net.origamiking.games.oregontrail.gameplay.day;
 import net.origamiking.games.oregontrail.OregonTrailMain;
 import net.origamiking.games.oregontrail.gameplay.events.Oregon;
 import net.origamiking.games.oregontrail.gameplay.events.fort.Fort;
-import net.origamiking.games.oregontrail.gameplay.events.Hunting;
 import net.origamiking.games.oregontrail.utils.MainGameMenu;
 import net.origamiking.games.oregontrail.utils.SubtractVariables;
 import net.origamiking.games.oregontrail.utils.Utils;
 import net.origamiking.games.oregontrail.variables.Variables;
 
-import javax.swing.*;
 import java.util.Random;
 
 public class Day {
@@ -26,23 +24,6 @@ public class Day {
             Utils.checkIfForlorn();
             Utils.checkIfPersonDead();
             ChooseGame.choose_day(switcher);
-            if (switcher == 2) {
-                OregonTrailMain.println(Variables.DAY_STUFF);
-                String[] options = {"No", "Yes"};
-
-                int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "You come to a forest, should someone in your party go hunt?", JOptionPane.DEFAULT_OPTION,
-                        JOptionPane.PLAIN_MESSAGE, null, options, null);
-                switch (choice) {
-                    case 1 -> {
-                        if (Variables.BULLETS >= 2) {
-                            Hunting.hunt();
-                        } else {
-                            Variables.DAY_STUFF = "You dont have enough bullets to hunt.";
-                        }
-                    }
-                    case 0 -> Variables.DAY_STUFF = "You come to a forest; you pass it.";
-                }
-            }
             MainGameMenu.mainGameMenu(Variables.DAY_STUFF);
             Variables.DAY_NUMBER++;
         }
