@@ -13,7 +13,10 @@ public class End {
                 JOptionPane.PLAIN_MESSAGE, null, options, null);
         switch (choice) {
             case 0 -> System.exit(0);
-            case 1 -> OregonTrailMain.start();
+            case 1 -> {
+                OregonTrailMain.oregonTrailWindowMain.clearWindow();
+                OregonTrailMain.start();
+            }
         }
     }
 }

@@ -33,6 +33,8 @@ public class Inventory {
             OregonTrailMain.inventoryWindow.appendTextln("   Happiness: " + CharacterVariables.PERSON_1.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HAPPINESS);
             OregonTrailMain.inventoryWindow.appendTextln("   Hygiene: " + CharacterVariables.PERSON_1.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HYGIENE);
             OregonTrailMain.inventoryWindow.appendTextln("");
+        } else {
+            OregonTrailMain.inventoryWindow.appendTextln(CharacterVariables.PERSON_1.PERSON + " is dead.");
         }
         if (!CharacterVariables.PERSON_2.IS_GONE) {
             show_person(CharacterVariables.PERSON_2.PERSON, CharacterVariables.PERSON_2.IS_FORLORN, CharacterVariables.PERSON_2.IS_SICK, CharacterVariables.PERSON_2.SICK_WITH);
@@ -41,6 +43,8 @@ public class Inventory {
             OregonTrailMain.inventoryWindow.appendTextln("   Happiness: " + CharacterVariables.PERSON_2.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HAPPINESS);
             OregonTrailMain.inventoryWindow.appendTextln("   Hygiene: " + CharacterVariables.PERSON_2.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HYGIENE);
             OregonTrailMain.inventoryWindow.appendTextln("");
+        } else {
+            OregonTrailMain.inventoryWindow.appendTextln(CharacterVariables.PERSON_2.PERSON + " is dead.");
         }
         if (!CharacterVariables.PERSON_3.IS_GONE) {
             show_person(CharacterVariables.PERSON_3.PERSON, CharacterVariables.PERSON_3.IS_FORLORN, CharacterVariables.PERSON_3.IS_SICK, CharacterVariables.PERSON_3.SICK_WITH);
@@ -49,6 +53,8 @@ public class Inventory {
             OregonTrailMain.inventoryWindow.appendTextln("   Happiness: " + CharacterVariables.PERSON_3.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HAPPINESS);
             OregonTrailMain.inventoryWindow.appendTextln("   Hygiene: " + CharacterVariables.PERSON_3.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HYGIENE);
             OregonTrailMain.inventoryWindow.appendTextln("");
+        } else {
+            OregonTrailMain.inventoryWindow.appendTextln(CharacterVariables.PERSON_3.PERSON + " is dead.");
         }
         if (!CharacterVariables.PERSON_4.IS_GONE) {
             show_person(CharacterVariables.PERSON_4.PERSON, CharacterVariables.PERSON_4.IS_FORLORN, CharacterVariables.PERSON_4.IS_SICK, CharacterVariables.PERSON_4.SICK_WITH);
@@ -57,6 +63,8 @@ public class Inventory {
             OregonTrailMain.inventoryWindow.appendTextln("   Happiness: " + CharacterVariables.PERSON_4.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HAPPINESS);
             OregonTrailMain.inventoryWindow.appendTextln("   Hygiene: " + CharacterVariables.PERSON_4.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HYGIENE);
             OregonTrailMain.inventoryWindow.appendTextln("");
+        } else {
+            OregonTrailMain.inventoryWindow.appendTextln(CharacterVariables.PERSON_4.PERSON + " is dead.");
         }
     }
     private static void displayForlorn(Boolean p_is_forlorn) {

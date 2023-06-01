@@ -28,7 +28,7 @@ public class InventoryWindow {
         textArea.setBackground(Color.BLACK);
         frame.setBackground(Color.BLACK);
 
-        frame.setSize(300, 1000);
+        frame.setSize(400, 1000);
         frame.setVisible(true);
     }
 

@@ -9,14 +9,15 @@ import javax.swing.*;
 
 public class UseStuff {
     public static void useMedicine() {
+        OregonTrailMain.println("You can heal:");
         if (CharacterVariables.PERSON_1.IS_SICK) {
-            OregonTrailMain.println("1. Heal " + CharacterVariables.PERSON_1.PERSON);
+            OregonTrailMain.println(CharacterVariables.PERSON_1.PERSON);
         } else if (CharacterVariables.PERSON_2.IS_SICK) {
-            OregonTrailMain.println("2. Heal " + CharacterVariables.PERSON_2.PERSON);
+            OregonTrailMain.println(CharacterVariables.PERSON_2.PERSON);
         } else if (CharacterVariables.PERSON_3.IS_SICK) {
-            OregonTrailMain.println("3. Heal " + CharacterVariables.PERSON_3.PERSON);
+            OregonTrailMain.println(CharacterVariables.PERSON_3.PERSON);
         } else if (CharacterVariables.PERSON_4.IS_SICK) {
-            OregonTrailMain.println("4. Heal " + CharacterVariables.PERSON_4.PERSON);
+            OregonTrailMain.println(CharacterVariables.PERSON_4.PERSON);
         } else {
             OregonTrailMain.println("No one is sick.");
         }
@@ -180,7 +181,7 @@ public class UseStuff {
         }
     }
     private static void p4_m() {
-        if (CharacterVariables.PERSON_3.SICK_WITH.equalsIgnoreCase("dysentery")) {
+        if (CharacterVariables.PERSON_4.SICK_WITH.equalsIgnoreCase("dysentery")) {
             OregonTrailMain.println("This takes 2 Medicine. Use Medicine Y/N");
             String[] options = {"No", "Yes"};
 
@@ -189,9 +190,9 @@ public class UseStuff {
             switch (choice) {
                 case 1 -> {
                     if (Variables.MEDICINE >= 2) {
-                        OregonTrailMain.println("-2 Medicine\n" + CharacterVariables.PERSON_3.PERSON + " is now better.");
-                        CharacterVariables.PERSON_3.SICK_WITH = "";
-                        CharacterVariables.PERSON_3.IS_SICK = false;
+                        OregonTrailMain.println("-2 Medicine\n" + CharacterVariables.PERSON_4.PERSON + " is now better.");
+                        CharacterVariables.PERSON_4.SICK_WITH = "";
+                        CharacterVariables.PERSON_4.IS_SICK = false;
                         Variables.MEDICINE = Variables.MEDICINE - 2;
                     } else {
                         OregonTrailMain.println("You dont have enough medicine.");
@@ -199,7 +200,7 @@ public class UseStuff {
                 }
                 case 0 -> {}
             }
-        } else if (CharacterVariables.PERSON_3.SICK_WITH.equalsIgnoreCase("fever")) {
+        } else if (CharacterVariables.PERSON_4.SICK_WITH.equalsIgnoreCase("fever")) {
             OregonTrailMain.println("This takes 1 Medicine. Use Medicine Y/N");
             String[] options = {"No", "Yes"};
 
@@ -208,9 +209,9 @@ public class UseStuff {
             switch (choice) {
                 case 1 -> {
                     if (Variables.MEDICINE >= 1) {
-                        OregonTrailMain.println("-1 Medicine\n" + CharacterVariables.PERSON_3.PERSON + " is now better.");
-                        CharacterVariables.PERSON_3.SICK_WITH = "";
-                        CharacterVariables.PERSON_3.IS_SICK = false;
+                        OregonTrailMain.println("-1 Medicine\n" + CharacterVariables.PERSON_4.PERSON + " is now better.");
+                        CharacterVariables.PERSON_4.SICK_WITH = "";
+                        CharacterVariables.PERSON_4.IS_SICK = false;
                         Variables.MEDICINE--;
                     } else {
                         OregonTrailMain.println("You dont have enough medicine.");

@@ -8,7 +8,9 @@ public class Bandit {
     protected static final Random rand = new Random();
     public static class PACK {
         public static void bandits() {
-            throw new RuntimeException("PACK OF BANDITS");
+            //TODO Pack of Bandits
+            ONE.bandit();
+//            throw new RuntimeException("PACK OF BANDITS");
         }
     }
     public static class ONE {

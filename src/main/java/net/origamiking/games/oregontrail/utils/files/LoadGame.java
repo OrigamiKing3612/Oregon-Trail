@@ -1,6 +1,7 @@
 package net.origamiking.games.oregontrail.utils.files;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
+import net.origamiking.games.oregontrail.utils.Utils;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.FileVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
@@ -29,7 +30,7 @@ public class LoadGame {
                     }
                 }
 
-                String[] options = new String[fileCount];
+                String[] options = new String[fileCount + 1]; // Increase the array size to accommodate the "Back" option
                 int index = 0;
 
                 for (File file : files) {
@@ -41,13 +42,17 @@ public class LoadGame {
                     }
                 }
 
+                options[fileCount] = "Back";
+                Utils.reverseArray(options);
                 int choice = JOptionPane.showOptionDialog(null, "Pick a save:", "Saves", JOptionPane.DEFAULT_OPTION,
                         JOptionPane.PLAIN_MESSAGE, null, options, null);
-                if (choice >= 0 && choice < options.length) {
+                if (choice >= 0 && choice < options.length - 1) {
                     String selectedSave = options[choice];
                     FileVariables.SAVE_NAME = String.valueOf(selectedSave);
                     FileVariables.FILE_NAME = getSaveDirectory() + selectedSave + ".txt";
                     OregonTrailMain.println("Selected save: " + selectedSave);
+                } else {
+                    OregonTrailMain.start();
                 }
                 loadSave();
             }

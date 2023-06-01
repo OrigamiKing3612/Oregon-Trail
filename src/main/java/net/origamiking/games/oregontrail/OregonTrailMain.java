@@ -12,7 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class OregonTrailMain {
-    private static OregonTrailWindowMain window;
+    public static OregonTrailWindowMain oregonTrailWindowMain;
     public static InventoryWindow inventoryWindow;
     public static void main(String[] args) {
         if (isMacOS()) {
@@ -23,25 +23,27 @@ public class OregonTrailMain {
             System.setProperty("apple.awt.showGrowBox", "true");
         }
         setColors();
-        window = new OregonTrailWindowMain();
+        oregonTrailWindowMain = new OregonTrailWindowMain();
         inventoryWindow = new InventoryWindow();
+        OregonTrailMain.println("Welcome to Oregon-Trail by OrigamiKing3612");
         start();
     }
     public static void println(String string) {
-        window.appendTextln(string);
+        oregonTrailWindowMain.appendTextln(string);
     }
     public static void print(String string) {
-        window.appendText(string);
+        oregonTrailWindowMain.appendText(string);
     }
     public static boolean isMacOS() {
         String osName = System.getProperty("os.name").toLowerCase();
         return osName.contains("mac");
     }
     public static void start() {
-        OregonTrailMain.println("Welcome to Oregon-Trail by OrigamiKing3612");
+        // TODO Add a leave/back to Delete Save and shop
+        // TODO make the harmonica Work
+        // TODO if person is dead, they still show up on options
         String[] options = {"Delete Save", "Load Game", "New Game"};
-        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Load Game or New Game", JOptionPane.DEFAULT_OPTION,
-                JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
+        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Load Game, New Game, or Delete Save", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
 
         switch (choice) {
             case 2 -> NewGame.newGame();

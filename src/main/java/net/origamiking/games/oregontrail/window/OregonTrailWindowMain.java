@@ -41,4 +41,7 @@ public class OregonTrailWindowMain {
         textArea.append(text);
         textArea.setCaretPosition(textArea.getDocument().getLength());
     }
+    public void clearWindow() {
+        textArea.setText("");
+    }
 }
