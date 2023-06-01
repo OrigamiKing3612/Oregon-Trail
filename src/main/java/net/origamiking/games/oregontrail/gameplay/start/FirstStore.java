@@ -26,13 +26,13 @@ public class FirstStore {
         }
     }
     private static void misc() {
-        String[] options = {"Coffee, 5 Coins", "Clothes, 7 Coins", "Harmonica, 5 Coins", "Knife, 20 Coins"};
+        String[] options = {"Back ","Coffee, 5 Coins", "Clothes, 7 Coins", "Harmonica, 5 Coins", "Knife, 20 Coins"};
 
         int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Misc", JOptionPane.DEFAULT_OPTION,
                 JOptionPane.PLAIN_MESSAGE, null, options, null);
 
         switch (choice) {
-            case 3 -> {
+            case 4 -> {
                 if (Variables.COINS >= 20) {
                     Variables.COINS = Variables.COINS - 20;
                     Variables.KNIFE++;
@@ -41,7 +41,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 2 -> {
+            case 3 -> {
                 if (Variables.COINS >= 5) {
                     Variables.COINS = Variables.COINS - 5;
                     Variables.HARMONICA++;
@@ -50,7 +50,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 1 -> {
+            case 2 -> {
                 if (Variables.COINS >= 7) {
                     Variables.COINS = Variables.COINS - 7;
                     Variables.CLOTHES++;
@@ -59,7 +59,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 0 -> {
+            case 1 -> {
                 if (Variables.COINS >= 5) {
                     Variables.COINS = Variables.COINS - 5;
                     Variables.COFFEE++;
@@ -68,16 +68,17 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
+            case 0 -> {}
         }
         firstStore();
     }
     private static void wagons() {
-        String[] options = {"Wagon Tongue, 8 Coins", "Wagon Wheel, 7 Coins", "Wagon Axel, 10 Coins", "Master's Wagon, 150 Coins", "Big Wagon, 100 Coins", "Medium Wagon, 75 Coins", "Small Wagon, 50 Coins"};
+        String[] options = {"Back","Wagon Tongue, 8 Coins", "Wagon Wheel, 7 Coins", "Wagon Axel, 10 Coins", "Master's Wagon, 150 Coins", "Big Wagon, 100 Coins", "Medium Wagon, 75 Coins", "Small Wagon, 50 Coins"};
 
         int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Wagons and Wagon Supplies", JOptionPane.DEFAULT_OPTION,
                 JOptionPane.PLAIN_MESSAGE, null, options, null);
         switch (choice) {
-            case 6 -> {
+            case 7 -> {
                 if (Variables.COINS >= 50) {
                     Variables.COINS = Variables.COINS - 50;
                     Variables.WAGON_TYPE = "Small Wagon";
@@ -87,7 +88,7 @@ public class FirstStore {
                 }
 
             }
-            case 5 -> {
+            case 6 -> {
                 if (Variables.COINS >= 75) {
                     Variables.COINS = Variables.COINS - 75;
                     Variables.WAGON_TYPE = "Medium Wagon";
@@ -96,7 +97,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 4 -> {
+            case 5 -> {
                 if (Variables.COINS >= 100) {
                     Variables.COINS = Variables.COINS - 100;
                     Variables.WAGON_TYPE = "Big Wagon";
@@ -105,7 +106,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 3 -> {
+            case 4 -> {
                 if (Variables.COINS >= 150) {
                     Variables.COINS = Variables.COINS - 150;
                     Variables.WAGON_TYPE = "Master's Wagon";
@@ -114,7 +115,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 2 -> {
+            case 3 -> {
                 if (Variables.COINS >= 10) {
                     Variables.COINS = Variables.COINS - 10;
                     Variables.AXELS++;
@@ -123,7 +124,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 1 -> {
+            case 2 -> {
                 if (Variables.COINS >= 7) {
                     Variables.COINS = Variables.COINS - 7;
                     Variables.WHEELS++;
@@ -132,7 +133,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 0 -> {
+            case 1 -> {
                 if (Variables.COINS >= 8) {
                     Variables.COINS = Variables.COINS - 8;
                     Variables.TONGUES++;
@@ -141,16 +142,17 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
+            case 0 -> {}
         }
         firstStore();
     }
     private static void food() {
-        String[] options = {"160 Pounds of Flour, 40 Coins", "5 Bacon, 20 Coins", "40 Pounds of Meat, 10 Coins", "4 Packs of Berries, 1 Coins"};
+        String[] options = {"Back", "160 Pounds of Flour, 40 Coins", "5 Bacon, 20 Coins", "40 Pounds of Meat, 10 Coins", "4 Packs of Berries, 1 Coins"};
 
         int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Food", JOptionPane.DEFAULT_OPTION,
                 JOptionPane.PLAIN_MESSAGE, null, options, null);
         switch (choice) {
-            case 3 -> {
+            case 4 -> {
                 if (Variables.COINS >= 1) {
                     Variables.COINS = Variables.COINS - 1;
                     Variables.POUNDS_OF_FOOD = Variables.POUNDS_OF_FOOD + 4f;
@@ -159,7 +161,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 2 -> {
+            case 3 -> {
                 if (Variables.COINS >= 10) {
                     Variables.COINS = Variables.COINS - 10;
                     Variables.POUNDS_OF_FOOD = Variables.POUNDS_OF_FOOD + 40f;
@@ -168,7 +170,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 1 -> {
+            case 2 -> {
                 if (Variables.COINS >= 20) {
                     Variables.COINS = Variables.COINS - 20;
                     Variables.POUNDS_OF_FOOD = Variables.POUNDS_OF_FOOD + 5f;
@@ -177,7 +179,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 0 -> {
+            case 1 -> {
                 if (Variables.COINS >= 40) {
                     Variables.COINS = Variables.COINS - 40;
                     Variables.POUNDS_OF_FOOD = Variables.POUNDS_OF_FOOD + 160f;
@@ -186,16 +188,17 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
+            case 0 -> {}
         }
         firstStore();
     }
     private static void ammunition_shop() {
-        String[] options = {"50 Bullets, 75 Coins", "20 Bullets, 30 Coins", "10 Bullets, 15 Coins"};
+        String[] options = {"Back", "50 Bullets, 75 Coins", "20 Bullets, 30 Coins", "10 Bullets, 15 Coins"};
 
         int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Ammunition Shop", JOptionPane.DEFAULT_OPTION,
                 JOptionPane.PLAIN_MESSAGE, null, options, null);
         switch (choice) {
-            case 2 -> {
+            case 3 -> {
                 if (Variables.COINS >= 15) {
                     Variables.COINS = Variables.COINS - 15;
                     Variables.BULLETS = Variables.BULLETS + 10;
@@ -204,7 +207,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 1 -> {
+            case 2 -> {
                 if (Variables.COINS >= 30) {
                     Variables.COINS = Variables.COINS - 30;
                     Variables.BULLETS = Variables.BULLETS + 20;
@@ -213,7 +216,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 0 -> {
+            case 1 -> {
                 if (Variables.COINS >= 75) {
                     Variables.COINS = Variables.COINS - 75;
                     Variables.BULLETS = Variables.BULLETS + 50;
@@ -222,16 +225,17 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
+            case 0 -> {}
         }
         firstStore();
     }
     private static void pharmacy() {
-        String[] options = {"2 Medicine, 60 Coins", "1 Medicine, 30 Coins"};
+        String[] options = {"Back","2 Medicine, 60 Coins", "1 Medicine, 30 Coins"};
 
         int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Pharmacy", JOptionPane.DEFAULT_OPTION,
                 JOptionPane.PLAIN_MESSAGE, null, options, null);
         switch (choice) {
-            case 1 -> {
+            case 2 -> {
                 if (Variables.COINS >= 30) {
                     Variables.COINS = Variables.COINS - 30;
                     Variables.MEDICINE = Variables.MEDICINE + 1;
@@ -240,7 +244,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
-            case 0 -> {
+            case 1 -> {
                 if (Variables.COINS >= 60) {
                     Variables.COINS = Variables.COINS - 60;
                     Variables.MEDICINE = Variables.MEDICINE + 2;
@@ -249,6 +253,7 @@ public class FirstStore {
                     OregonTrailMain.println("You dont have enough coins.");
                 }
             }
+            case 0 -> {}
         }
         firstStore();
     }
