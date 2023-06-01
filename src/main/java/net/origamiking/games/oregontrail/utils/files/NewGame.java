@@ -5,6 +5,7 @@ import net.origamiking.games.oregontrail.gameplay.start.ChooseCharacters;
 import net.origamiking.games.oregontrail.gameplay.start.FirstStore;
 import net.origamiking.games.oregontrail.variables.FileVariables;
 import net.origamiking.games.oregontrail.window.Inventory;
+import net.origamiking.games.oregontrail.window.InventoryWindow;
 
 import javax.swing.*;
 
@@ -25,6 +26,7 @@ public class NewGame {
         OregonTrailMain.println("This is a text based game.");
         OregonTrailMain.println("Your goal is to get to Oregon before winter.");
         ChooseCharacters.choose_characters();
+        OregonTrailMain.inventoryWindow = new InventoryWindow();
         Inventory.printToWindow();
         FirstStore.firstStore();
         OregonTrailMain.println("Its May 1st\nYou leave for Oregon Tomorrow...");

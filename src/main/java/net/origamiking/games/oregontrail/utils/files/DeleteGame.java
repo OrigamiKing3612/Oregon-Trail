@@ -1,6 +1,7 @@
 package net.origamiking.games.oregontrail.utils.files;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
+import net.origamiking.games.oregontrail.utils.Utils;
 import net.origamiking.games.oregontrail.variables.FileVariables;
 
 import javax.swing.*;
@@ -21,7 +22,7 @@ public class DeleteGame {
                     }
                 }
 
-                String[] options = new String[fileCount];
+                String[] options = new String[fileCount + 1];
                 int index = 0;
 
                 for (File file : files) {
@@ -32,17 +33,19 @@ public class DeleteGame {
                         index++;
                     }
                 }
-
+                options[fileCount] = "Back";
+                Utils.reverseArray(options);
                 int choice = JOptionPane.showOptionDialog(null, "Pick a save:", "Saves", JOptionPane.DEFAULT_OPTION,
                         JOptionPane.PLAIN_MESSAGE, null, options, null);
-                if (choice >= 0 && choice < options.length) {
+                if (choice >= 0 && choice < options.length - 1) {
                     File selectedFile = files[choice];
-
                     if (selectedFile.delete()) {
                         System.out.println("Save deleted successfully: " + selectedFile.getName());
                     } else {
                         System.out.println("Failed to delete the save: " + selectedFile.getName());
                     }
+                } else {
+                    OregonTrailMain.start();
                 }
             }
         }

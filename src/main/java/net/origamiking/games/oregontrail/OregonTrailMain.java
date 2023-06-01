@@ -14,6 +14,7 @@ import java.awt.*;
 public class OregonTrailMain {
     public static OregonTrailWindowMain oregonTrailWindowMain;
     public static InventoryWindow inventoryWindow;
+    public static boolean game = false;
     public static void main(String[] args) {
         if (isMacOS()) {
             System.setProperty("apple.awt.application.name", "Oregon Trail By: OrigamiKing3612");
@@ -24,8 +25,8 @@ public class OregonTrailMain {
         }
         setColors();
         oregonTrailWindowMain = new OregonTrailWindowMain();
-        inventoryWindow = new InventoryWindow();
         OregonTrailMain.println("Welcome to Oregon-Trail by OrigamiKing3612");
+        game = false;
         start();
     }
     public static void println(String string) {
@@ -42,15 +43,20 @@ public class OregonTrailMain {
         // TODO Add a leave/back to Delete Save and shop
         // TODO make the harmonica Work
         // TODO if person is dead, they still show up on options
-        String[] options = {"Delete Save", "Load Game", "New Game"};
-        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Load Game, New Game, or Delete Save", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[2]);
+        String[] options = {"Quit", "Delete Save", "Load Game", "New Game"};
+        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Load Game, New Game, or Delete Save", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[3]);
 
         switch (choice) {
-            case 2 -> NewGame.newGame();
-            case 1 -> LoadGame.loadSaves();
-            case 0 -> DeleteGame.deleteSave();
+            case 3 -> NewGame.newGame();
+            case 2 -> {
+                inventoryWindow = new InventoryWindow();
+                LoadGame.loadSaves();
+            }
+            case 1 -> DeleteGame.deleteSave();
+            case 0 -> System.exit(0);
             default -> throw new IllegalStateException("Unexpected value: " + choice);
         }
+
         for (int d = Variables.DAYS; d < Variables.MAX_DAYS; d++) {
             Day.day();
         }

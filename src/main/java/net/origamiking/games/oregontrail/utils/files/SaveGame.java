@@ -10,114 +10,119 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class SaveGame {
+    public static FileWriter writer;
     public static void saveGame() {
-//        set_save_name();
         try {
             File directory = new File(FileVariables.SAVES_DIRECTORY);
             if (!directory.exists()) {
                 directory.mkdirs();
             }
-            FileWriter writer = new FileWriter(FileVariables.FILE_NAME);
+            writer = new FileWriter(FileVariables.FILE_NAME);
             //normal vars
-            writer.write(Variables.DAYS + "\n");
-            writer.write(Variables.MAX_DAYS + "\n");
-            writer.write(Variables.COINS + "\n");
-            writer.write(Variables.DAY_NUMBER + "\n");
-            writer.write(Variables.WAGON_TYPE + "\n");
-            writer.write(Variables.POUNDS_OF_FOOD + "\n");
-            writer.write(Variables.HAS_GUN + "\n");
-            writer.write(Variables.BULLETS + "\n");
-            writer.write(Variables.MEDICINE + "\n");
-            writer.write(Variables.DAY_STUFF + "\n");
-            writer.write(Variables.RATIONS_PER_PERSON + "\n");
-            writer.write(Variables.OUT_OF_FOOD_COUNTER + "\n");
-            writer.write(Variables.PERSON_COUNTER + "\n");
-            writer.write(Variables.AXELS + "\n");
-            writer.write(Variables.WHEELS + "\n");
-            writer.write(Variables.TONGUES + "\n");
-            writer.write(Variables.HARMONICA + "\n");
-            writer.write(Variables.CLOTHES + "\n");
-            writer.write(Variables.KNIFE + "\n");
-            writer.write(Variables.COFFEE + "\n");
+            write(Variables.DAYS);
+            write(Variables.MAX_DAYS);
+            write(Variables.COINS);
+            write(Variables.DAY_NUMBER);
+            write(Variables.WAGON_TYPE);
+            write(Variables.POUNDS_OF_FOOD);
+            write(Variables.HAS_GUN);
+            write(Variables.BULLETS);
+            write(Variables.MEDICINE);
+            write(Variables.DAY_STUFF);
+            write(Variables.RATIONS_PER_PERSON);
+            write(Variables.OUT_OF_FOOD_COUNTER);
+            write(Variables.PERSON_COUNTER);
+            write(Variables.AXELS);
+            write(Variables.WHEELS);
+            write(Variables.TONGUES);
+            write(Variables.HARMONICA);
+            write(Variables.CLOTHES);
+            write(Variables.KNIFE);
+            write(Variables.COFFEE);
             // character vars
             // p1
-            writer.write(CharacterVariables.PERSON_1.PERSON + "\n");
-            writer.write(CharacterVariables.PERSON_1.IS_SICK + "\n");
-            writer.write(CharacterVariables.PERSON_1.SICK_WITH + "\n");
-            writer.write(CharacterVariables.PERSON_1.IS_FORLORN + "\n");
-            writer.write(CharacterVariables.PERSON_1.MESSAGE + "\n");
-            writer.write(CharacterVariables.PERSON_1.IS_GONE + "\n");
-            writer.write(CharacterVariables.PERSON_1.STATS.MAX_HEALTH + "\n");
-            writer.write(CharacterVariables.PERSON_1.STATS.MAX_HAPPINESS + "\n");
-            writer.write(CharacterVariables.PERSON_1.STATS.MAX_STAMINA + "\n");
-            writer.write(CharacterVariables.PERSON_1.STATS.MAX_HYGIENE + "\n");
-            writer.write(CharacterVariables.PERSON_1.STATS.HEALTH + "\n");
-            writer.write(CharacterVariables.PERSON_1.STATS.HAPPINESS + "\n");
-            writer.write(CharacterVariables.PERSON_1.STATS.STAMINA + "\n");
-            writer.write(CharacterVariables.PERSON_1.STATS.HYGIENE + "\n");
+            write(CharacterVariables.PERSON_1.PERSON);
+            write(CharacterVariables.PERSON_1.IS_SICK);
+            write(CharacterVariables.PERSON_1.SICK_WITH);
+            write(CharacterVariables.PERSON_1.IS_FORLORN);
+            write(CharacterVariables.PERSON_1.MESSAGE);
+            write(CharacterVariables.PERSON_1.IS_GONE);
+            write(CharacterVariables.PERSON_1.STATS.MAX_HEALTH);
+            write(CharacterVariables.PERSON_1.STATS.MAX_HAPPINESS);
+            write(CharacterVariables.PERSON_1.STATS.MAX_STAMINA);
+            write(CharacterVariables.PERSON_1.STATS.MAX_HYGIENE);
+            write(CharacterVariables.PERSON_1.STATS.HEALTH);
+            write(CharacterVariables.PERSON_1.STATS.HAPPINESS);
+            write(CharacterVariables.PERSON_1.STATS.STAMINA);
+            write(CharacterVariables.PERSON_1.STATS.HYGIENE);
             // p2
-            writer.write(CharacterVariables.PERSON_2.PERSON + "\n");
-            writer.write(CharacterVariables.PERSON_2.IS_SICK + "\n");
-            writer.write(CharacterVariables.PERSON_2.SICK_WITH + "\n");
-            writer.write(CharacterVariables.PERSON_2.IS_FORLORN + "\n");
-            writer.write(CharacterVariables.PERSON_2.MESSAGE + "\n");
-            writer.write(CharacterVariables.PERSON_2.IS_GONE + "\n");
-            writer.write(CharacterVariables.PERSON_2.STATS.MAX_HEALTH + "\n");
-            writer.write(CharacterVariables.PERSON_2.STATS.MAX_HAPPINESS + "\n");
-            writer.write(CharacterVariables.PERSON_2.STATS.MAX_STAMINA + "\n");
-            writer.write(CharacterVariables.PERSON_2.STATS.MAX_HYGIENE + "\n");
-            writer.write(CharacterVariables.PERSON_2.STATS.HEALTH + "\n");
-            writer.write(CharacterVariables.PERSON_2.STATS.HAPPINESS + "\n");
-            writer.write(CharacterVariables.PERSON_2.STATS.STAMINA + "\n");
-            writer.write(CharacterVariables.PERSON_2.STATS.HYGIENE + "\n");
+            write(CharacterVariables.PERSON_2.PERSON);
+            write(CharacterVariables.PERSON_2.IS_SICK);
+            write(CharacterVariables.PERSON_2.SICK_WITH);
+            write(CharacterVariables.PERSON_2.IS_FORLORN);
+            write(CharacterVariables.PERSON_2.MESSAGE);
+            write(CharacterVariables.PERSON_2.IS_GONE);
+            write(CharacterVariables.PERSON_2.STATS.MAX_HEALTH);
+            write(CharacterVariables.PERSON_2.STATS.MAX_HAPPINESS);
+            write(CharacterVariables.PERSON_2.STATS.MAX_STAMINA);
+            write(CharacterVariables.PERSON_2.STATS.MAX_HYGIENE);
+            write(CharacterVariables.PERSON_2.STATS.HEALTH);
+            write(CharacterVariables.PERSON_2.STATS.HAPPINESS);
+            write(CharacterVariables.PERSON_2.STATS.STAMINA);
+            write(CharacterVariables.PERSON_2.STATS.HYGIENE);
             // p3
-            writer.write(CharacterVariables.PERSON_3.PERSON + "\n");
-            writer.write(CharacterVariables.PERSON_3.IS_SICK + "\n");
-            writer.write(CharacterVariables.PERSON_3.SICK_WITH + "\n");
-            writer.write(CharacterVariables.PERSON_3.IS_FORLORN + "\n");
-            writer.write(CharacterVariables.PERSON_3.MESSAGE + "\n");
-            writer.write(CharacterVariables.PERSON_3.IS_GONE + "\n");
-            writer.write(CharacterVariables.PERSON_3.STATS.MAX_HEALTH + "\n");
-            writer.write(CharacterVariables.PERSON_3.STATS.MAX_HAPPINESS + "\n");
-            writer.write(CharacterVariables.PERSON_3.STATS.MAX_STAMINA + "\n");
-            writer.write(CharacterVariables.PERSON_3.STATS.MAX_HYGIENE + "\n");
-            writer.write(CharacterVariables.PERSON_3.STATS.HEALTH + "\n");
-            writer.write(CharacterVariables.PERSON_3.STATS.HAPPINESS + "\n");
-            writer.write(CharacterVariables.PERSON_3.STATS.STAMINA + "\n");
-            writer.write(CharacterVariables.PERSON_3.STATS.HYGIENE + "\n");
+            write(CharacterVariables.PERSON_3.PERSON);
+            write(CharacterVariables.PERSON_3.IS_SICK);
+            write(CharacterVariables.PERSON_3.SICK_WITH);
+            write(CharacterVariables.PERSON_3.IS_FORLORN);
+            write(CharacterVariables.PERSON_3.MESSAGE);
+            write(CharacterVariables.PERSON_3.IS_GONE);
+            write(CharacterVariables.PERSON_3.STATS.MAX_HEALTH);
+            write(CharacterVariables.PERSON_3.STATS.MAX_HAPPINESS);
+            write(CharacterVariables.PERSON_3.STATS.MAX_STAMINA);
+            write(CharacterVariables.PERSON_3.STATS.MAX_HYGIENE);
+            write(CharacterVariables.PERSON_3.STATS.HEALTH);
+            write(CharacterVariables.PERSON_3.STATS.HAPPINESS);
+            write(CharacterVariables.PERSON_3.STATS.STAMINA);
+            write(CharacterVariables.PERSON_3.STATS.HYGIENE);
             // p4
-            writer.write(CharacterVariables.PERSON_4.PERSON + "\n");
-            writer.write(CharacterVariables.PERSON_4.IS_SICK + "\n");
-            writer.write(CharacterVariables.PERSON_4.SICK_WITH + "\n");
-            writer.write(CharacterVariables.PERSON_4.IS_FORLORN + "\n");
-            writer.write(CharacterVariables.PERSON_4.MESSAGE + "\n");
-            writer.write(CharacterVariables.PERSON_4.IS_GONE + "\n");
-            writer.write(CharacterVariables.PERSON_4.STATS.MAX_HEALTH + "\n");
-            writer.write(CharacterVariables.PERSON_4.STATS.MAX_HAPPINESS + "\n");
-            writer.write(CharacterVariables.PERSON_4.STATS.MAX_STAMINA + "\n");
-            writer.write(CharacterVariables.PERSON_4.STATS.MAX_HYGIENE + "\n");
-            writer.write(CharacterVariables.PERSON_4.STATS.HEALTH + "\n");
-            writer.write(CharacterVariables.PERSON_4.STATS.HAPPINESS + "\n");
-            writer.write(CharacterVariables.PERSON_4.STATS.STAMINA + "\n");
-            writer.write(CharacterVariables.PERSON_4.STATS.HYGIENE + "\n");
+            write(CharacterVariables.PERSON_4.PERSON);
+            write(CharacterVariables.PERSON_4.IS_SICK);
+            write(CharacterVariables.PERSON_4.SICK_WITH);
+            write(CharacterVariables.PERSON_4.IS_FORLORN);
+            write(CharacterVariables.PERSON_4.MESSAGE);
+            write(CharacterVariables.PERSON_4.IS_GONE);
+            write(CharacterVariables.PERSON_4.STATS.MAX_HEALTH);
+            write(CharacterVariables.PERSON_4.STATS.MAX_HAPPINESS);
+            write(CharacterVariables.PERSON_4.STATS.MAX_STAMINA);
+            write(CharacterVariables.PERSON_4.STATS.MAX_HYGIENE);
+            write(CharacterVariables.PERSON_4.STATS.HEALTH);
+            write(CharacterVariables.PERSON_4.STATS.HAPPINESS);
+            write(CharacterVariables.PERSON_4.STATS.STAMINA);
+            write(CharacterVariables.PERSON_4.STATS.HYGIENE);
             //weather vars
-            writer.write(WeatherVariables.RAINING + "\n");
-            writer.write(WeatherVariables.SNOWING + "\n");
-            writer.write(WeatherVariables.SEVERE + "\n");
-            writer.write(WeatherVariables.THUNDERSTORM + "\n");
-            writer.write(WeatherVariables.IS_GROUND_WET + "\n");
-            writer.write(CharacterVariables.PERSON_1.SICK_COUNTER + "\n");
-            writer.write(CharacterVariables.PERSON_2.SICK_COUNTER + "\n");
-            writer.write(CharacterVariables.PERSON_3.SICK_COUNTER + "\n");
-            writer.write(CharacterVariables.PERSON_4.SICK_COUNTER + "\n");
-
+            write(WeatherVariables.RAINING);
+            write(WeatherVariables.SNOWING);
+            write(WeatherVariables.SEVERE);
+            write(WeatherVariables.THUNDERSTORM);
+            write(WeatherVariables.IS_GROUND_WET);
+            write(CharacterVariables.PERSON_1.SICK_COUNTER);
+            write(CharacterVariables.PERSON_2.SICK_COUNTER);
+            write(CharacterVariables.PERSON_3.SICK_COUNTER);
+            write(CharacterVariables.PERSON_4.SICK_COUNTER);
 
             writer.close();
-            System.out.println("Game Saved!");
             System.out.println("Saved at: " + FileVariables.FILE_NAME);
         } catch (IOException e) {
             System.out.println("An error occurred while saving the game.");
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+    public static void write(Object object) {
+        try {
+            writer.write(object + "\n");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

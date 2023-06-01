@@ -30,7 +30,7 @@ public class LoadGame {
                     }
                 }
 
-                String[] options = new String[fileCount + 1]; // Increase the array size to accommodate the "Back" option
+                String[] options = new String[fileCount + 1];
                 int index = 0;
 
                 for (File file : files) {
@@ -46,15 +46,17 @@ public class LoadGame {
                 Utils.reverseArray(options);
                 int choice = JOptionPane.showOptionDialog(null, "Pick a save:", "Saves", JOptionPane.DEFAULT_OPTION,
                         JOptionPane.PLAIN_MESSAGE, null, options, null);
-                if (choice >= 0 && choice < options.length - 1) {
+                if (choice >= 0 && choice < options.length) {
                     String selectedSave = options[choice];
-                    FileVariables.SAVE_NAME = String.valueOf(selectedSave);
-                    FileVariables.FILE_NAME = getSaveDirectory() + selectedSave + ".txt";
-                    OregonTrailMain.println("Selected save: " + selectedSave);
-                } else {
-                    OregonTrailMain.start();
+                    if (selectedSave.equals("Back")) {
+                        OregonTrailMain.start();
+                    } else {
+                        FileVariables.SAVE_NAME = selectedSave;
+                        FileVariables.FILE_NAME = getSaveDirectory() + File.separator + selectedSave + ".txt";
+                        OregonTrailMain.println("Selected save: " + selectedSave);
+                        loadSave();
+                    }
                 }
-                loadSave();
             }
         }
     }
