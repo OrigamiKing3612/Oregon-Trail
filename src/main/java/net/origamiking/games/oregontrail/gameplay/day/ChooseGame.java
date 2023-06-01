@@ -26,7 +26,7 @@ public class ChooseGame {
             case 8 -> Weather.weather();
             case 9 -> Illness.illness();
             case 10 -> Forlorn.forlorn();
-            case 11 -> Fishing.fish();
+            case 11 -> Variables.DAY_STUFF = "You have an uneventful day.";//Fishing.fish();
             case 12 -> WagonOnSideOfTrail.wagonOnSideOfTrail();
             case 13 -> AnimalAttack.attack();
             case 14 -> Indians.indians();
