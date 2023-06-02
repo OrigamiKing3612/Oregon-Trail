@@ -40,7 +40,6 @@ public class OregonTrailMain {
         return osName.contains("mac");
     }
     public static void start() {
-        // TODO Add a leave/back to Delete Save and shop
         // TODO make the harmonica Work
         // TODO if person is dead, they still show up on options
         String[] options = {"Quit", "Delete Save", "Load Game", "New Game"};
