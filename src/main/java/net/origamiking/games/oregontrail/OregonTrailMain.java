@@ -81,7 +81,7 @@ public class OregonTrailMain {
             UIManager.put("ComboBox.font", font);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }
