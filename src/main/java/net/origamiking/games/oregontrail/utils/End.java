@@ -14,7 +14,7 @@ public class End {
         switch (choice) {
             case 0 -> System.exit(0);
             case 1 -> {
-                OregonTrailMain.oregonTrailWindowMain.clearWindow();
+                OregonTrailMain.oregonTrailWindow.clearWindow();
                 OregonTrailMain.start();
             }
         }

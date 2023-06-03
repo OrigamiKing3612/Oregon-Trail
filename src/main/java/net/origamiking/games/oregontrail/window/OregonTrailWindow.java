@@ -3,10 +3,10 @@ package net.origamiking.games.oregontrail.window;
 import javax.swing.*;
 import java.awt.*;
 
-public class OregonTrailWindowMain {
+public class OregonTrailWindow {
     private final JTextArea textArea;
 
-    public OregonTrailWindowMain() {
+    public OregonTrailWindow() {
         JFrame frame = new JFrame("Oregon Trail by OrigamiKing3612");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

@@ -6,13 +6,13 @@ import net.origamiking.games.oregontrail.utils.files.LoadGame;
 import net.origamiking.games.oregontrail.utils.files.NewGame;
 import net.origamiking.games.oregontrail.variables.Variables;
 import net.origamiking.games.oregontrail.window.InventoryWindow;
-import net.origamiking.games.oregontrail.window.OregonTrailWindowMain;
+import net.origamiking.games.oregontrail.window.OregonTrailWindow;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class OregonTrailMain {
-    public static OregonTrailWindowMain oregonTrailWindowMain;
+    public static OregonTrailWindow oregonTrailWindow;
     public static InventoryWindow inventoryWindow;
     public static final String VERSION = "0.1.0";
     public static final String SAVE_VERSION_1 = "1";
@@ -34,16 +34,16 @@ public class OregonTrailMain {
         }
         System.out.println("Starting Oregon Trail version: " + VERSION);
         setColors();
-        oregonTrailWindowMain = new OregonTrailWindowMain();
+        oregonTrailWindow = new OregonTrailWindow();
         OregonTrailMain.println("Welcome to Oregon-Trail by OrigamiKing3612");
         game = false;
         start();
     }
     public static void println(String string) {
-        oregonTrailWindowMain.appendTextln(string);
+        oregonTrailWindow.appendTextln(string);
     }
     public static void print(String string) {
-        oregonTrailWindowMain.appendText(string);
+        oregonTrailWindow.appendText(string);
     }
     public static boolean isMacOS() {
         String osName = System.getProperty("os.name").toLowerCase();
@@ -58,7 +58,6 @@ public class OregonTrailMain {
         switch (choice) {
             case 3 -> NewGame.newGame();
             case 2 -> {
-                inventoryWindow = new InventoryWindow();
                 LoadGame.loadSaves();
             }
             case 1 -> DeleteGame.deleteSave();
