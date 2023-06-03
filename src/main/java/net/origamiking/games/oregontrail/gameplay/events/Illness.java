@@ -35,7 +35,17 @@ public class Illness {
         }
     }
     private static void pickIllness() {
-        switch (pickPerson()) {
+        int person = pickPerson();
+        if (person == 1 && CharacterVariables.PERSON_1.IS_GONE) {
+            person = pickPerson();
+        } else if (person == 2 && CharacterVariables.PERSON_2.IS_GONE) {
+            person = pickPerson();
+        } else if (person == 3 && CharacterVariables.PERSON_3.IS_GONE) {
+            person = pickPerson();
+        } else if (person == 4 && CharacterVariables.PERSON_4.IS_GONE) {
+            person = pickPerson();
+        }
+        switch (person) {
             case 1 -> {
                 if (CharacterVariables.PERSON_1.STATS.HYGIENE <= 5) switcher2 = 0;
                 switch (switcher2) {

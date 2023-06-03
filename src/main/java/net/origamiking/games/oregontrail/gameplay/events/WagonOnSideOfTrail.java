@@ -6,37 +6,75 @@ import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 
 import javax.swing.*;
+import java.util.Objects;
 import java.util.Random;
 
 public class WagonOnSideOfTrail {
     final static Random rand = new Random();
     public static void wagonOnSideOfTrail() {
+        Variables.DAY_STUFF = "";
         String person = "";
         boolean go = false;
         OregonTrailMain.println("You come across an old abandoned wagon on the side of the trail. Should one go check it out?");
+        int fileCount = 0;
+        if (!CharacterVariables.PERSON_1.IS_GONE) fileCount++;
+        if (!CharacterVariables.PERSON_2.IS_GONE) fileCount++;
+        if (!CharacterVariables.PERSON_3.IS_GONE) fileCount++;
+        if (!CharacterVariables.PERSON_4.IS_GONE) fileCount++;
+        String[] options = new String[fileCount + 1];
+        int index = 0;
+        if (!CharacterVariables.PERSON_1.IS_GONE) {
+            options[index] = CharacterVariables.PERSON_1.PERSON;
+            index++;
+        }
+        if (!CharacterVariables.PERSON_2.IS_GONE) {
+            options[index] = CharacterVariables.PERSON_2.PERSON;
+            index++;
+        }
+        if (!CharacterVariables.PERSON_3.IS_GONE) {
+            options[index] = CharacterVariables.PERSON_3.PERSON;
+            index++;
+        }
+        if (!CharacterVariables.PERSON_4.IS_GONE) {
+            options[index] = CharacterVariables.PERSON_4.PERSON;
+        }
 
-        String[] options = {"Leave", CharacterVariables.PERSON_4.PERSON, CharacterVariables.PERSON_3.PERSON, CharacterVariables.PERSON_2.PERSON, CharacterVariables.PERSON_1.PERSON};
-
+        options[fileCount] = "Leave";
+        Utils.reverseArray(options);
         int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Who should check out the wagon?", JOptionPane.DEFAULT_OPTION,
                 JOptionPane.PLAIN_MESSAGE, null, options, null);
+
         switch (choice) {
-            case 0 -> {}
+            case 0 -> OregonTrailMain.println("You come to a forest; you pass it.");
             case 1 -> {
-                person = CharacterVariables.PERSON_4.PERSON;
+                if (Objects.equals(options[1], CharacterVariables.PERSON_1.PERSON)) person = CharacterVariables.PERSON_1.PERSON;
+                if (Objects.equals(options[1], CharacterVariables.PERSON_2.PERSON)) person = CharacterVariables.PERSON_2.PERSON;
+                if (Objects.equals(options[1], CharacterVariables.PERSON_3.PERSON)) person = CharacterVariables.PERSON_3.PERSON;
+                if (Objects.equals(options[1], CharacterVariables.PERSON_4.PERSON)) person = CharacterVariables.PERSON_4.PERSON;
                 go = true;
             }
             case 2 -> {
-                person = CharacterVariables.PERSON_3.PERSON;
+                if (Objects.equals(options[2], CharacterVariables.PERSON_1.PERSON)) person = CharacterVariables.PERSON_1.PERSON;
+                if (Objects.equals(options[2], CharacterVariables.PERSON_2.PERSON)) person = CharacterVariables.PERSON_2.PERSON;
+                if (Objects.equals(options[2], CharacterVariables.PERSON_3.PERSON)) person = CharacterVariables.PERSON_3.PERSON;
+                if (Objects.equals(options[2], CharacterVariables.PERSON_4.PERSON)) person = CharacterVariables.PERSON_4.PERSON;
                 go = true;
             }
             case 3 -> {
-                person = CharacterVariables.PERSON_2.PERSON;
+                if (Objects.equals(options[3], CharacterVariables.PERSON_1.PERSON)) person = CharacterVariables.PERSON_1.PERSON;
+                if (Objects.equals(options[3], CharacterVariables.PERSON_2.PERSON)) person = CharacterVariables.PERSON_2.PERSON;
+                if (Objects.equals(options[3], CharacterVariables.PERSON_3.PERSON)) person = CharacterVariables.PERSON_3.PERSON;
+                if (Objects.equals(options[3], CharacterVariables.PERSON_4.PERSON)) person = CharacterVariables.PERSON_4.PERSON;
                 go = true;
             }
             case 4 -> {
-                person = CharacterVariables.PERSON_1.PERSON;
+                if (Objects.equals(options[4], CharacterVariables.PERSON_1.PERSON)) person = CharacterVariables.PERSON_1.PERSON;
+                if (Objects.equals(options[4], CharacterVariables.PERSON_2.PERSON)) person = CharacterVariables.PERSON_2.PERSON;
+                if (Objects.equals(options[4], CharacterVariables.PERSON_3.PERSON)) person = CharacterVariables.PERSON_3.PERSON;
+                if (Objects.equals(options[4], CharacterVariables.PERSON_4.PERSON)) person = CharacterVariables.PERSON_4.PERSON;
                 go = true;
             }
+            default -> throw new IllegalStateException("Unexpected value: " + choice);
         }
         if (go) {
             boolean r = rand.nextBoolean();
