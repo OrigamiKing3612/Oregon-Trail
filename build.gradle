@@ -26,6 +26,13 @@ repositories {
 jar {
     manifest {
         attributes 'Main-Class': 'net.origamiking.games.oregontrail.OregonTrailMain'
+        attributes 'Specification-Title': 'Oregon-Trail'
+        attributes 'Specification-Vendor': 'OrigamiKing3612'
+        attributes 'Specification-Version': '1'
+        attributes 'Implementation-Title': project.name
+        attributes 'Implementation-Version': game_version
+        attributes 'Implementation-Vendor': 'OrigamiKing3612'
+        attributes 'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
     }
 }
 dependencies {
