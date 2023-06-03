@@ -12,6 +12,7 @@ import java.util.Random;
 public class Hunting {
     final static Random rand = new Random();
     public static void hunt() {
+        Variables.DAY_STUFF = "";
         String person = "";
         boolean go = false;
         OregonTrailMain.println("You come to a forest, should someone in your party go hunt?");
