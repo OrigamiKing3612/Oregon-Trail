@@ -6,6 +6,7 @@ import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.FileVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 import net.origamiking.games.oregontrail.variables.WeatherVariables;
+import net.origamiking.games.oregontrail.window.Inventory;
 
 import javax.swing.*;
 import java.io.BufferedReader;
@@ -151,7 +152,7 @@ public class LoadGame {
             if ((line = reader.readLine()) != null) CharacterVariables.PERSON_4.SICK_COUNTER = Integer.parseInt(line);
 
 
-
+            Inventory.printToWindow();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
