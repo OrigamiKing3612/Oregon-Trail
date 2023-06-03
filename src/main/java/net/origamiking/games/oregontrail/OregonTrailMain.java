@@ -14,6 +14,15 @@ import java.awt.*;
 public class OregonTrailMain {
     public static OregonTrailWindowMain oregonTrailWindowMain;
     public static InventoryWindow inventoryWindow;
+    public static final String VERSION = "0.1.0";
+    public static final String SAVE_VERSION_1 = "1";
+    public static final String SAVE_VERSION_2 = "a";
+    public static final String FULL_SAVE_VERSION = "Save-Version: " + SAVE_VERSION_1 + SAVE_VERSION_2;
+
+//  Update
+//  To update change versions in OregonTrailMain
+//  And the checkers in LoadGame
+//  Then build jar
     public static boolean game = false;
     public static void main(String[] args) {
         if (isMacOS()) {
@@ -23,6 +32,7 @@ public class OregonTrailMain {
             System.setProperty("apple.awt.brushMetalLook", "true");
             System.setProperty("apple.awt.showGrowBox", "true");
         }
+        System.out.println("Starting Oregon Trail version: " + VERSION);
         setColors();
         oregonTrailWindowMain = new OregonTrailWindowMain();
         OregonTrailMain.println("Welcome to Oregon-Trail by OrigamiKing3612");

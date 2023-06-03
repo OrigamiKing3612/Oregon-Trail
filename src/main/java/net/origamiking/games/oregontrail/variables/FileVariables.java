@@ -7,7 +7,7 @@ import java.io.File;
 public class FileVariables {
     public static String SAVE_NAME;
     public static String FILE_NAME = getSaveDirectory() + SAVE_NAME + ".txt";
-    public static String SAVES_DIRECTORY = getSaveDirectory();
+    public static final String SAVES_DIRECTORY = getSaveDirectory();
     public static String DIRECTORY = getDirectory();
 
 
