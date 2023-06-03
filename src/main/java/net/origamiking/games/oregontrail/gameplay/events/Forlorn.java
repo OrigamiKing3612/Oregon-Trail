@@ -11,7 +11,7 @@ public class Forlorn {
     private static String person;
     public static void forlorn() {
         pickPerson();
-        Variables.DAY_STUFF = person + " Wishes they were home. " + person + " is now Forlorn.";
+        Variables.DAY_STUFF = person + " wishes they were home. " + person + " is now Forlorn.";
     }
     public static void pickPerson() {
         switch (switcher) {
