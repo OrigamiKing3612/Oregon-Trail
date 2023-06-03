@@ -1,58 +1,107 @@
 package net.origamiking.games.oregontrail.gameplay.menu_features.inentory;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
+import net.origamiking.games.oregontrail.utils.Utils;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 
 import javax.swing.*;
+import java.util.Objects;
 
 
 public class UseStuff {
+    static String person;
     public static void useMedicine() {
-        OregonTrailMain.println("You can heal:");
-        if (CharacterVariables.PERSON_1.IS_SICK) {
-            OregonTrailMain.println(CharacterVariables.PERSON_1.PERSON);
-        } else if (CharacterVariables.PERSON_2.IS_SICK) {
-            OregonTrailMain.println(CharacterVariables.PERSON_2.PERSON);
-        } else if (CharacterVariables.PERSON_3.IS_SICK) {
-            OregonTrailMain.println(CharacterVariables.PERSON_3.PERSON);
-        } else if (CharacterVariables.PERSON_4.IS_SICK) {
-            OregonTrailMain.println(CharacterVariables.PERSON_4.PERSON);
-        } else {
-            OregonTrailMain.println("No one is sick.");
+        Variables.DAY_STUFF = "";
+        int fileCount = 0;
+        if (!CharacterVariables.PERSON_1.IS_GONE) fileCount++;
+        if (!CharacterVariables.PERSON_2.IS_GONE) fileCount++;
+        if (!CharacterVariables.PERSON_3.IS_GONE) fileCount++;
+        if (!CharacterVariables.PERSON_4.IS_GONE) fileCount++;
+        String[] options = new String[fileCount + 1];
+        int index = 0;
+        if (!CharacterVariables.PERSON_1.IS_GONE) {
+            options[index] = CharacterVariables.PERSON_1.PERSON;
+            index++;
         }
-        String[] options = {"Leave", "Heal " + CharacterVariables.PERSON_4.PERSON, "Heal " + CharacterVariables.PERSON_3.PERSON, "Heal " + CharacterVariables.PERSON_2.PERSON, "Heal " + CharacterVariables.PERSON_1.PERSON};
+        if (!CharacterVariables.PERSON_2.IS_GONE) {
+            options[index] = CharacterVariables.PERSON_2.PERSON;
+            index++;
+        }
+        if (!CharacterVariables.PERSON_3.IS_GONE) {
+            options[index] = CharacterVariables.PERSON_3.PERSON;
+            index++;
+        }
+        if (!CharacterVariables.PERSON_4.IS_GONE) {
+            options[index] = CharacterVariables.PERSON_4.PERSON;
+        }
 
-        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "What would you like to do?", JOptionPane.DEFAULT_OPTION,
+        options[fileCount] = "Leave";
+        Utils.reverseArray(options);
+        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Who you want to heal?", JOptionPane.DEFAULT_OPTION,
                 JOptionPane.PLAIN_MESSAGE, null, options, null);
+
         switch (choice) {
-            case 0 -> {}
+            case 0 -> OregonTrailMain.println("You decide not to heal anyone.");
+            case 3 -> {
+                if (Objects.equals(options[1], CharacterVariables.PERSON_1.PERSON)) person = CharacterVariables.PERSON_1.PERSON;
+                if (Objects.equals(options[1], CharacterVariables.PERSON_2.PERSON)) person = CharacterVariables.PERSON_2.PERSON;
+                if (Objects.equals(options[1], CharacterVariables.PERSON_3.PERSON)) person = CharacterVariables.PERSON_3.PERSON;
+                if (Objects.equals(options[1], CharacterVariables.PERSON_4.PERSON)) person = CharacterVariables.PERSON_4.PERSON;
+                personStuff(Utils.returnPersonNumber(person));
+            }
+            case 2 -> {
+                if (Objects.equals(options[2], CharacterVariables.PERSON_1.PERSON)) person = CharacterVariables.PERSON_1.PERSON;
+                if (Objects.equals(options[2], CharacterVariables.PERSON_2.PERSON)) person = CharacterVariables.PERSON_2.PERSON;
+                if (Objects.equals(options[2], CharacterVariables.PERSON_3.PERSON)) person = CharacterVariables.PERSON_3.PERSON;
+                if (Objects.equals(options[2], CharacterVariables.PERSON_4.PERSON)) person = CharacterVariables.PERSON_4.PERSON;
+                personStuff(Utils.returnPersonNumber(person));
+            }
+            case 1 -> {
+                if (Objects.equals(options[3], CharacterVariables.PERSON_1.PERSON)) person = CharacterVariables.PERSON_1.PERSON;
+                if (Objects.equals(options[3], CharacterVariables.PERSON_2.PERSON)) person = CharacterVariables.PERSON_2.PERSON;
+                if (Objects.equals(options[3], CharacterVariables.PERSON_3.PERSON)) person = CharacterVariables.PERSON_3.PERSON;
+                if (Objects.equals(options[3], CharacterVariables.PERSON_4.PERSON)) person = CharacterVariables.PERSON_4.PERSON;
+                personStuff(Utils.returnPersonNumber(person));
+            }
+            case 4 -> {
+                if (Objects.equals(options[4], CharacterVariables.PERSON_1.PERSON)) person = CharacterVariables.PERSON_1.PERSON;
+                if (Objects.equals(options[4], CharacterVariables.PERSON_2.PERSON)) person = CharacterVariables.PERSON_2.PERSON;
+                if (Objects.equals(options[4], CharacterVariables.PERSON_3.PERSON)) person = CharacterVariables.PERSON_3.PERSON;
+                if (Objects.equals(options[4], CharacterVariables.PERSON_4.PERSON)) person = CharacterVariables.PERSON_4.PERSON;
+                personStuff(Utils.returnPersonNumber(person));
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + choice);
+        }
+    }
+    private static void personStuff(int choice) {
+        switch (choice) {
             case 4 -> {
                 if (CharacterVariables.PERSON_1.IS_SICK) {
                     p1_m();
                 } else {
-                    OregonTrailMain.println("This Person is not sick");
+                    OregonTrailMain.println("This person is not sick");
                 }
             }
             case 3 -> {
                 if (CharacterVariables.PERSON_2.IS_SICK) {
                     p2_m();
                 } else {
-                    OregonTrailMain.println("This Person is not sick");
+                    OregonTrailMain.println("This person is not sick");
                 }
             }
             case 2 -> {
                 if (CharacterVariables.PERSON_3.IS_SICK) {
                     p3_m();
                 } else {
-                    OregonTrailMain.println("This Person is not sick");
+                    OregonTrailMain.println("This person is not sick");
                 }
             }
             case 1 -> {
                 if (CharacterVariables.PERSON_4.IS_SICK) {
                     p4_m();
                 } else {
-                    OregonTrailMain.println("This Person is not sick");
+                    OregonTrailMain.println("This person is not sick");
                 }
             }
         }

@@ -78,29 +78,6 @@ public class SeeDoctor {
             }
             default -> throw new IllegalStateException("Unexpected value: " + choice);
         }
-//        if (go) {
-//            if (Variables.BULLETS >= 2) {
-//                Hunting.go_hunt(person);
-//            } else {
-//                OregonTrailMain.println("You dont have enough bullets to hunt.");
-//            }
-//        }
-//
-//        if (CharacterVariables.PERSON_1.IS_SICK) {
-//            OregonTrailMain.println("1. Heal " + CharacterVariables.PERSON_1.PERSON);
-//        } else if (CharacterVariables.PERSON_2.IS_SICK) {
-//            OregonTrailMain.println("2. Heal " + CharacterVariables.PERSON_2.PERSON);
-//        } else if (CharacterVariables.PERSON_3.IS_SICK) {
-//            OregonTrailMain.println("3. Heal " + CharacterVariables.PERSON_3.PERSON);
-//        } else if (CharacterVariables.PERSON_4.IS_SICK) {
-//            OregonTrailMain.println("4. Heal " + CharacterVariables.PERSON_4.PERSON);
-//        } else {
-//            OregonTrailMain.println("No one is sick.");
-//        }
-//        String[] options = {"Leave", "Heal " + CharacterVariables.PERSON_4.PERSON, "Heal " + CharacterVariables.PERSON_3.PERSON, "Heal " + CharacterVariables.PERSON_2.PERSON, "Heal " + CharacterVariables.PERSON_1.PERSON};
-//
-//        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Who you want to heal?", JOptionPane.DEFAULT_OPTION,
-//                JOptionPane.PLAIN_MESSAGE, null, options, null);
     }
     public static void personStuff(int choice) {
         switch (choice) {
