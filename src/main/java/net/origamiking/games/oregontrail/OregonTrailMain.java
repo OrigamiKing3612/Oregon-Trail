@@ -1,6 +1,7 @@
 package net.origamiking.games.oregontrail;
 
 import net.origamiking.games.oregontrail.gameplay.day.Day;
+import net.origamiking.games.oregontrail.utils.Utils;
 import net.origamiking.games.oregontrail.utils.files.DeleteGame;
 import net.origamiking.games.oregontrail.utils.files.LoadGame;
 import net.origamiking.games.oregontrail.utils.files.NewGame;
@@ -10,7 +11,6 @@ import net.origamiking.games.oregontrail.window.InventoryWindow;
 import net.origamiking.games.oregontrail.window.OregonTrailWindow;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class OregonTrailMain {
     public static OregonTrailWindow oregonTrailWindow;
@@ -19,49 +19,30 @@ public class OregonTrailMain {
     public static final String SAVE_VERSION_1 = "1";
     public static final String SAVE_VERSION_2 = "a";
     public static final String FULL_SAVE_VERSION = "Save-Version: " + SAVE_VERSION_1 + SAVE_VERSION_2;
+    public static boolean game = false;
 
 //  Update
 //  To update change versions in OregonTrailMain
 //  And the checkers in LoadGame
 //  Then build jar
-    public static boolean game = false;
-    public static void main(String[] args) {
+    private static void startup() {
         System.out.println("Starting Oregon Trail version: " + VERSION);
-        if (isMacOS()) {
-            System.setProperty("apple.awt.application.name", "Oregon Trail By: OrigamiKing3612");
-            System.setProperty("apple.awt.application.appearance", "system");
-            System.setProperty("apple.awt.application.icon", "Info.plist");
-            System.setProperty("apple.awt.brushMetalLook", "true");
-            System.setProperty("apple.awt.showGrowBox", "true");
-        }
+        Utils.macStuff();
         Runtime.getRuntime().addShutdownHook(new Thread(SaveGame::saveGame));
-        setColors();
+        Utils.setColors();
         oregonTrailWindow = new OregonTrailWindow();
-        OregonTrailMain.println("Welcome to Oregon-Trail by OrigamiKing3612");
-        game = false;
-        start();
-    }
-    public static void println(String string) {
-        oregonTrailWindow.appendTextln(string);
-    }
-    public static void print(String string) {
-        oregonTrailWindow.appendText(string);
-    }
-    public static boolean isMacOS() {
-        String osName = System.getProperty("os.name").toLowerCase();
-        return osName.contains("mac");
     }
     public static void start() {
         // TODO make the harmonica Work
         // TODO if person is dead, they still show up on options
+        OregonTrailMain.println("Welcome to Oregon-Trail by OrigamiKing3612");
+        game = false;
         String[] options = {"Quit", "Delete Save", "Load Game", "New Game"};
         int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Load Game, New Game, or Delete Save", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[3]);
 
         switch (choice) {
             case 3 -> NewGame.newGame();
-            case 2 -> {
-                LoadGame.loadSaves();
-            }
+            case 2 -> LoadGame.loadSaves();
             case 1 -> DeleteGame.deleteSave();
             case 0 -> System.exit(0);
             default -> throw new IllegalStateException("Unexpected value: " + choice);
@@ -71,28 +52,15 @@ public class OregonTrailMain {
             Day.day();
         }
     }
-    private static void setColors() {
-        try {
-            Font font = new Font("Times New Roman", Font.PLAIN, 16);
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-
-            UIManager.put("OptionPane.background", Color.BLACK);
-            UIManager.put("OptionPane.buttonBackground", Color.BLACK);
-            UIManager.put("OptionPane.messageForeground", Color.GREEN);
-            UIManager.put("OptionPane.buttonForeground", Color.GREEN);
-            UIManager.put("Panel.background", Color.BLACK);
-            UIManager.put("TextField.background", Color.DARK_GRAY);
-            UIManager.put("TextField.foreground", Color.GREEN);
-            UIManager.put("ComboBox.background", Color.BLACK);
-            UIManager.put("Label.font", font);
-            UIManager.put("Button.font", font);
-            UIManager.put("TextField.font", font);
-            UIManager.put("ComboBox.font", font);
-            UIManager.put("Button.background", Color.BLUE);
-            UIManager.put("Button.foreground", Color.WHITE);
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public static void println(String string) {
+        oregonTrailWindow.appendTextln(string);
     }
+    public static void print(String string) {
+        oregonTrailWindow.appendText(string);
+    }
+    public static void main(String[] args) {
+        startup();
+        start();
+    }
+
 }

@@ -3,6 +3,8 @@ package net.origamiking.games.oregontrail.utils;
 import net.origamiking.games.oregontrail.gameplay.events.Deaths;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.Objects;
 import java.util.Random;
 
@@ -252,6 +254,43 @@ public class Utils {
 
             start++;
             end--;
+        }
+    }
+    public static boolean isMacOS() {
+        String osName = System.getProperty("os.name").toLowerCase();
+        return osName.contains("mac");
+    }
+    public static void setColors() {
+        try {
+            Font font = new Font("Times New Roman", Font.PLAIN, 16);
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+
+            UIManager.put("OptionPane.background", Color.BLACK);
+            UIManager.put("OptionPane.buttonBackground", Color.BLACK);
+            UIManager.put("OptionPane.messageForeground", Color.GREEN);
+            UIManager.put("OptionPane.buttonForeground", Color.GREEN);
+            UIManager.put("Panel.background", Color.BLACK);
+            UIManager.put("TextField.background", Color.DARK_GRAY);
+            UIManager.put("TextField.foreground", Color.GREEN);
+            UIManager.put("ComboBox.background", Color.BLACK);
+            UIManager.put("Label.font", font);
+            UIManager.put("Button.font", font);
+            UIManager.put("TextField.font", font);
+            UIManager.put("ComboBox.font", font);
+            UIManager.put("Button.background", Color.BLUE);
+            UIManager.put("Button.foreground", Color.WHITE);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static void macStuff() {
+        if (Utils.isMacOS()) {
+            System.setProperty("apple.awt.application.name", "Oregon Trail By: OrigamiKing3612");
+            System.setProperty("apple.awt.application.appearance", "system");
+            System.setProperty("apple.awt.application.icon", "Info.plist");
+            System.setProperty("apple.awt.brushMetalLook", "true");
+            System.setProperty("apple.awt.showGrowBox", "true");
         }
     }
 }
