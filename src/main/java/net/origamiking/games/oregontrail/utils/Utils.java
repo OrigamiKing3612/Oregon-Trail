@@ -29,16 +29,32 @@ public class Utils {
         int r = rand.nextInt(4);
         switch (r) {
             case 0 -> {
-                return 1;
+                if (!CharacterVariables.PERSON_1.IS_GONE) {
+                    return 1;
+                } else {
+                    return returnPerson();
+                }
             }
             case 1 -> {
-                return 2;
+                if (!CharacterVariables.PERSON_1.IS_GONE) {
+                    return 2;
+                } else {
+                    return returnPerson();
+                }
             }
             case 2 -> {
-                return 3;
+                if (!CharacterVariables.PERSON_1.IS_GONE) {
+                    return 3;
+                } else {
+                    return returnPerson();
+                }
             }
             case 3 -> {
-                return 4;
+                if (!CharacterVariables.PERSON_1.IS_GONE) {
+                    return 4;
+                } else {
+                    return returnPerson();
+                }
             }
             default -> throw new IllegalStateException("Unexpected value: " + r);
         }

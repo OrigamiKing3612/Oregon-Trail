@@ -19,7 +19,7 @@ public class Day {
         } else if (Variables.DAY_NUMBER >= Variables.MAX_DAYS) {
             Oregon.win();
         } else {
-            final int switcher = rand.nextInt(15); //# of Options
+            final int switcher = rand.nextInt(16); //# of Options
             SubtractVariables.subtractVariables();
             Utils.checkIfForlorn();
             Utils.checkIfPersonDead();

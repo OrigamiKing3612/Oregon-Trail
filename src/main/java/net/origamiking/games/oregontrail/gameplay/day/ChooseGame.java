@@ -30,6 +30,7 @@ public class ChooseGame {
             case 12 -> WagonOnSideOfTrail.wagonOnSideOfTrail();
             case 13 -> AnimalAttack.attack();
             case 14 -> Indians.indians();
+            case 15 -> DonnerParty.donnerParty();
         }
     }
 }

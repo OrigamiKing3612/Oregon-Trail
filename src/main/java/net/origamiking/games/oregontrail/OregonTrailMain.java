@@ -4,6 +4,7 @@ import net.origamiking.games.oregontrail.gameplay.day.Day;
 import net.origamiking.games.oregontrail.utils.files.DeleteGame;
 import net.origamiking.games.oregontrail.utils.files.LoadGame;
 import net.origamiking.games.oregontrail.utils.files.NewGame;
+import net.origamiking.games.oregontrail.utils.files.SaveGame;
 import net.origamiking.games.oregontrail.variables.Variables;
 import net.origamiking.games.oregontrail.window.InventoryWindow;
 import net.origamiking.games.oregontrail.window.OregonTrailWindow;
@@ -25,6 +26,7 @@ public class OregonTrailMain {
 //  Then build jar
     public static boolean game = false;
     public static void main(String[] args) {
+        System.out.println("Starting Oregon Trail version: " + VERSION);
         if (isMacOS()) {
             System.setProperty("apple.awt.application.name", "Oregon Trail By: OrigamiKing3612");
             System.setProperty("apple.awt.application.appearance", "system");
@@ -32,7 +34,7 @@ public class OregonTrailMain {
             System.setProperty("apple.awt.brushMetalLook", "true");
             System.setProperty("apple.awt.showGrowBox", "true");
         }
-        System.out.println("Starting Oregon Trail version: " + VERSION);
+        Runtime.getRuntime().addShutdownHook(new Thread(SaveGame::saveGame));
         setColors();
         oregonTrailWindow = new OregonTrailWindow();
         OregonTrailMain.println("Welcome to Oregon-Trail by OrigamiKing3612");
