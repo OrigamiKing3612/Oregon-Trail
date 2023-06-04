@@ -81,13 +81,13 @@ public class OregonTrailMain {
             UIManager.put("Panel.background", Color.BLACK);
             UIManager.put("TextField.background", Color.DARK_GRAY);
             UIManager.put("TextField.foreground", Color.GREEN);
-            UIManager.put("Button.background", Color.BLACK);
-            UIManager.put("Button.foreground", Color.WHITE);
             UIManager.put("ComboBox.background", Color.BLACK);
             UIManager.put("Label.font", font);
             UIManager.put("Button.font", font);
             UIManager.put("TextField.font", font);
             UIManager.put("ComboBox.font", font);
+            UIManager.put("Button.background", Color.BLUE);
+            UIManager.put("Button.foreground", Color.WHITE);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
