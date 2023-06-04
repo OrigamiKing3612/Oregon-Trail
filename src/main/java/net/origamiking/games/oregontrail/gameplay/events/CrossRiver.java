@@ -1,6 +1,7 @@
 package net.origamiking.games.oregontrail.gameplay.events;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
+import net.origamiking.games.oregontrail.utils.Deaths;
 import net.origamiking.games.oregontrail.variables.Variables;
 
 import javax.swing.*;

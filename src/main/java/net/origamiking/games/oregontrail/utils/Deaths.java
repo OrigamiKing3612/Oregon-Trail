@@ -1,7 +1,6 @@
-package net.origamiking.games.oregontrail.gameplay.events;
+package net.origamiking.games.oregontrail.utils;
 
 import net.origamiking.games.oregontrail.OregonTrailMain;
-import net.origamiking.games.oregontrail.utils.End;
 
 public class Deaths {
     public static void drowning_in_river() {
