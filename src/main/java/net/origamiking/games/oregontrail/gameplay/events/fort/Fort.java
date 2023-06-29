@@ -1,30 +1,37 @@
 package net.origamiking.games.oregontrail.gameplay.events.fort;
 
-import net.origamiking.games.oregontrail.OregonTrailMain;
+import javafx.scene.control.Button;
+import net.origamiking.games.oregontrail.OregonTrailApplication;
 import net.origamiking.games.oregontrail.gameplay.menu_features.Rest;
 import net.origamiking.games.oregontrail.gameplay.menu_features.SeeInventory;
 import net.origamiking.games.oregontrail.utils.files.SaveQuit;
 
-import javax.swing.*;
-
 public class Fort {
     public static void fort() {
-        boolean move_on = false;
-        OregonTrailMain.println("You came to a Fort.");
-        OregonTrailMain.println("What would you like to do?");
+        final boolean[] move_on = {false};
+        OregonTrailApplication.println("You came to a Fort.");
+        OregonTrailApplication.println("What would you like to do?");
 
-        String[] options = {"Save and Quit", "Depart", "See Inventory", "Rest", "Shop", "See the doctor"};
+        Button[] buttons = new Button[6];
+        buttons[0] = new Button("See the doctor");
+        buttons[1] = new Button("Shop");
+        buttons[2] = new Button("Rest");
+        buttons[3] = new Button("See Inventory");
+        buttons[4] = new Button("Depart");
+        buttons[5] = new Button("Save and Quit");
 
-        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "What would you like to do?", JOptionPane.DEFAULT_OPTION,
-                JOptionPane.PLAIN_MESSAGE, null, options, null);
-        switch (choice) {
-            case 5 -> SeeDoctor.seeDoctor();
-            case 4 -> FortStore.fortStore();
-            case 3 -> Rest.rest();
-            case 2 -> SeeInventory.useStuff();
-            case 1 -> move_on = true;
-            case 0 -> SaveQuit.save_and_quit();
+        for (Button button : buttons) {
+            button.setOnAction(e -> {
+                switch (button.getText()) {
+//                    case "See the doctor" -> SeeDoctor.seeDoctor();
+                    case "Shop" -> FortStore.fortStore();
+                    case "Rest" -> Rest.rest();
+                    case "See Inventory" -> SeeInventory.useStuff();
+                    case "Depart" -> move_on[0] = true;
+                    case "Save and Quit" -> SaveQuit.save_and_quit();
+                }
+                if (!move_on[0]) fort();
+            });
         }
-        if (!move_on) fort();
     }
 }

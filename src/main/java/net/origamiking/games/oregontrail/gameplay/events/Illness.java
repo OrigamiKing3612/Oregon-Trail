@@ -1,6 +1,6 @@
 package net.origamiking.games.oregontrail.gameplay.events;
 
-import net.origamiking.games.oregontrail.OregonTrailMain;
+import net.origamiking.games.oregontrail.OregonTrailApplication;
 import net.origamiking.games.oregontrail.utils.Utils;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 
@@ -67,7 +67,7 @@ public class Illness {
                         CharacterVariables.PERSON_1.SICK_COUNTER = 3;
                     }
                 }
-                OregonTrailMain.println(CharacterVariables.PERSON_1.PERSON + " is sick with " + CharacterVariables.PERSON_1.SICK_WITH + ".");
+                OregonTrailApplication.println(CharacterVariables.PERSON_1.PERSON + " is sick with " + CharacterVariables.PERSON_1.SICK_WITH + ".");
             }
             case 2 -> {
                 if (CharacterVariables.PERSON_2.STATS.HYGIENE <= 5) switcher2 = 0;
@@ -90,7 +90,7 @@ public class Illness {
                         CharacterVariables.PERSON_1.SICK_COUNTER = 3;
                     }
                 }
-                OregonTrailMain.println(CharacterVariables.PERSON_2.PERSON + " is sick with " + CharacterVariables.PERSON_2.SICK_WITH + ".");
+                OregonTrailApplication.println(CharacterVariables.PERSON_2.PERSON + " is sick with " + CharacterVariables.PERSON_2.SICK_WITH + ".");
 
             }
             case 3 -> {
@@ -114,7 +114,7 @@ public class Illness {
                         CharacterVariables.PERSON_1.SICK_COUNTER = 3;
                     }
                 }
-                OregonTrailMain.println(CharacterVariables.PERSON_3.PERSON + " is sick with " + CharacterVariables.PERSON_3.SICK_WITH + ".");
+                OregonTrailApplication.println(CharacterVariables.PERSON_3.PERSON + " is sick with " + CharacterVariables.PERSON_3.SICK_WITH + ".");
             }
             case 4 -> {
                 if (CharacterVariables.PERSON_4.STATS.HYGIENE <= 5) switcher2 = 0;
@@ -137,7 +137,7 @@ public class Illness {
                         CharacterVariables.PERSON_1.SICK_COUNTER = 3;
                     }
                 }
-                OregonTrailMain.println(CharacterVariables.PERSON_4.PERSON + " is sick with " + CharacterVariables.PERSON_4.SICK_WITH + ".");
+                OregonTrailApplication.println(CharacterVariables.PERSON_4.PERSON + " is sick with " + CharacterVariables.PERSON_4.SICK_WITH + ".");
             }
             default -> throw new IllegalStateException("Unexpected value: " + pickPerson());
         }

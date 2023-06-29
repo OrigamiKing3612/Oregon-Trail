@@ -1,31 +1,50 @@
 package net.origamiking.games.oregontrail.gameplay.start;
 
-import net.origamiking.games.oregontrail.OregonTrailMain;
+import javafx.scene.control.TextInputDialog;
+import net.origamiking.games.oregontrail.OregonTrailApplication;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
-
-import javax.swing.*;
 
 public class ChooseCharacters {
     public static void choose_characters() {
-        OregonTrailMain.println("Choose carefully. You cannot change their names after this point!");
+        OregonTrailApplication.println("Choose carefully. You cannot change their names after this point!");
 
-        String person1 = JOptionPane.showInputDialog("Name Person 1:");
+        String person1 = "";
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Name Person 1:");
+        dialog.setHeaderText(null);
+        dialog.setContentText("Name Person 1:");
+        dialog.showAndWait().ifPresent(e ->  e = person1);
         CharacterVariables.PERSON_1.PERSON = (person1 != null) ? person1 : "";
 
-        String person2 = JOptionPane.showInputDialog("Name Person 2:");
+        String person2 = "";
+        TextInputDialog dialog2 = new TextInputDialog();
+        dialog2.setTitle("Name Person 2:");
+        dialog2.setHeaderText(null);
+        dialog2.setContentText("Name Person 2:");
+        dialog2.showAndWait().ifPresent(e -> e = person2);
         CharacterVariables.PERSON_2.PERSON = (person2 != null) ? person2 : "";
 
-        String person3 = JOptionPane.showInputDialog("Name Person 3:");
+        String person3 = "";
+        TextInputDialog dialog3 = new TextInputDialog();
+        dialog3.setTitle("Name Person 3:");
+        dialog3.setHeaderText(null);
+        dialog3.setContentText("Name Person 3:");
+        dialog3.showAndWait().ifPresent(e -> e = person3);
         CharacterVariables.PERSON_3.PERSON = (person3 != null) ? person3 : "";
 
-        String person4 = JOptionPane.showInputDialog("Name Person 4:");
+        String person4 = "";
+        TextInputDialog dialog4 = new TextInputDialog();
+        dialog4.setTitle("Name Person 3:");
+        dialog4.setHeaderText(null);
+        dialog4.setContentText("Name Person 3:");
+        dialog4.showAndWait().ifPresent(e -> e = person4);
         CharacterVariables.PERSON_4.PERSON = (person4 != null) ? person4 : "";
 
-        OregonTrailMain.print("Your Characters are: ");
+        OregonTrailApplication.print("Your Characters are: ");
         if (CharacterVariables.PERSON_1.PERSON.isEmpty()) CharacterVariables.PERSON_1.PERSON = "Person-1";
         if (CharacterVariables.PERSON_2.PERSON.isEmpty()) CharacterVariables.PERSON_2.PERSON = "Person-2";
         if (CharacterVariables.PERSON_3.PERSON.isEmpty()) CharacterVariables.PERSON_3.PERSON = "Person-3";
         if (CharacterVariables.PERSON_4.PERSON.isEmpty()) CharacterVariables.PERSON_4.PERSON = "Person-4";
-        OregonTrailMain.println(CharacterVariables.PERSON_1.PERSON + ", " + CharacterVariables.PERSON_2.PERSON + ", " + CharacterVariables.PERSON_3.PERSON + ", and "+ CharacterVariables.PERSON_4.PERSON + ".");
+        OregonTrailApplication.println(CharacterVariables.PERSON_1.PERSON + ", " + CharacterVariables.PERSON_2.PERSON + ", " + CharacterVariables.PERSON_3.PERSON + ", and " + CharacterVariables.PERSON_4.PERSON + ".");
     }
 }

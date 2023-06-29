@@ -1,6 +1,6 @@
 package net.origamiking.games.oregontrail.gameplay.day;
 
-import net.origamiking.games.oregontrail.OregonTrailMain;
+import net.origamiking.games.oregontrail.OregonTrailApplication;
 import net.origamiking.games.oregontrail.gameplay.events.Oregon;
 import net.origamiking.games.oregontrail.gameplay.events.fort.Fort;
 import net.origamiking.games.oregontrail.utils.MainGameMenu;
@@ -13,7 +13,7 @@ import java.util.Random;
 public class Day {
     final static Random rand = new Random();
     public static void day() {
-        OregonTrailMain.println("Day " + Variables.DAY_NUMBER);
+        OregonTrailApplication.println("Day " + Variables.DAY_NUMBER);
         if (Variables.DAY_NUMBER == 130 || Variables.DAY_NUMBER == 140 || Variables.DAY_NUMBER == 150) {
             Fort.fort();
         } else if (Variables.DAY_NUMBER >= Variables.MAX_DAYS) {

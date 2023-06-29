@@ -1,6 +1,6 @@
 package net.origamiking.games.oregontrail.gameplay.events;
 
-import net.origamiking.games.oregontrail.OregonTrailMain;
+import net.origamiking.games.oregontrail.OregonTrailApplication;
 import net.origamiking.games.oregontrail.utils.Utils;
 import net.origamiking.games.oregontrail.variables.Variables;
 
@@ -21,7 +21,7 @@ public class AnimalAttack {
         String personName = Utils.returnPersonName(person);
         int food = Utils.returnNumber(10, 25);
         if (Variables.BULLETS >= 3) {
-            OregonTrailMain.println("Suddenly a bear jumps out and attacks " + personName + ". They shoot the bear but get hurt in the process. \n+" + food + " pounds of food\n-3 bullets");
+            OregonTrailApplication.println("Suddenly a bear jumps out and attacks " + personName + ". They shoot the bear but get hurt in the process. \n+" + food + " pounds of food\n-3 bullets");
             Variables.POUNDS_OF_FOOD = Variables.POUNDS_OF_FOOD + food;
             Variables.BULLETS = Variables.BULLETS - 3;
             Utils.subStamina(person, 2);
@@ -47,7 +47,7 @@ public class AnimalAttack {
         } else {
             int person_dead = Utils.returnPerson();
             String dead = Utils.returnPersonName(person_dead);
-            OregonTrailMain.println("Suddenly a bear jumps out and attacks " + dead + ". You dont have any bullets so everyone tries to punch the bear. In the process, " + dead + " dies.");
+            OregonTrailApplication.println("Suddenly a bear jumps out and attacks " + dead + ". You dont have any bullets so everyone tries to punch the bear. In the process, " + dead + " dies.");
             Utils.subStamina(1, 2);
             Utils.subStamina(2, 2);
             Utils.subStamina(3, 2);
@@ -64,7 +64,7 @@ public class AnimalAttack {
             Utils.subHygiene(2, 2);
             Utils.subHygiene(3, 2);
             Utils.subHygiene(4, 2);
-            OregonTrailMain.println(dead + " has died.");
+            OregonTrailApplication.println(dead + " has died.");
             Utils.die(person_dead);
             Utils.checkIfPersonDead();
         }
@@ -72,7 +72,7 @@ public class AnimalAttack {
     private static void wolves() {
         int food = Utils.returnNumber(15, 35);
         if (Variables.BULLETS >= 10) {
-            OregonTrailMain.println("Suddenly a pack of wolves jump out and attack. Everyone shoots as many wolves as they can but they get hurt in the process. \n+" + food + " pounds of food\n-10 bullets");
+            OregonTrailApplication.println("Suddenly a pack of wolves jump out and attack. Everyone shoots as many wolves as they can but they get hurt in the process. \n+" + food + " pounds of food\n-10 bullets");
             Variables.POUNDS_OF_FOOD = Variables.POUNDS_OF_FOOD + food;
             Variables.BULLETS = Variables.BULLETS - 10;
             Utils.subAllStats(2);
@@ -82,11 +82,11 @@ public class AnimalAttack {
             String dead1 = Utils.returnPersonName(person_dead1);
             int person_dead2 = Utils.returnPerson();
             String dead2 = Utils.returnPersonName(person_dead2);
-            OregonTrailMain.println("Suddenly a pack of wolves jump out and attack. You dont have any bullets so everyone tries to punch any wolves they can. In the process, " + dead2 + " and " + dead1 +" die.");
+            OregonTrailApplication.println("Suddenly a pack of wolves jump out and attack. You dont have any bullets so everyone tries to punch any wolves they can. In the process, " + dead2 + " and " + dead1 +" die.");
             Utils.subAllStats(4);
-            OregonTrailMain.println(dead2 + " has died.");
+            OregonTrailApplication.println(dead2 + " has died.");
             Utils.die(person_dead2);
-            OregonTrailMain.println(dead1 + " has died.");
+            OregonTrailApplication.println(dead1 + " has died.");
             Utils.die(person_dead1);
             Utils.checkIfPersonDead();
         }

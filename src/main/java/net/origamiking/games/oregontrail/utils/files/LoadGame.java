@@ -1,15 +1,18 @@
 package net.origamiking.games.oregontrail.utils.files;
 
-import net.origamiking.games.oregontrail.OregonTrailMain;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+import net.origamiking.games.oregontrail.OregonTrailApplication;
 import net.origamiking.games.oregontrail.utils.Utils;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.FileVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 import net.origamiking.games.oregontrail.variables.WeatherVariables;
-import net.origamiking.games.oregontrail.window.Inventory;
-import net.origamiking.games.oregontrail.window.InventoryWindow;
 
-import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -19,6 +22,7 @@ import static net.origamiking.games.oregontrail.variables.FileVariables.getSaveD
 
 public class LoadGame {
     public static void loadSaves() {
+        Stage primaryStage = new Stage();
         File folder = new File(FileVariables.SAVES_DIRECTORY);
 
         if (folder.isDirectory()) {
@@ -46,20 +50,34 @@ public class LoadGame {
 
                 options[fileCount] = "Back";
                 Utils.reverseArray(options);
-                int choice = JOptionPane.showOptionDialog(null, "Pick a save:", "Saves", JOptionPane.DEFAULT_OPTION,
-                        JOptionPane.PLAIN_MESSAGE, null, options, null);
-                if (choice >= 0 && choice < options.length) {
-                    String selectedSave = options[choice];
-                    if (selectedSave.equals("Back")) {
-                        OregonTrailMain.start();
-                    } else {
-                        FileVariables.SAVE_NAME = selectedSave;
-                        FileVariables.FILE_NAME = getSaveDirectory() + File.separator + selectedSave + ".txt";
-                        OregonTrailMain.println("Selected save: " + selectedSave);
-                        loadSave();
-                    }
+
+                HBox menuLayout = new HBox(10);
+                menuLayout.setPadding(new Insets(10));
+                menuLayout.setAlignment(Pos.CENTER);
+
+                for (String option : options) {
+                    Button button = new Button(option);
+                    button.setOnAction(e -> handleButtonClick(button.getText()));
+                    menuLayout.getChildren().add(button);
                 }
+
+                Scene scene = new Scene(menuLayout);
+                primaryStage.setTitle("Saves");
+                primaryStage.setScene(scene);
+                primaryStage.show();
             }
+        }
+    }
+
+    private static void handleButtonClick(String buttonText) {
+        if (buttonText.equals("Back")) {
+            //TODO back
+//            OregonTrailApplication.start();
+        } else {
+            FileVariables.SAVE_NAME = buttonText;
+            FileVariables.FILE_NAME = getSaveDirectory() + File.separator + buttonText + ".txt";
+            OregonTrailApplication.println("Selected save: " + buttonText);
+            loadSave();
         }
     }
     public static void loadSave() {
@@ -151,9 +169,9 @@ public class LoadGame {
             if ((line = reader.readLine()) != null) CharacterVariables.PERSON_2.SICK_COUNTER = Integer.parseInt(line);
             if ((line = reader.readLine()) != null) CharacterVariables.PERSON_3.SICK_COUNTER = Integer.parseInt(line);
             if ((line = reader.readLine()) != null) CharacterVariables.PERSON_4.SICK_COUNTER = Integer.parseInt(line);
-
-            OregonTrailMain.inventoryWindow = new InventoryWindow();
-            Inventory.printToWindow();
+//TODO
+//            OregonTrailMain.inventoryWindow = new InventoryWindow();
+//            Inventory.printToWindow();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

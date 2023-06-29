@@ -1,37 +1,94 @@
 plugins {
     id 'java'
     id 'application'
+    id 'org.javamodularity.moduleplugin' version '1.8.12'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+    id 'org.beryx.jlink' version '2.25.0'
 }
 
-group = 'net.origamiking.games.oregontrail'
-version = game_version
+group 'net.origamiking.games.oregontrail'
+version game_version
 
 repositories {
     mavenCentral()
 }
 
-jar {
-    manifest {
-        attributes 'Main-Class': 'net.origamiking.games.oregontrail.OregonTrailMain'
-        attributes 'Specification-Title': 'Oregon-Trail'
-        attributes 'Specification-Vendor': 'OrigamiKing3612'
-        attributes 'Specification-Version': '1'
-        attributes 'Implementation-Title': project.name
-        attributes 'Implementation-Version': game_version
-        attributes 'Implementation-Vendor': 'OrigamiKing3612'
-        attributes 'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-    }
+ext {
+    junitVersion = '5.9.2'
+}
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainModule = 'net.origamiking.games.oregontrail'
+    mainClass = 'net.origamiking.games.oregontrail.OregonTrailApplication'
+}
+
+javafx {
+    version = '17.0.6'
+    modules = ['javafx.controls', 'javafx.fxml']
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-}
 
-java {
-    withSourcesJar()
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
 test {
     useJUnitPlatform()
 }
+
+jlink {
+    imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'app'
+    }
+}
+
+jlinkZip {
+    group = 'distribution'
+}
+//plugins {
+//    id 'java'
+//    id 'application'
+//}
+//
+//group = 'net.origamiking.games.oregontrail'
+//version = game_version
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//jar {
+//    manifest {
+//        attributes 'Main-Class': 'net.origamiking.games.oregontrail.OregonTrailMain'
+//        attributes 'Specification-Title': 'Oregon-Trail'
+//        attributes 'Specification-Vendor': 'OrigamiKing3612'
+//        attributes 'Specification-Version': '1'
+//        attributes 'Implementation-Title': project.name
+//        attributes 'Implementation-Version': game_version
+//        attributes 'Implementation-Vendor': 'OrigamiKing3612'
+//        attributes 'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+//    }
+//}
+//
+//dependencies {
+//    testImplementation platform('org.junit:junit-bom:5.9.1')
+//    testImplementation 'org.junit.jupiter:junit-jupiter'
+//}
+//
+//java {
+//    withSourcesJar()
+//}
+//
+//test {
+//    useJUnitPlatform()
+//}
