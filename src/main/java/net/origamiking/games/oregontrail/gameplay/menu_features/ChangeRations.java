@@ -1,6 +1,7 @@
 package net.origamiking.games.oregontrail.gameplay.menu_features;
 
 import javafx.scene.control.Button;
+import net.origamiking.games.oregontrail.OregonTrailApplication;
 import net.origamiking.games.oregontrail.variables.Variables;
 
 public class ChangeRations {
@@ -10,7 +11,8 @@ public class ChangeRations {
         buttons[1] = new Button("6 Rations Per Person");
         buttons[2] = new Button("4 Rations Per Person");
         buttons[3] = new Button("2 Rations Per Person");
-
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> handleButtonClick(button.getText()));
         }

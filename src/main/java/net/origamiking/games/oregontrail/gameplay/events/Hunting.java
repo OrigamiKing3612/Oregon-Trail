@@ -53,7 +53,8 @@ public class Hunting {
         buttons[2] = new Button(options[2]);
         buttons[3] = new Button(options[3]);
         buttons[4] = new Button(options[4]);
-
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
 
         for (Button button : buttons) {
             button.setOnAction(e -> {
@@ -125,7 +126,8 @@ public class Hunting {
         buttons[1] = new Button("2");
         buttons[2] = new Button("3");
         buttons[3] = new Button("4");
-
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
 
         for (Button button : buttons) {
             button.setOnAction(e -> {

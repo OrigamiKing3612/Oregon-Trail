@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import net.origamiking.games.oregontrail.OregonTrailApplication;
 
 public class MainGameMenu {
     public static void mainGameMenu(String dayStuff) {
@@ -22,7 +23,8 @@ public class MainGameMenu {
         buttons[2] = new Button("Use Stuff");
         buttons[3] = new Button("Change Rations");
         buttons[4] = new Button("Continue Traveling");
-
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> {
                 boolean move_on = false;

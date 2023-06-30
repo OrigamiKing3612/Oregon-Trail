@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import net.origamiking.games.oregontrail.OregonTrailApplication;
 import net.origamiking.games.oregontrail.utils.Utils;
 import net.origamiking.games.oregontrail.variables.FileVariables;
 
@@ -66,9 +67,9 @@ public class DeleteGame {
             String saveFileName = buttonText + ".txt";
             File saveFile = new File(FileVariables.SAVES_DIRECTORY, saveFileName);
             if (saveFile.delete()) {
-                System.out.println("Save deleted successfully: " + saveFile.getName());
+                OregonTrailApplication.println("Save deleted successfully: " + saveFile.getName());
             } else {
-                System.out.println("Failed to delete the save: " + saveFile.getName());
+                OregonTrailApplication.println("Failed to delete the save: " + saveFile.getName());
             }
         }
     }

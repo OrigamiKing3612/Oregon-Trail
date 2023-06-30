@@ -19,7 +19,8 @@ public class CrossRiver {
         buttons[0] = new Button("Use the ferry");
         buttons[1] = new Button("Caulk Wagon");
         buttons[2] = new Button("Ford the river");
-
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> {
                 switch (button.getText()) {
@@ -45,7 +46,8 @@ public class CrossRiver {
         buttons[0] = new Button("Use the ferry");
         buttons[1] = new Button("Caulk Wagon");
         buttons[2] = new Button("Ford the river");
-
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> {
                 switch (button.getText()) {
@@ -68,7 +70,8 @@ public class CrossRiver {
             Button[] buttons = new Button[2];
             buttons[0] = new Button("Ford the river");
             buttons[1] = new Button("Caulk Wagon");
-
+            OregonTrailApplication.hBox.getChildren().clear();
+            OregonTrailApplication.hBox.getChildren().addAll(buttons);
             for (Button button : buttons) {
                 button.setOnAction(e -> {
                     switch (button.getText()) {
@@ -88,7 +91,8 @@ public class CrossRiver {
         buttons[0] = new Button("Ford the river");
         buttons[1] = new Button("Caulk Wagon");
         buttons[2] = new Button("Use the ferry");
-
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> {
                 switch (button.getText()) {
@@ -127,7 +131,8 @@ public class CrossRiver {
         buttons[0] = new Button("Use the ferry");
         buttons[1] = new Button("Ford the river");
         buttons[2] = new Button("Caulk Wagon");
-
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> {
                 switch (button.getText()) {

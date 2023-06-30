@@ -16,6 +16,7 @@ public class FirstStore {
         buttons[3] = new Button("Pharmacy");
         buttons[4] = new Button("Misc");
         buttons[5] = new Button("Leave Shop");
+        OregonTrailApplication.addButtons(buttons);
 
         for (Button button : buttons) {
             button.setOnAction(e -> {
@@ -40,6 +41,8 @@ public class FirstStore {
         buttons[2] = new Button("Clothes, 7 Coins");
         buttons[3] = new Button("Coffee, 5 Coins");
         buttons[4] = new Button("Back");
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
 
         for (Button button : buttons) {
             button.setOnAction(e -> {
@@ -100,6 +103,8 @@ public class FirstStore {
         buttons[5] = new Button("Wagon Wheel, 7 Coins");
         buttons[6] = new Button("Wagon Tongue, 8 Coins");
         buttons[7] = new Button("Back");
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> {
                 switch (button.getText()) {
@@ -182,7 +187,8 @@ public class FirstStore {
         buttons[2] = new Button("5 Bacon, 20 Coins");
         buttons[3] = new Button("160 Pounds of Flour, 40 Coins");
         buttons[4] = new Button("Back");
-
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> {
                 switch (button.getText()) {
@@ -238,7 +244,8 @@ public class FirstStore {
         buttons[1] = new Button("Clothes, 7 Coins");
         buttons[2] = new Button("50 Bullets, 75 Coins");
         buttons[3] = new Button("Back");
-
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> {
                 switch (button.getText()) {
@@ -284,7 +291,8 @@ public class FirstStore {
         buttons[0] = new Button("1 Medicine, 30 Coins");
         buttons[1] = new Button("2 Medicine, 60 Coins");
         buttons[2] = new Button("Back");
-
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> {
                 switch (button.getText()) {

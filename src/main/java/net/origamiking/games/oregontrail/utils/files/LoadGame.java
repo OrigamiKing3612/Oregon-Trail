@@ -170,7 +170,7 @@ public class LoadGame {
             if ((line = reader.readLine()) != null) CharacterVariables.PERSON_3.SICK_COUNTER = Integer.parseInt(line);
             if ((line = reader.readLine()) != null) CharacterVariables.PERSON_4.SICK_COUNTER = Integer.parseInt(line);
 //TODO
-//            OregonTrailMain.inventoryWindow = new InventoryWindow();
+//            OregonTrailMain.inventoryWindow = new InventoryArea();
 //            Inventory.printToWindow();
         } catch (IOException e) {
             throw new RuntimeException(e);

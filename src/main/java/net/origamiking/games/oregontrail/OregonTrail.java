@@ -16,7 +16,6 @@ public class OregonTrail {
 //  Then build jar
     public static void startup() {
         System.out.println("Starting Oregon Trail version: " + VERSION);
-        OregonTrailApplication.println("Starting Oregon Trail version: " + VERSION);
         Utils.macStuff();
         Runtime.getRuntime().addShutdownHook(new Thread(SaveGame::saveGame));
     }

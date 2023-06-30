@@ -14,6 +14,8 @@ public class DonnerParty {
         Button[] buttons = new Button[2];
         buttons[0] = new Button("Yes");
         buttons[1] = new Button("No");
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> {
                 switch (button.getText().toLowerCase()) {
