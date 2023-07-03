@@ -1,88 +1,108 @@
 package net.origamiking.games.oregontrail.window;
 
-import net.origamiking.games.oregontrail.OregonTrailMain;
+import javafx.scene.control.Button;
 import net.origamiking.games.oregontrail.variables.CharacterVariables;
 import net.origamiking.games.oregontrail.variables.Variables;
 
 public class Inventory {
     public static void printToWindow() {
-        OregonTrailMain.inventoryWindow.clearWindow();
-        OregonTrailMain.inventoryWindow.appendTextln("");
-        OregonTrailMain.inventoryWindow.appendTextln("You have:");
-        OregonTrailMain.inventoryWindow.appendTextln("Coins: " + Variables.COINS);
-        OregonTrailMain.inventoryWindow.appendTextln("Wagon Type: " + Variables.WAGON_TYPE);
-        OregonTrailMain.inventoryWindow.appendTextln("Pounds of Food: " + Variables.POUNDS_OF_FOOD);
-        OregonTrailMain.inventoryWindow.appendTextln("Medicine: " + Variables.MEDICINE);
-        if (Variables.HAS_GUN) { OregonTrailMain.inventoryWindow.appendTextln("Gun: 1"); } else { OregonTrailMain.inventoryWindow.appendTextln("Gun: None"); }
-        OregonTrailMain.inventoryWindow.appendTextln("Knife: " + Variables.KNIFE);
-        OregonTrailMain.inventoryWindow.appendTextln("Bullets: " + Variables.BULLETS);
-        OregonTrailMain.inventoryWindow.appendTextln("Axels: " + Variables.AXELS);
-        OregonTrailMain.inventoryWindow.appendTextln("Wheels: " + Variables.WHEELS);
-        OregonTrailMain.inventoryWindow.appendTextln("Harmonica: " + Variables.HARMONICA);
-        OregonTrailMain.inventoryWindow.appendTextln("Clothes: " + Variables.CLOTHES);
-        OregonTrailMain.inventoryWindow.appendTextln("Coffee: " + Variables.COFFEE);
-        OregonTrailMain.inventoryWindow.appendTextln("People Left: " + Variables.PERSON_COUNTER);
+        Button[] inventoryButtons = new Button[3];
+        inventoryButtons[0] = new Button("Use Clothes");
+        inventoryButtons[1] = new Button("Use Coffee");
+        inventoryButtons[2] = new Button("Use Medicine");
+
+
+        for (Button inventoryButton : inventoryButtons) {
+            inventoryButton.setOnAction(e -> {
+                switch (inventoryButton.getText()) {
+//TODO                case "Use Medicine" -> UseStuff.useMedicine();
+//                    case "Use Coffee" -> UseStuff.useCoffee();
+//                    case "Use Clothes" -> UseStuff.useClothes();
+                    default -> {
+                    }
+                }
+            });
+        }
+        InventoryArea.addInventoryButtons(inventoryButtons);
+        InventoryArea.clearWindow();
+        InventoryArea.println("You have:");
+        InventoryArea.println("Coins: " + Variables.COINS);
+        InventoryArea.println("Wagon Type: " + Variables.WAGON_TYPE);
+        InventoryArea.println("Pounds of Food: " + Variables.POUNDS_OF_FOOD);
+        InventoryArea.println("Medicine: " + Variables.MEDICINE);
+        if (Variables.HAS_GUN) {
+            InventoryArea.println("Gun: 1");
+        } else {
+            InventoryArea.println("Gun: None");
+        }
+        InventoryArea.println("Knife: " + Variables.KNIFE);
+        InventoryArea.println("Bullets: " + Variables.BULLETS);
+        InventoryArea.println("Axels: " + Variables.AXELS);
+        InventoryArea.println("Wheels: " + Variables.WHEELS);
+        InventoryArea.println("Harmonica: " + Variables.HARMONICA);
+        InventoryArea.println("Clothes: " + Variables.CLOTHES);
+        InventoryArea.println("Coffee: " + Variables.COFFEE);
+        InventoryArea.println("People Left: " + Variables.PERSON_COUNTER);
         characters();
     }
+
     private static void characters() {
         if (!CharacterVariables.PERSON_1.IS_GONE) {
-            OregonTrailMain.inventoryWindow.appendTextln("");
             show_person(CharacterVariables.PERSON_1.PERSON, CharacterVariables.PERSON_1.IS_FORLORN, CharacterVariables.PERSON_1.IS_SICK, CharacterVariables.PERSON_1.SICK_WITH);
-            OregonTrailMain.inventoryWindow.appendTextln("   Health: " + CharacterVariables.PERSON_1.STATS.HEALTH + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HEALTH);
-            OregonTrailMain.inventoryWindow.appendTextln("   Stamina: " + CharacterVariables.PERSON_1.STATS.STAMINA + " out of " + CharacterVariables.PERSON_1.STATS.MAX_STAMINA);
-            OregonTrailMain.inventoryWindow.appendTextln("   Happiness: " + CharacterVariables.PERSON_1.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HAPPINESS);
-            OregonTrailMain.inventoryWindow.appendTextln("   Hygiene: " + CharacterVariables.PERSON_1.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HYGIENE);
-            OregonTrailMain.inventoryWindow.appendTextln("");
+            InventoryArea.println("   Health: " + CharacterVariables.PERSON_1.STATS.HEALTH + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HEALTH);
+            InventoryArea.println("   Stamina: " + CharacterVariables.PERSON_1.STATS.STAMINA + " out of " + CharacterVariables.PERSON_1.STATS.MAX_STAMINA);
+            InventoryArea.println("   Happiness: " + CharacterVariables.PERSON_1.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HAPPINESS);
+            InventoryArea.println("   Hygiene: " + CharacterVariables.PERSON_1.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_1.STATS.MAX_HYGIENE);
         } else {
-            OregonTrailMain.inventoryWindow.appendTextln(CharacterVariables.PERSON_1.PERSON + " is dead.");
+            InventoryArea.println(CharacterVariables.PERSON_1.PERSON + " is dead.");
         }
         if (!CharacterVariables.PERSON_2.IS_GONE) {
             show_person(CharacterVariables.PERSON_2.PERSON, CharacterVariables.PERSON_2.IS_FORLORN, CharacterVariables.PERSON_2.IS_SICK, CharacterVariables.PERSON_2.SICK_WITH);
-            OregonTrailMain.inventoryWindow.appendTextln("   Health: " + CharacterVariables.PERSON_2.STATS.HEALTH + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HEALTH);
-            OregonTrailMain.inventoryWindow.appendTextln("   Stamina: " + CharacterVariables.PERSON_2.STATS.STAMINA + " out of " + CharacterVariables.PERSON_2.STATS.MAX_STAMINA);
-            OregonTrailMain.inventoryWindow.appendTextln("   Happiness: " + CharacterVariables.PERSON_2.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HAPPINESS);
-            OregonTrailMain.inventoryWindow.appendTextln("   Hygiene: " + CharacterVariables.PERSON_2.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HYGIENE);
-            OregonTrailMain.inventoryWindow.appendTextln("");
+            InventoryArea.println("   Health: " + CharacterVariables.PERSON_2.STATS.HEALTH + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HEALTH);
+            InventoryArea.println("   Stamina: " + CharacterVariables.PERSON_2.STATS.STAMINA + " out of " + CharacterVariables.PERSON_2.STATS.MAX_STAMINA);
+            InventoryArea.println("   Happiness: " + CharacterVariables.PERSON_2.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HAPPINESS);
+            InventoryArea.println("   Hygiene: " + CharacterVariables.PERSON_2.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_2.STATS.MAX_HYGIENE);
         } else {
-            OregonTrailMain.inventoryWindow.appendTextln(CharacterVariables.PERSON_2.PERSON + " is dead.");
+            InventoryArea.println(CharacterVariables.PERSON_2.PERSON + " is dead.");
         }
         if (!CharacterVariables.PERSON_3.IS_GONE) {
             show_person(CharacterVariables.PERSON_3.PERSON, CharacterVariables.PERSON_3.IS_FORLORN, CharacterVariables.PERSON_3.IS_SICK, CharacterVariables.PERSON_3.SICK_WITH);
-            OregonTrailMain.inventoryWindow.appendTextln("   Health: " + CharacterVariables.PERSON_3.STATS.HEALTH + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HEALTH);
-            OregonTrailMain.inventoryWindow.appendTextln("   Stamina: " + CharacterVariables.PERSON_3.STATS.STAMINA + " out of " + CharacterVariables.PERSON_3.STATS.MAX_STAMINA);
-            OregonTrailMain.inventoryWindow.appendTextln("   Happiness: " + CharacterVariables.PERSON_3.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HAPPINESS);
-            OregonTrailMain.inventoryWindow.appendTextln("   Hygiene: " + CharacterVariables.PERSON_3.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HYGIENE);
-            OregonTrailMain.inventoryWindow.appendTextln("");
+            InventoryArea.println("   Health: " + CharacterVariables.PERSON_3.STATS.HEALTH + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HEALTH);
+            InventoryArea.println("   Stamina: " + CharacterVariables.PERSON_3.STATS.STAMINA + " out of " + CharacterVariables.PERSON_3.STATS.MAX_STAMINA);
+            InventoryArea.println("   Happiness: " + CharacterVariables.PERSON_3.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HAPPINESS);
+            InventoryArea.println("   Hygiene: " + CharacterVariables.PERSON_3.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_3.STATS.MAX_HYGIENE);
         } else {
-            OregonTrailMain.inventoryWindow.appendTextln(CharacterVariables.PERSON_3.PERSON + " is dead.");
+            InventoryArea.println(CharacterVariables.PERSON_3.PERSON + " is dead.");
         }
         if (!CharacterVariables.PERSON_4.IS_GONE) {
             show_person(CharacterVariables.PERSON_4.PERSON, CharacterVariables.PERSON_4.IS_FORLORN, CharacterVariables.PERSON_4.IS_SICK, CharacterVariables.PERSON_4.SICK_WITH);
-            OregonTrailMain.inventoryWindow.appendTextln("   Health: " + CharacterVariables.PERSON_4.STATS.HEALTH + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HEALTH);
-            OregonTrailMain.inventoryWindow.appendTextln("   Stamina: " + CharacterVariables.PERSON_4.STATS.STAMINA + " out of " + CharacterVariables.PERSON_4.STATS.MAX_STAMINA);
-            OregonTrailMain.inventoryWindow.appendTextln("   Happiness: " + CharacterVariables.PERSON_4.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HAPPINESS);
-            OregonTrailMain.inventoryWindow.appendTextln("   Hygiene: " + CharacterVariables.PERSON_4.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HYGIENE);
-            OregonTrailMain.inventoryWindow.appendTextln("");
+            InventoryArea.println("   Health: " + CharacterVariables.PERSON_4.STATS.HEALTH + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HEALTH);
+            InventoryArea.println("   Stamina: " + CharacterVariables.PERSON_4.STATS.STAMINA + " out of " + CharacterVariables.PERSON_4.STATS.MAX_STAMINA);
+            InventoryArea.println("   Happiness: " + CharacterVariables.PERSON_4.STATS.HAPPINESS + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HAPPINESS);
+            InventoryArea.println("   Hygiene: " + CharacterVariables.PERSON_4.STATS.HYGIENE + " out of " + CharacterVariables.PERSON_4.STATS.MAX_HYGIENE);
         } else {
-            OregonTrailMain.inventoryWindow.appendTextln(CharacterVariables.PERSON_4.PERSON + " is dead.");
+            InventoryArea.println(CharacterVariables.PERSON_4.PERSON + " is dead.");
         }
     }
+
     private static void displayForlorn(Boolean p_is_forlorn) {
         if (p_is_forlorn) {
-            OregonTrailMain.inventoryWindow.appendTextln("   Is forlorn.");
+            InventoryArea.println("   Is forlorn.");
         } else {
-            OregonTrailMain.inventoryWindow.appendTextln("   Is not forlorn.");
+            InventoryArea.println("   Is not forlorn.");
         }
     }
+
     private static void displaySick(Boolean sick, String s) {
         if (sick) {
-            OregonTrailMain.inventoryWindow.appendTextln("   Is sick with " + s + ".");
+            InventoryArea.println("   Is sick with " + s + ".");
         } else {
-            OregonTrailMain.inventoryWindow.appendTextln("   Is not sick.");
+            InventoryArea.println("   Is not sick.");
         }
     }
+
     private static void show_person(String p, Boolean p_is_forlorn, Boolean sick, String s) {
-        OregonTrailMain.inventoryWindow.appendTextln(p + ":");
+        InventoryArea.println(p + ":");
         displayForlorn(p_is_forlorn);
         displaySick(sick, s);
     }

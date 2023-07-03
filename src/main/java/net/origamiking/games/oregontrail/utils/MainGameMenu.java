@@ -1,35 +1,59 @@
 package net.origamiking.games.oregontrail.utils;
 
-import net.origamiking.games.oregontrail.OregonTrailMain;
-import net.origamiking.games.oregontrail.gameplay.menu_features.ChangeRations;
-import net.origamiking.games.oregontrail.gameplay.menu_features.Rest;
-import net.origamiking.games.oregontrail.gameplay.menu_features.SeeInventory;
-import net.origamiking.games.oregontrail.utils.files.SaveQuit;
-import net.origamiking.games.oregontrail.window.Inventory;
-
-import javax.swing.*;
-import java.util.Objects;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import net.origamiking.games.oregontrail.OregonTrailApplication;
 
 public class MainGameMenu {
     public static void mainGameMenu(String dayStuff) {
-        Inventory.printToWindow();
-        boolean move_on = false;
-        if (!(Objects.equals(dayStuff, ""))) OregonTrailMain.println(dayStuff);
-        String[] options = { "Save and Quit", "Rest", "Use Stuff", "Change Rations", "Continue Traveling" };
+        Stage primaryStage = new Stage();
+//        Inventory.printToWindow();
 
-        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Main Game Menu", JOptionPane.DEFAULT_OPTION,
-                JOptionPane.PLAIN_MESSAGE, null, options, options[4]);
+        if (!dayStuff.isEmpty()) {
+            System.out.println(dayStuff);
+        }
 
-        switch (choice) {
-            case 4 -> move_on = true;
-            case 3 -> ChangeRations.changeRations();
-            case 2 -> SeeInventory.useStuff();
-            case 1 -> Rest.rest();
-            case 0 -> SaveQuit.save_and_quit();
-            default -> {}
+        Button[] buttons = new Button[5];
+        buttons[0] = new Button("Save and Quit");
+        buttons[1] = new Button("Rest");
+        buttons[2] = new Button("Use Stuff");
+        buttons[3] = new Button("Change Rations");
+        buttons[4] = new Button("Continue Traveling");
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
+        for (Button button : buttons) {
+            button.setOnAction(e -> {
+                boolean move_on = false;
+
+                switch (button.getText()) {
+                    case "Continue Traveling" -> move_on = true;
+//            case "Change Rations" -> ChangeRations.changeRations();
+//            case "Use Stuff" -> SeeInventory.useStuff();
+//            case "Rest" -> Rest.rest();
+//            case "Save and Quit" -> SaveQuit.save_and_quit();
+                    default -> {
+                    }
+                }
+
+                if (!move_on) {
+                    mainGameMenu(dayStuff);
+                }
+            });
         }
-        if (!move_on) {
-            mainGameMenu(dayStuff);
-        }
+
+        VBox menuLayout = new VBox(10);
+        menuLayout.setPadding(new Insets(10));
+        menuLayout.setAlignment(Pos.CENTER);
+        menuLayout.getChildren().addAll(buttons);
+
+        Scene scene = new Scene(menuLayout);
+        primaryStage.setTitle("Main Game Menu");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
+
 }

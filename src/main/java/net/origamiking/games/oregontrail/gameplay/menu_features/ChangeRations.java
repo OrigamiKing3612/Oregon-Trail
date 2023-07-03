@@ -1,20 +1,30 @@
 package net.origamiking.games.oregontrail.gameplay.menu_features;
 
+import javafx.scene.control.Button;
+import net.origamiking.games.oregontrail.OregonTrailApplication;
 import net.origamiking.games.oregontrail.variables.Variables;
-
-import javax.swing.*;
 
 public class ChangeRations {
     public static void changeRations() {
-        String[] options = {"Leave","6 Rations Per Person.", "4 Rations Per Person.", "2 Rations Per Person."};
-
-        int choice = JOptionPane.showOptionDialog(null, "Choose an option:", "Change Rations Per Person", JOptionPane.DEFAULT_OPTION,
-                JOptionPane.PLAIN_MESSAGE, null, options, null);
-        switch (choice) {
-            case 0 -> {}
-            case 3 -> Variables.RATIONS_PER_PERSON = 2;
-            case 2 -> Variables.RATIONS_PER_PERSON = 4;
-            case 1 -> Variables.RATIONS_PER_PERSON = 6;
+        Button[] buttons = new Button[4];
+        buttons[0] = new Button("Leave");
+        buttons[1] = new Button("6 Rations Per Person");
+        buttons[2] = new Button("4 Rations Per Person");
+        buttons[3] = new Button("2 Rations Per Person");
+        OregonTrailApplication.hBox.getChildren().clear();
+        OregonTrailApplication.hBox.getChildren().addAll(buttons);
+        for (Button button : buttons) {
+            button.setOnAction(e -> handleButtonClick(button.getText()));
+        }
+    }
+    private static void handleButtonClick(String buttonText) {
+        switch (buttonText) {
+            case "2 Rations Per Person" -> Variables.RATIONS_PER_PERSON = 2;
+            case "4 Rations Per Person" -> Variables.RATIONS_PER_PERSON = 4;
+            case "6 Rations Per Person" -> Variables.RATIONS_PER_PERSON = 6;
+            case "Leave" -> {/*TODO Leave*/}
+            default -> {
+            }
         }
     }
 }
