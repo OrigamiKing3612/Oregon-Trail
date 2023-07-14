@@ -5,17 +5,17 @@ import net.origamiking.games.oregontrail.OregonTrailApplication;
 import net.origamiking.games.oregontrail.variables.Variables;
 
 public class FirstStore {
+    private static boolean can_lave = false;
     public static void firstStore() {
 //        Inventory.printToWindow();
         OregonTrailApplication.println("You have " + Variables.COINS + " coins, what will you buy?");
 
-        Button[] buttons = new Button[6];
+        Button[] buttons = new Button[5];
         buttons[0] = new Button("Wagons and Wagon Supplies");
         buttons[1] = new Button("Food");
-        buttons[2] = new Button("Quit");
-        buttons[3] = new Button("Pharmacy");
-        buttons[4] = new Button("Misc");
-        buttons[5] = new Button("Leave Shop");
+        buttons[2] = new Button("Pharmacy");
+        buttons[3] = new Button("Misc");
+        buttons[4] = new Button("Leave Shop");
         OregonTrailApplication.addButtons(buttons);
 
         for (Button button : buttons) {
@@ -103,8 +103,7 @@ public class FirstStore {
         buttons[5] = new Button("Wagon Wheel, 7 Coins");
         buttons[6] = new Button("Wagon Tongue, 8 Coins");
         buttons[7] = new Button("Back");
-        OregonTrailApplication.hBox.getChildren().clear();
-        OregonTrailApplication.hBox.getChildren().addAll(buttons);
+        OregonTrailApplication.addButtons(buttons);
         for (Button button : buttons) {
             button.setOnAction(e -> {
                 switch (button.getText()) {
@@ -327,7 +326,10 @@ public class FirstStore {
     private static void leave_shop() {
         if (Variables.WAGON_TYPE.isEmpty()) {
             OregonTrailApplication.println("You need a Wagon!");
+            can_lave = false;
             firstStore();
+        } else {
+            can_lave = true;
         }
     }
 }
